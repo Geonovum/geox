@@ -13,6 +13,7 @@ var respecConfig = {
   shortName: "geox",
   pubDomain: "nen3610",
   github: "https://github.com/lvdbrink/geox",
+  format: "markdown",
   //previousPublishDate: "2017-01-01",
   //previousStatus: "GN-CV",
   //localBiblio: {
