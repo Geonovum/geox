@@ -26,4 +26,233 @@ opgebouwd uit een verzameling geometrische primitieven.
 - Geometrische primitieven
 - Geometrische complexen
 
-[...]
+Dimensionaliteit is het tweede criterium bij het definiëren van geometrietypen.
+
+-   0 dimensies
+-   1 dimensie
+-   2 dimensies
+-   3 dimensies
+
+Het ISO 19107 ruimtelijk schema is geconstrueerd rond die twee criteria van data
+complexiteit en dimensionaliteit. Er is nog een derde criterium, functionaliteit
+(operaties), dat echter voor de indeling van de geometrietypen in het ruimtelijk
+schema geen gevolgen heeft. ISO 19125-1 Simple feature access definieert een
+model voor 2 dimensionale geometrietypen. Zie hiervoor ook het OGC origineel
+
+OpenGIS® Implementation Standard for Geographic information - Simple feature
+access - Part 1: Common architecture.In dit 2D geometriemodel zijn restricties
+opgenomen die van een algemene geometrie een simpele geometrie maken. De term
+simple feature staat daarin voor features beperkt tot 2 dimensionale geometrie.
+
+Figuur 1 beeldt het ruimtelijk schema af en is overgenomen uit het INSPIRE
+consolidated UML model. Dat is weer gebaseerd op het model voor geometrische
+basistypen uit de ISO 19107.
+
+![](media/86bee1823dfd4f2ae0112c0462d2ccec.wmf)
+
+#### Het ruimtelijk schema
+
+Uit dit schema worden alleen de geometrietypen toegelicht die voor deze
+handreiking van toepassing zijn. De toelichting is beperkt en omvat alleen de
+informatie die voor de toepassing van dit document relevant is. Voor de
+volledige beschrijving wordt verwezen naar ISO 19107. Voor simple features (2D)
+gelden er restricties die apart worden aangegeven.
+
+##### GM_Object
+
+De superklasse van alle geometrietypen. Deze klasse beschrijft de eigenschappen
+die alle geometrie types in ISO 19107 delen. Operaties die voor de klasse
+GM_Object beschreven zijn zullen dus voor ieder geometrietype geïmplementeerd
+zijn. Als in een model de geometrie van een object beschreven moet worden
+terwijl er niets bekend is over het mogelijke voorkomen van die geometrie dan
+kan GM_Object worden gekozen.
+
+Ook als een klasse meerdere geometrietypen toestaat (bijvoorbeeld: een
+inrichtingselement kan een punt of een lijn zijn) kan GM_Object worden gebruikt,
+waarbij dit met een constraint wordt ingeperkt tot GM_Point en GM_Curve.
+
+##### Geometrische primitieven.
+
+    1.  GM_Point
+
+Punt. 0-dimensionale geometrie.
+
+1.  GM_Curve
+
+Lijn. 1-dimensionale geometrie.
+
+![](media/0b8de24f040db37781eaeb14a30bbc5b.png)
+
+Een curve is simple indien er geen zelfintersectie optreedt.
+
+1.  *Lijngeometrie*
+
+Lijnen zijn continu en hebben een meetbare lengte in een coördinaten systeem.
+Lijnen bestaan uit een of meer lijnsegmenten waarbij de lijnsegmenten
+verschillende interpolatiemethoden kunnen gebruiken. Lijnsegmenten zijn aan
+elkaar verbonden waarbij het eindpunt van elk segment, behalve de laatste,
+verbonden is aan het beginpunt van het volgende. Wanneer het begin- en eindpunt
+van een lijn met elkaar verbonden zijn is de lijn gesloten en spreken we ook wel
+van een Ring.
+
+1.  GM_Surface
+
+![](media/58c21f62efe0b7365a5b5f5275f92765.png)
+
+![](media/764b59233f8848def3eb50383c5c525c.png)
+
+Vlak. 2-dimensionale geometrie.
+
+1.  *Vlakgeometrie en vlakgeometrie met binnengrens*
+
+Een vlak heeft een oriëntatie, dat wil zeggen, een boven en onderzijde. De
+bovenzijde is gedefinieerd als de kant vanaf welke de begrenzing tegen de klok
+in (anti clock wise) is gedigitaliseerd. Een vlak bestaat uit een of meer
+‘surface patches’. Indien er meerdere zijn dan vormen die samen een
+aaneengesloten vlak.
+
+Een vlak is simple indien een vlak bestaat uit één surface patch.
+
+Een vlak heeft normaal gesproken in ieder geval in 2D situaties een buitenkant,
+de exterior. Daarnaast kan een vlak ook nog 0 of meer interne begrenzingen
+hebben, de interior. De buitenkant heeft, zoals hierboven beschreven, van
+bovenaf gezien een richting tegen de klok in. De binnenkant wordt met de klok
+mee vastgelegd.
+
+1.  GM_Solid
+
+![](media/103dc38214592182fb03b6a35f93730e.png)
+
+Volume. 3-dimensionaal geometrietype.
+
+1.  *Volume geometrie*
+
+De geometrie van een GM_Solid is opgebouwd uit GM_SolidBoundaries (grenzen) die
+elk weer een GM_Surface zijn. Deze zijn naar buiten toe georiënteerd: de
+bovenkant van elk vlak is aan de buitenkant van het volume object te zien.
+
+1.  Interpolatie
+
+Lijnen zijn opgebouwd uit lijnsegmenten. Lijnsegmenten kunnen verschillende
+interpolatiemethoden voor de interpretatie van de coördinaten hebben. In de
+regel worden in Nederland (zie Nederlands profiel) alleen de lineaire en
+‘circular arc by three points’ gebruikt.
+
+De volgende interpolatiemethoden zijn gespecificeerd. In de lijst hieronder zijn
+de Engelse ISO 19107 termen weergegeven. Alleen de meest gebruikte typen worden
+uitgelegd.
+
+-   Linear: rechte lijn tussen twee opeenvolgende punten
+
+-   Geodesic
+
+-   Circular arc by three points: elke set van drie punten vormt een
+    cirkelvormige boog (arc) die begint bij het eerste punt, door het tweede
+    punt gaat en eindigt bij het derde punt. Als de drie punten op één lijn
+    liggen ontstaat er een rechte lijn.
+
+-   Circular arc by two points
+
+-   Circular arc by two points and bulge factor
+
+-   Elliptical arc
+
+-   Clothoid
+
+-   Conic arc
+
+-   Polynominal spline
+
+-   Cubic spline
+
+-   Rational spline
+
+    1.  Geometrische aggregaties
+
+Het is mogelijk om samenstellingen van geometrietypen te aggregeren in nieuwe
+geometrie typen. Hiervoor is het aggregatiepakket ontwikkeld. Aggregaties hebben
+verder geen regels over de inhoudelijke structuur; in algemeenheid zijn er geen
+regels over of de geometrische primitieven elkaar moeten/mogen raken, overlappen
+enzovoort. Voor simple features (2D) gelden er wel restricties. Deze worden
+apart aangegeven.
+
+Geometrische complexen oftewel composites zijn ook samenstellingen van
+geometrische primitieven, maar hierbij gelden wel aanvullende regels. Deze
+composites worden verder niet besproken. Ze zijn geen onderdeel van het Simple
+Features profile (zie Hoofdstuk 3).
+
+1.  GM_MultiPoint
+
+Multipunt. Verzameling van punten die gezamenlijk één object vormen. (instanties
+van GM_Point).
+
+Een multipoint is simple indien er geen punten met dezelfde coördinaten
+voorkomen.
+
+![](media/030ba8517c101a644e03ff2e09a9c0c2.png)
+
+1.  *Multipunt geometrie*
+
+    1.  GM_MultiCurve
+
+Multilijn. Verzameling van lijnen die gezamenlijk één object vormen (instanties
+van GM_Curve).
+
+![](media/b333117b913e2db1f94da7471a783bc0.png)
+
+Een multicurve is simple indien de samenstellende delen simple zijn en de enige
+intersecties tussen delen zich bevinden in punten aan de buitenkant van die
+objecten (geen kruising wel vertakking).
+
+1.  *Multilijn geometrie*
+
+    1.  GM_MultiSurface
+
+Multivlak. Verzameling van vlakken die gezamenlijk één object vormen (instanties
+van GM_Surface).
+
+![](media/eee827e9f6bcfa3e14c887ac4a13de25.png)
+
+Vlakken in een multisurface mogen elkaar niet overlappen. In een simple
+multisurface mogen vlakken elkaar alleen raken in een eindig aantal punten (wel
+punten maar geen grenzen gemeenschappelijk)
+
+1.  *Multivlak geometrie*
+
+    1.  GM_MultiSolid
+
+![](media/c477d607a99392edcfe168576d395292.png)
+
+Multivolume. Verzameling van volumes die gezamenlijk één object vormen
+(instanties van GM_Solid).
+
+1.  *Multivolume geometrie*
+
+    1.  Definities van 2, 2.5 en 3D
+
+Voor het representeren van geometrieën is de dimensionaliteit van groot belang.
+Voor 2 en 3 dimensionale representatie lijkt voor de hand te liggen wat daar mee
+bedoeld wordt. In de praktijk wordt er ook nog over 2.5 D gesproken. Het is
+daarom goed om bruikbare definities te hanteren.
+
+2D: Objecten bestaan uit punten, lijnen of vlakken. Coördinaten zijn een x en
+een y-waarde.
+
+2,5D: Punten, lijnen of vlakken. Coördinaten zijn een x,y en z waarde. Bij elk
+x,y-locatie is er maximaal één z-waarde beschikbaar. Dat betekent dat 2D
+geometrien zich in een 3D ruimte (x,y,z) bevinden maar dat de geometrien
+zichzelf of elkaar niet mogen overlappen in de horizontale projectie.
+
+3D: Volume eenheden oftewel ‘solids’ zijn onderdeel van de mogelijke
+geometrietypen. Bij elke x,y-locatie zijn er meerdere z-waarden mogelijk.
+
+1.  Nederlands profiel op ISO 19107
+
+Het ruimtelijk schema in al zijn complexiteit is geschikt om zeer gevarieerde
+representaties van geometrieën te definiëren. Bij het kiezen van geometrietypen
+ter implementatie in een softwareomgeving is het van belang eisen ten aanzien
+van interoperabiliteit mee te nemen. In het kader van het Nederlands profiel op
+ISO 19107 is er gekeken naar GML als implementatieomgeving. Daarin is
+geëvalueerd welke subset van geometrietypen uit het ruimtelijke schema tot een
+basisset, een profiel, moeten behoren. Er is daarmee een directe link tussen het
+Nederlandse profiel op GML en het profiel op ISO 19107.
