@@ -68,6 +68,8 @@ Vlak. 2-dimensionale geometrie.
     <figcaption>Vlakgeometrie en vlakgeometrie met binnengrens</figcaption>
 </figure>
 
+<aside class="issue">Hier gaat nog iets mis met de grootte van de afbeelding. </aside>
+
 Een vlak heeft een oriëntatie, dat wil zeggen, een boven en onderzijde. De bovenzijde is gedefinieerd als de kant vanaf welke de begrenzing tegen de klok in (anti clock wise) is gedigitaliseerd. Een vlak bestaat uit een of meer ‘surface patches’. Indien er meerdere zijn dan vormen die samen een aaneengesloten vlak.
 
 Een vlak is simple indien een vlak bestaat uit één surface patch.
