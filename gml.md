@@ -77,7 +77,7 @@ Verder geldt:
 - Het gebruik van Gml:metadataProperty is niet toegestaan. Men moet indien nodig zelf metadata elementen definiëren in een GML application schema.
 - In het GML application schema moet het compliance level op de voorgeschreven manier (zie <a href="#schema-compliance-data-levering-data-ontvangen"></a>) worden aangegeven.
 - In het GML application schema moet het volledige GML schema geïmporteerd worden (gml.xsd).
-- Een GML application schema mag maximaal één feature collection op de voorgeschreven manier (zie <a href="#feature-collecties"></a>paragraaf 3.3.1) definiëren.
+- Een GML application schema mag maximaal één feature collection op de voorgeschreven manier (zie <a href="#feature-collecties"></a> definiëren.
 
 ### Feature collecties
 
