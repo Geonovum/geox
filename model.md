@@ -25,7 +25,7 @@ consolidated UML model. Dat is weer gebaseerd op het model voor geometrische
 basistypen uit de ISO 19107.
 
 <figure>
-    <img src=media/86bee1823dfd4f2ae0112c0462d2ccec.png">
+    <img src="media/86bee1823dfd4f2ae0112c0462d2ccec.png">
     <figcaption>Ruimtelijk schema van ISO 19107</figcaption>
 </figure>
 
