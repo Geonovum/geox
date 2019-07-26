@@ -12,7 +12,7 @@ var respecConfig = {
   ],
   shortName: "geox",
   pubDomain: "nen3610",
-  github: "https://github.com/lvdbrink/geox",
+  github: "https://github.com/geonovum/geox",
   format: "markdown",
   //previousPublishDate: "2017-01-01",
   //previousStatus: "GN-CV",
