@@ -75,9 +75,9 @@ Voor **alle niveau’s (SF0, SF1 en SF2)** geldt bovendien dat de volgende GML o
 Verder geldt:
 
 - Het gebruik van Gml:metadataProperty is niet toegestaan. Men moet indien nodig zelf metadata elementen definiëren in een GML application schema.
-- In het GML application schema moet het compliance level op de voorgeschreven manier (zie paragraaf 3.7) worden aangegeven.
+- In het GML application schema moet het compliance level op de voorgeschreven manier (zie <a href="#schema-compliance-data-levering-data-ontvangen"></a>) worden aangegeven.
 - In het GML application schema moet het volledige GML schema geïmporteerd worden (gml.xsd).
-- Een GML application schema mag maximaal één feature collection op de voorgeschreven manier (zie paragraaf 3.3.1) definiëren.
+- Een GML application schema mag maximaal één feature collection op de voorgeschreven manier (zie <a href="#feature-collecties"></a>paragraaf 3.3.1) definiëren.
 
 ### Feature collecties
 
@@ -590,7 +590,7 @@ verwezen wordt.
 
 <figure>
     <img src="media/75285cecf93111fe4f07f9e08dcb82a2.png" alt="SF0 klasse met verwijzingen">
-    <ficaption>Klasse in SF0 model met objectVerwijzingen</figcaption>
+    <figcaption>Klasse in SF0 model met objectVerwijzingen</figcaption>
 </figure>
 
 ## Algemene coderingsregels GML
@@ -619,23 +619,24 @@ Het XML Schema moet voldoen aan de eisen die GML eraan stelt (GML 3.2.1 clause 2
 Het GML XML Schema bevat abstracte typen, die in een GML Application Schema worden uitgebreid, en concrete typen die direct kunnen worden gebruikt.
 
 De belangrijkste eisen aan GML Application schema's zijn:
-- Clause 21.2.2: Het GML application schema definieert eigen uitbreidingen op het GML XML Schema in een eigen targetNamespace.
-- Clause 21.2.3: Het GML application schema importeert het GML XML Schema.
-- Clause 21.3.3: 
-    - Voor elke klasse die een geo-object vertegenwoordigt moet een globaal complexType en een globaal element gedefinieerd zijn.
-    - Elk complexType voor een geo-object moet direct of indirect een extensie zijn van het type `gml:AbstractFeatureType`. `AbstractFeatureType` is op zijn beurt een extensie van `AbstractGMLType`. Van dit type erven alle objecten het verplichte `gml:id` attribuut.
-    - Elk element in het schema voor een geo-object moet lid zijn van de substitutionGroup voor het element `gml:AbstractFeature` (dat wil zeggen: moet zich direct of indirect in de substitutionGroup=”gml:AbstractFeature” bevinden).
-    - Elk identificeerbaar object dat geen geo-object is, moet lid zijn van de substitutionGroup voor het element `gml:AbstractGML`.
-- Clause 21.3.4: Alle eigenschappen van een entiteit en alle relaties naar andere entiteiten worden opgenomen als child XML element.
-- Clause 21.2.7: Als de waarde van een eigenschap een enkelvoudige waarde is, moet deze als literal value worden opgenomen in het eigenschap element zonder verdere markup. Zie ook 7.2.3.10.
-
-<pre class="example">
+<ul>
+  <li>Clause 21.2.2: Het GML application schema definieert eigen uitbreidingen op het GML XML Schema in een eigen targetNamespace.</li>
+  <li>Clause 21.2.3: Het GML application schema importeert het GML XML Schema.</li>
+  <li>Clause 21.3.3:
+  <ul><li>Voor elke klasse die een geo-object vertegenwoordigt moet een globaal complexType en een globaal element gedefinieerd zijn.</li>
+      <li>Elk complexType voor een geo-object moet direct of indirect een extensie zijn van het type `gml:AbstractFeatureType`. `AbstractFeatureType` is op zijn beurt een extensie van `AbstractGMLType`. Van dit type erven alle objecten het verplichte `gml:id` attribuut.</li>
+      <li>Elk element in het schema voor een geo-object moet lid zijn van de substitutionGroup voor het element `gml:AbstractFeature` (dat wil zeggen: moet zich direct of indirect in de substitutionGroup=”gml:AbstractFeature” bevinden).</li>
+      <li>Elk identificeerbaar object dat geen geo-object is, moet lid zijn van de substitutionGroup voor het element `gml:AbstractGML`.</li></ul></li>
+  <li>Clause 21.3.4: Alle eigenschappen van een entiteit en alle relaties naar andere entiteiten worden opgenomen als child XML element.</li>
+  <li>Clause 21.2.7: Als de waarde van een eigenschap een enkelvoudige waarde is, moet deze als literal value worden opgenomen in het eigenschap element zonder verdere markup. Zie ook 7.2.3.10.
+  <pre class="example">
 GOED:  
 &lt;gml:Integer>5&lt;/gml:Integer>
 FOUT:
 &lt;gml:Integer>  
 &lt;gml:value>5&lt;/gml:value>
 &lt;/gml:Integer>
-</pre>
-- Clause 21.2.6: Het object property model moet gevolgd worden. Toelichting: GML is een objectenmodel. Dat wil zeggen dat alles is gemodelleerd als ofwel een object, ofwel een eigenschap van een object. Een relatie naar een ander object wordt ook gezien als eigenschap. Een object kan niet direct een ander object bevatten, maar een eigenschap kan wel een object bevatten. Dit wordt het object-property model genoemd. Als een eigenschap dus een complexe waarde heeft (structuur bezit) moet deze complexe waarde als apart object worden gedefinieerd. Een eigenschap mag zelf geen verdere structuur hebben. Het eigenschap element kan een verwijzing naar dit object bevatten of kan het als geneste structuur opnemen. Zie ook Clause 7.2.3.
-- Clause 21.2.1/21.3.4: Het gebruik van XML attributen is toegestaan (maar niet voor het opnemen van eigenschappen van objecten). Attributen worden niet in een namespace gedeclareerd met uitzondering van `gml:id`. Zie ook clause 7.1.3.
+  </pre></li>
+  <li>Clause 21.2.6: Het object property model moet gevolgd worden. Toelichting: GML is een objectenmodel. Dat wil zeggen dat alles is gemodelleerd als ofwel een object, ofwel een eigenschap van een object. Een relatie naar een ander object wordt ook gezien als eigenschap. Een object kan niet direct een ander object bevatten, maar een eigenschap kan wel een object bevatten. Dit wordt het object-property model genoemd. Als een eigenschap dus een complexe waarde heeft (structuur bezit) moet deze complexe waarde als apart object worden gedefinieerd. Een eigenschap mag zelf geen verdere structuur hebben. Het eigenschap element kan een verwijzing naar dit object bevatten of kan het als geneste structuur opnemen. Zie ook Clause 7.2.3.</li>
+  <li>Clause 21.2.1/21.3.4: Het gebruik van XML attributen is toegestaan (maar niet voor het opnemen van eigenschappen van objecten). Attributen worden niet in een namespace gedeclareerd met uitzondering van `gml:id`. Zie ook clause 7.1.3.</li>
+</ul>
