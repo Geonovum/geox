@@ -64,7 +64,7 @@ Vlak. 2-dimensionale geometrie.
 
 <figure>
     <img src="media/58c21f62efe0b7365a5b5f5275f92765.png"  width="200">
-    <img src="media/764b59233f8848def3eb50383c5c525c.png"  width="50">
+    <img src="media/764b59233f8848def3eb50383c5c525c.png"  width="1">
     <figcaption>Vlakgeometrie en vlakgeometrie met binnengrens</figcaption>
 </figure>
 
