@@ -555,7 +555,10 @@ Er zijn twee oplossingen waaruit gekozen kan worden:
 
 Complexe datatypen, oftewel samengestelde attributen, met eigen geneste structuur, zijn in SF2 wel toegestaan, maar in SF0 niet.
 
-![Klasse met zelfgemaakt, complex datatype ‘identificatie’ in SF2 model](media/a33c233d3be4783c1c37a2d849ddbd19.png)
+<figure>
+  <img src="media/a33c233d3be4783c1c37a2d849ddbd19.png" alt="complex datatype">
+  <figcaption>Klasse met zelfgemaakt, complex datatype ‘identificatie’ in SF2 model</figcaption>
+</figure>
 
 Samengestelde attributen worden in een aan SF0 voldoend informatiemodel opgenomen als losse attributen. Met een gelijknamig stereotype dat bij elk van de attributen die bij het samengestelde attribuut horen wordt opgenomen, wordt in het UML informatiemodel aangegeven dat de attributen bij elkaar horen. Het stereotype wordt in de UML klasse weergegeven boven de attributen die het gemeenschappelijk hebben tussen << >>.
 
