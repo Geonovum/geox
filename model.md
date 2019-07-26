@@ -25,7 +25,7 @@ consolidated UML model. Dat is weer gebaseerd op het model voor geometrische
 basistypen uit de ISO 19107.
 
 <figure>
-    <img src="media/86bee1823dfd4f2ae0112c0462d2ccec.png">
+    <img src="media/86bee1823dfd4f2ae0112c0462d2ccec.png" width="400">
     <figcaption>Ruimtelijk schema van ISO 19107</figcaption>
 </figure>
 
@@ -52,7 +52,7 @@ Lijn. 1-dimensionale geometrie.
 Een curve is simple indien er geen zelfintersectie optreedt.
 
 <figure>
-    <img src="media/0b8de24f040db37781eaeb14a30bbc5b.png">
+    <img src="media/0b8de24f040db37781eaeb14a30bbc5b.png" width="400">
     <figcaption>Lijngeometrie</figcaption>
 </figure>
 
@@ -63,8 +63,8 @@ Lijnen zijn continu en hebben een meetbare lengte in een coördinaten systeem. L
 Vlak. 2-dimensionale geometrie.
 
 <figure>
-    <img src="media/58c21f62efe0b7365a5b5f5275f92765.png">
-    <img src="media/764b59233f8848def3eb50383c5c525c.png">
+    <img src="media/58c21f62efe0b7365a5b5f5275f92765.png"  width="400">
+    <img src="media/764b59233f8848def3eb50383c5c525c.png"  width="400">
     <figcaption>Vlakgeometrie en vlakgeometrie met binnengrens</figcaption>
 </figure>
 
@@ -79,7 +79,7 @@ Een vlak heeft normaal gesproken in ieder geval in 2D situaties een buitenkant, 
 Volume. 3-dimensionaal geometrietype.
 
 <figure>
-    <img src="media/103dc38214592182fb03b6a35f93730e.png">
+    <img src="media/103dc38214592182fb03b6a35f93730e.png"  width="400">
     <figcaption>Volume geometrie</figcaption>
 </figure>
 
@@ -115,7 +115,7 @@ Geometrische complexen oftewel composites zijn ook samenstellingen van geometris
 Multipunt. Verzameling van punten die gezamenlijk één object vormen. (instanties van GM_Point). Een multipoint is simple indien er geen punten met dezelfde coördinaten voorkomen.
 
 <figure>
-    <img src="media/030ba8517c101a644e03ff2e09a9c0c2.png">
+    <img src="media/030ba8517c101a644e03ff2e09a9c0c2.png"  width="400">
     <figcaption>Multipunt geometrie</figcaption>
 </figure>
 
@@ -126,7 +126,7 @@ Multilijn. Verzameling van lijnen die gezamenlijk één object vormen (instantie
 Een multicurve is simple indien de samenstellende delen simple zijn en de enige intersecties tussen delen zich bevinden in punten aan de buitenkant van die objecten (geen kruising wel vertakking).
 
 <figure>
-    <img src="media/b333117b913e2db1f94da7471a783bc0.png">
+    <img src="media/b333117b913e2db1f94da7471a783bc0.png" width="400">
     <figcaption>Multilijn geometrie</figcaption>
 </figure>
 
@@ -137,7 +137,7 @@ Multivlak. Verzameling van vlakken die gezamenlijk één object vormen (instanti
 Vlakken in een multisurface mogen elkaar niet overlappen. In een simple multisurface mogen vlakken elkaar alleen raken in een eindig aantal punten (wel punten maar geen grenzen gemeenschappelijk)
 
 <figure>
-    <img src="media/eee827e9f6bcfa3e14c887ac4a13de25.png">
+    <img src="media/eee827e9f6bcfa3e14c887ac4a13de25.png" width="400">
     <figcaption>Multivlak geometrie</figcaption>
 </figure>
 
@@ -145,7 +145,7 @@ Vlakken in een multisurface mogen elkaar niet overlappen. In een simple multisur
 Multivolume. Verzameling van volumes die gezamenlijk één object vormen (instanties van GM_Solid).
 
 <figure>
-    <img src="media/c477d607a99392edcfe168576d395292.png">
+    <img src="media/c477d607a99392edcfe168576d395292.png" width="400">
     <figcaption>Multivolume geometrie</figcaption>
 </figure>
 
