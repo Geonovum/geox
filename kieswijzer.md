@@ -11,8 +11,10 @@ Positionering:
 - Voor de onbekende gebruiker
 - Voor kleine aanleveringen (bv terugmelden)
 - Niet als authentieke bron
+- Als er geen ander coordinaaterferentiesysteem dan WGS 84 noodzakelijk is
 
 ## GeoPackage
+Positionering: 
 - Overzetten van data van systeem a naar systeem b
 - Archivering
 - Grote volumes
@@ -21,5 +23,5 @@ Positionering:
 ## GML
 Positionering: 
 - Archivering van data
-- In combi met tekstgerichte uitwisseling (dan is XML nl geschikter dan JSON)
-- In gevallen waar validatie heel belangrijk is?
+- In combinatie met tekstgerichte uitwisseling (dan is XML nl geschikter dan JSON)
+- In gevallen waar nauwkeurige validatie van de bestandsstructuur en -inhoud heel belangrijk is
