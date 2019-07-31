@@ -1,8 +1,8 @@
 # Geometrie in model
 
-<p class='note'>Dit hoofdstuk gaat integraal de tekt bevatten uit hfd 2 en hfd 5 uit de [Handreiking Geometrie in model en GML](https://www.geonovum.nl/uploads/documents/Geometrieinmodelengml_1.0.pdf). </p>
+<p class='note'>Dit hoofdstuk bevat op dit moment integraal de tekt uit hfd 2 en hfd 5 uit de <a href="https://www.geonovum.nl/uploads/documents/Geometrieinmodelengml_1.0.pdf">Handreiking Geometrie in model en GML</a>. </p>
 
-Dit hoofdstuk beschrijft de definitie van de geometrietypen zoals die zijn gedefinieerd in ISO 19107 [[iso-19107-2003]] en in informatiemodellen worden toegepast. Alleen het geometrie gedeelte van het ruimtelijke schema is in deze handreiking opgenomen;het topologie gedeelte wordt niet besproken.
+Dit hoofdstuk beschrijft de definitie van de geometrietypen zoals die zijn gedefinieerd in ISO 19107: Geographic information -- Spatial schema [[iso-19107-2003]] en in informatiemodellen worden toegepast. Alleen het geometrie gedeelte van het ruimtelijke schema is in deze handreiking opgenomen; het topologie gedeelte wordt niet besproken.
 
 NEN 3610 beschrijft de regels voor het modelleren van geo-informatie. Belangrijk in de definitie van een geografisch object is dat het locatie eigenschappen heeft. Eén van die locatie eigenschappen is de directe locatie die middels coördinaten is beschreven. Door middel van attributen wordt de directe locatie en geometrie door coördinaten gerepresenteerd. De waarden van die attributen zijn coördinaten of coördinaatreeksen die een geometrie representeren. We noemen dit geometrietypen. In ISO 19107 is een klassediagram, het ruimtelijk schema, opgenomen met de geometrietypen en hun onderlinge relaties. De geometrietypen uit dit diagram worden gebruikt om de geometrietypen in geo-informatiemodellen te specificeren.
 
@@ -39,7 +39,7 @@ De superklasse van alle geometrietypen. Deze klasse beschrijft de eigenschappen 
 
 Ook als een klasse meerdere geometrietypen toestaat (bijvoorbeeld: een inrichtingselement kan een punt of een lijn zijn) kan GM_Object worden gebruikt, waarbij dit met een constraint wordt ingeperkt tot GM_Point en GM_Curve.
 
-## Geometrische primitieven.
+## Geometrische primitieven
 
 ### GM_Point
 
@@ -63,12 +63,9 @@ Lijnen zijn continu en hebben een meetbare lengte in een coördinaten systeem. L
 Vlak. 2-dimensionale geometrie.
 
 <figure>
-    <img src="media/58c21f62efe0b7365a5b5f5275f92765.png"  width="200">
-    <img src="media/764b59233f8848def3eb50383c5c525c.png"  width="1">
-    <figcaption>Vlakgeometrie en vlakgeometrie met binnengrens</figcaption>
+    <img src="media/2surfaces.png"  width="200">
+    <figcaption>Vlakgeometrie (a) en vlakgeometrie met binnengrens (b)</figcaption>
 </figure>
-
-<aside class="issue">Hier gaat nog iets mis met de grootte van de afbeelding. </aside>
 
 Een vlak heeft een oriëntatie, dat wil zeggen, een boven en onderzijde. De bovenzijde is gedefinieerd als de kant vanaf welke de begrenzing tegen de klok in (anti clock wise) is gedigitaliseerd. Een vlak bestaat uit een of meer ‘surface patches’. Indien er meerdere zijn dan vormen die samen een aaneengesloten vlak.
 
@@ -110,7 +107,7 @@ De volgende interpolatiemethoden zijn gespecificeerd. In de lijst hieronder zijn
 Het is mogelijk om samenstellingen van geometrietypen te aggregeren in nieuwe geometrie typen. Hiervoor is het aggregatiepakket ontwikkeld. Aggregaties hebben verder geen regels over de inhoudelijke structuur; in algemeenheid zijn er geen
 regels over of de geometrische primitieven elkaar moeten/mogen raken, overlappen enzovoort. Voor simple features (2D) gelden er wel restricties. Deze worden apart aangegeven.
 
-Geometrische complexen oftewel composites zijn ook samenstellingen van geometrische primitieven, maar hierbij gelden wel aanvullende regels. Deze composites worden verder niet besproken. Ze zijn geen onderdeel van het Simple Features profile (zie <a href="#gml"></a>.
+Geometrische complexen oftewel composites zijn ook samenstellingen van geometrische primitieven, maar hierbij gelden wel aanvullende regels. Deze composites worden verder niet besproken. Ze zijn geen onderdeel van het Simple Features profile (zie <a href="#gml"></a>).
 
 ### GM_MultiPoint
 
