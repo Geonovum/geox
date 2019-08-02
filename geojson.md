@@ -2,6 +2,36 @@
 
 JSON [[RFC8259]] is een codering voor gegevens in een op JavaScript gebaseerd formaat. Vaak wordt JSON als alternatief voor XML gebruikt om gestructureerde gegevens te coderen en uit te wisselen.
 
+## Voorbeeld
+(*Bron: Spatial Data on the Web Best Practice, [Coordinates encoded using GeoJSON](https://www.w3.org/TR/sdw-bp/#ex-crs-geojson)*)
+<pre class="example" id="ex-crs-geojson" title="Coordinates encoded using GeoJSON [RFC7946] in HTTP response">
+HTTP/1.1 200 OK
+Date: Sun, 05 Mar 2017 17:12:35 GMT
+Content-length: 543
+Connection: close
+Content-type: application/geo+json
+
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [ [4.884235, 52.375108], [4.884276, 52.375153], 
+        [4.884257, 52.375159], [4.883981, 52.375254], 
+        [4.883850, 52.375109], [4.883819, 52.375075], 
+        [4.884104, 52.374979], [4.884143, 52.374965], 
+        [4.884207, 52.375035], [4.884263, 52.375016], 
+        [4.884320, 52.374996], [4.884255, 52.374926], 
+        [4.884329, 52.374901], [4.884451, 52.375034], 
+        [4.884235, 52.375108] ]
+      ]
+  },
+  "properties": {
+    "name": "Anne Frank's House"
+  }
+}
+</pre>
+
 GeoJSON [[RFC7946]] gebruikt JSON om geografische gegevens te coderen. Het is bedoeld om simpele geografische objecten te representeren inclusief hun ruimtelijke en niet-ruimtelijke eigenschappen. GeoJSON ondersteunt de volgende geometrische objecten: 
 - punten: `Point` en `MuliPoint`
 - lijnen: `LineString` en `MultiLineString`
@@ -22,9 +52,9 @@ Het is mogelijk om GeoJSON met linked data te combineren door gebruik te maken v
 
 GeoJSON schrijft WGS 84 voor; dit maakt het geschikt voor visualisatie op het web. Een nadeel van WGS 84 is de lagere nauwkeurigheid in vergelijking met RD; maar voor de meeste toepassingen is data met hoge nauwkeurigheid niet nodig. 
 
-In veel gevallen is de nauwkeurigheid van GeoJSON in combinatie met WGS 84 voldoende; op het Geoforum wordt er bijvoorbeeld zelden gevraagd om data met hoge nauwkeurigheid. Belangrijker is vindbaarheid van data. De aanbeveling is om GeoJSON alleen in combinatie met WGS 84 te gebruiken. De [Spatial Data on the Web Best Practice](https://www.w3.org/TR/sdw-bp/#bp-crs-choice) raadt aan om geodata, zodra je het aanbiedt op het web, in ieder geval altijd in WGS 84 te publiceren, en daarnaast in andere CRS als daar expliciete behoefte aan is. Als er door alle aanbiedende en gebruikende partijen een afspraak over is, GeoJSON eventueel ook in combinatie met andere CRS gebruikt worden. 
+In veel gevallen is de nauwkeurigheid van GeoJSON in combinatie met WGS 84 voldoende; op het Geoforum wordt er bijvoorbeeld zelden gevraagd om data met hoge nauwkeurigheid. Belangrijker is vindbaarheid van data. De aanbeveling is om GeoJSON alleen in combinatie met WGS 84 te gebruiken. De [Spatial Data on the Web Best Practice](https://www.w3.org/TR/sdw-bp/#bp-crs-choice) raadt aan om geodata, zodra je het aanbiedt op het web, in ieder geval altijd in WGS 84 te publiceren, en daarnaast in andere CRS als daar expliciete behoefte aan is. Als er door alle aanbiedende en gebruikende partijen een afspraak over is, kan GeoJSON eventueel ook in combinatie met andere CRS gebruikt worden. 
 
-WFS 3 kan in combinatie met zowel GeoJSON als GML worden gebruikt. Dit laatste is alleen nog interessant als er behoefte is aan nauwkeurigere geometrieën of aan arcs (die in GeoJSON niet worden ondersteund). Andere use cases voor GML/XML zien de PDOK ontwikkelaars niet meer.
+WFS 3 kan in combinatie met zowel GeoJSON als GML worden gebruikt. Dit laatste is alleen nog interessant als er behoefte is aan nauwkeurigere geometrieën of aan arcs (die in GeoJSON niet worden ondersteund). 
 
 ## voordelen
 
@@ -37,9 +67,10 @@ WFS 3 kan in combinatie met zowel GeoJSON als GML worden gebruikt. Dit laatste i
 ## beperkingen
 - Alleen in combinatie met WGS 84 te gebruiken. Dit heeft gevolgen voor de nauwkeurigheid. 
 - Ondersteunt geen 3D geometrieën (solids) - zie hiervoor [CityJSON](https://www.cityjson.org). Het is wel mogelijk om een hoogtecoordinaat (altitude) op te nemen bij punten, lijnen en vlakken.
+- Ondersteunt geen bogen (arcs).
 
 ## afspraken
-Er zijn afspraken nodig over het aantal decimalen in coordinaten en over het gebruikte CRS. Wanneer gebruik je WGS 84, wanneer RD en hoe wissel je die laatste uit. 
+TODO: Er zijn afspraken nodig over het aantal decimalen in coordinaten en over het gebruikte CRS. Wanneer gebruik je WGS 84, wanneer RD en hoe wissel je die laatste uit. 
 
 ### aantal decimalen
 Uit GeoJSON standaard: 
@@ -49,11 +80,12 @@ Uit GeoJSON standaard:
 > Furthermore, the WGS 84 datum is a relatively coarse approximation of the geoid, with the height varying by up to 5 m (but generally between 2 and 3 meters) higher or lower relative to a surface parallel to Earth's mean sea level.
 
 ### coordinaatreferentiesysteem
-TODO - Wanneer gebruik je WGS 84, wanneer RD en hoe wissel je die laatste uit.
+TODO - Wanneer gebruik je WGS 84, wanneer RD of ETRS89 en hoe wissel je die laatste twee uit.
+
+Gebruiken we wel of niet GeoJSON in combinatie met andere coordinaatreferentiesystemen dan WGS 84? En als we dit wel doen, hoe communiceer je dan wat het coordinaatreferentiesysteem van je data is? Hier moeten we afspraken over maken. 
 
 ## how to
 TODO
 
-- hoe: geojson conneg The media type application/geo+json is used to designate that content is provided in GeoJSON format
-- hoe: simplified geometries
-- hoe: URI's in GeoJSON (zie Note hierover in BP 10)
+- Content negotiation met GeoJSON: het media type `application/geo+json` wordt gebruikt om aan te geven dat data wordt aangeboden in  GeoJSON formaat.
+- hoe: URI's in GeoJSON (zie Note hierover in [BP 10](https://www.w3.org/TR/sdw-bp/#entity-level-links)).
