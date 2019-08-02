@@ -1,22 +1,30 @@
 # GeoJSON
 
-<p class='note'>Voor nu staan hier alleen even wat bevindingen over GeoJSON uit de werkgroep lichtere formaten. Dit moet een uitgebreidere tekst worden, maar die moet nog geschreven worden. </p>
-
 JSON [[RFC8259]] is een codering voor gegevens in een op JavaScript gebaseerd formaat. Vaak wordt JSON als alternatief voor XML gebruikt om gestructureerde gegevens te coderen en uit te wisselen.
 
-GeoJSON [[RFC7946]] gebruikt JSON om geografische gegevens te coderen. Het is bedoeld om simpele geografische objecten te representeren inclusief hun ruimtelijke en niet-ruimtelijke eigenschappen. GeoJSON ondersteunt punten, lijnen, vlakken, en de multi-varianten van deze drie. Volumes en bogen worden niet ondersteund. Een GeoJSON kan een geo-object bevatten: een Feature; of een lijst van geo-objecten: een Feature Collection met daarin meerdere Features. 
+GeoJSON [[RFC7946]] gebruikt JSON om geografische gegevens te coderen. Het is bedoeld om simpele geografische objecten te representeren inclusief hun ruimtelijke en niet-ruimtelijke eigenschappen. GeoJSON ondersteunt de volgende geometrische objecten: 
+- punten: `Point` en `MuliPoint`
+- lijnen: `LineString` en `MultiLineString`
+- vlakken: `Polygon` en `MultiPolygon`
+- multigeometrie: `GeometryCollection` waarin een mix van de bovenstaande geometrietypen kan voorkomen. 
+
+Volumes en bogen worden niet ondersteund. 
+
+Een GeoJSON object representeert ofwel een losse geometrie, een `Geometry`; ofwel een enkel geo-object, een `Feature`; of een lijst van geo-objecten, een `FeatureCollection` met daarin meerdere features. Elk `Feature` bevat een `geometry` eigenschap waarin de geometrie is opgenomen; en een `properties` eigenschap waarin de niet-geometrische eigenschappen staan.  
 
 GeoJSON is ontstaan als informele community standaard, opgesteld in een internet werkgroep. Ondersteuning voor GeoJSON is er in sommige geografische databases en GIS softwarepakketten, en is breed aanwezig in web mapping libraries en APIs van bijvoorbeeld Google, Yahoo en Twitter.
 
 GeoJSON is een prima formaat voor de meeste toepassingen - zeker in web toepassingen - bijvoorbeeld om iconen of polygonen bovenop een kaart op het web weer te geven. De browser toont dan een basiskaart, haalt de daar bovenop weer te geven geodata op, en combineert deze met de basiskaart met behulp van een JavaScript library.
 
-Een voordeel van dit formaat is dat het te lezen is in een tekst editor, in tegenstelling tot GeoPackage bestanden die binair zijn. Dit maakt GeoJSON wat eenvoudiger in gebruik. JSON is heel geschikt voor web toepassingen, bijvoorbeeld voor publicatie van data in een API of voor visualisatie op het web. Het maakt geodata ook bruikbaar voor niet-geo experts. Er zijn veel tools beschikbaar om ermee te werken. Het is mogelijk om GeoJSON met linked data te combineren door gebruik te maken van [JSON-LD 1.1](https://www.w3.org/TR/json-ld11/). 
+Een voordeel van dit formaat is dat het te lezen is in een tekst editor, in tegenstelling tot GeoPackage bestanden die binair zijn. Dit maakt GeoJSON wat eenvoudiger in gebruik. JSON is heel geschikt voor web toepassingen, bijvoorbeeld voor publicatie van data in een API of voor visualisatie op het web. Omdat JSON gebaseerd is op JavaScript, is het direct te gebruiken in web toepassingen, zonder dat het eerst geparseerd of geconverteerd moet worden. Er zijn bovendien veel tools beschikbaar om ermee te werken. Deze voordelen maken GeoJSON goed bruikbaar voor niet-geo experts, die JSON vaak al kennen. 
 
-GeoJSON schrijft WGS 84 voor; dit maakt het geschikt voor visualisatie op het web.
+Het is mogelijk om GeoJSON met linked data te combineren door gebruik te maken van [JSON-LD 1.1](https://www.w3.org/TR/json-ld11/). 
 
-WFS 3 kan in combinatie met GML worden gebruikt, dit is alleen nog interessant als er behoefte is aan nauwkeurigere geometrieën of aan arcs (die in GeoJSON niet worden ondersteund). Andere use cases voor GML/XML zien de PDOK ontwikkelaars niet meer.
+GeoJSON schrijft WGS 84 voor; dit maakt het geschikt voor visualisatie op het web. Een nadeel van WGS 84 is de lagere nauwkeurigheid in vergelijking met RD; maar voor de meeste toepassingen is data met hoge nauwkeurigheid niet nodig. 
 
-In veel gevallen is de nauwkeurigheid van GeoJSON voldoende; op het Geoforum wordt er zelden gevraagd om data met hoge nauwkeurigheid. Belangrijker is vindbaarheid van data. De aanbeveling is om GeoJSON alleen in combinatie met WGS 84 te gebruiken. De [Spatial Data on the Web Best Practice](https://www.w3.org/TR/sdw-bp/#bp-crs-choice) raadt aan om geodata op het web in ieder geval in WGS 84 te publiceren.  
+In veel gevallen is de nauwkeurigheid van GeoJSON in combinatie met WGS 84 voldoende; op het Geoforum wordt er bijvoorbeeld zelden gevraagd om data met hoge nauwkeurigheid. Belangrijker is vindbaarheid van data. De aanbeveling is om GeoJSON alleen in combinatie met WGS 84 te gebruiken. De [Spatial Data on the Web Best Practice](https://www.w3.org/TR/sdw-bp/#bp-crs-choice) raadt aan om geodata, zodra je het aanbiedt op het web, in ieder geval altijd in WGS 84 te publiceren, en daarnaast in andere CRS als daar expliciete behoefte aan is. Als er door alle aanbiedende en gebruikende partijen een afspraak over is, GeoJSON eventueel ook in combinatie met andere CRS gebruikt worden. 
+
+WFS 3 kan in combinatie met zowel GeoJSON als GML worden gebruikt. Dit laatste is alleen nog interessant als er behoefte is aan nauwkeurigere geometrieën of aan arcs (die in GeoJSON niet worden ondersteund). Andere use cases voor GML/XML zien de PDOK ontwikkelaars niet meer.
 
 ## voordelen
 
