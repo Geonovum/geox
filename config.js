@@ -28,8 +28,16 @@ var respecConfig = {
       href:"http://www.opengeospatial.org/standards/gml",
       title:"Geography Markup Language (GML) simple features profile",
     authors: ["Linda van den Brink", "Clemens Portele", "Panagiotis (Peter) A. Vretanos"],
-      date: "5 April 2012"
+      date: "5 April 2012",
+      publisher:"Open Geospatial Consortium",
     },
+    "CityGML20":{
+      href:"https://portal.opengeospatial.org/files/?artifact_id=47842",
+      title:"OGC City Geography Markup Language (CityGML) Encoding Standard",
+      authors:["Gerhard Gröger", "Thomas H. Kolbe", "Claus Nagel", "Karl-Heinz Häfele"],
+      date:"4 April 2012",
+      publisher:"Open Geospatial Consortium",
+    }
   //  "ISO19136": {
   //    "href": "https://www.iso.org/standard/32554.html",
   //    "title": "ISO 19136:2007 Geographic information -- Geography Markup Language (GML)",

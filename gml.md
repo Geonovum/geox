@@ -1,8 +1,34 @@
 # Geography Markup Language (GML) - Nederlands profiel
 
-<p class='note'>Dit hoofdstuk bevat de integrale tekt uit hfd 3 en 4 van de Handreiking Geometrie in model en GML [[HGMG]].</p>
+## Introductie
+Geography Markup Language [[gml]] is het meest robuste uitwisselingsformaat voor geografische bestanden. Het definieert XML-codering voor het overbrengen en opslaan van allerlei geo-informatie, zoals geometrie, topografie, coverages en sensordata. GML kan worden gebruikt voor bestandsuitwisseling tussen systemen maar ook binnen webservices zoals WFS.
 
-Het Nederlands Basismodel Geo-informatie (NEN 3610) specificeert in overeenstemming met de ISO-geo-informatiestandaarden GML (Geography Markup Language) als uitwisselingsformaat voor geo-informatie. De actuele standaard voor GML wordt gehanteerd. Op dit moment is dat GML 3.2.1 [[iso-19136-2007]], waarbij ook GML 3.1.1 nog ondersteund wordt. Omdat GML 3.2.1 een zeer uitgebreide standaard is wordt er een profiel, een subset gehanteerd.
+GML is een uitgebreide standaard die oplossingen biedt voor uiteenlopende situaties en variaties in het uitwisselen van geo-informatie. Variaties zijn er bijvoorbeeld in geometrietypen, maar ook in complexiteit van datastructuren. Om op verschillende complexiteitsniveaus met GML te werken, heeft het OGC profielen gemaakt. Deze profielen omschrijven elk een subset van de totale GML-set. De standaardprofielen zijn GML Simple Feature Profile level 0, 1 en 2. Hoe hoger het level, hoe meer je ermee kan. Maar ook: hoe complexer en minder generiek het model wordt. Het is daarom altijd van belang voor- en nadelen van het te gebruiken profiel tegen elkaar af te wegen.
+
+GML gestandaardiseerd bij het OGC en, daar OGC en ISO met elkaar samenwerken, ook gestandaardiseerd als ISO 19136:2007 [[iso-19136-2007]]. Inhoudelijk is dit dezelfde standaard. De ISO variant is opgenomen als nationale standaard in de Pas-toe-of-leg-uit-lijst van het Forum Standaardisatie. Dat betekent dat overheidsorganisaties deze standaard moeten uitvragen bij aanschaf van ICT-producten of ICT-diensten van € 50.000 of meer.
+
+## Voordelen
+GML is een uitgebreide standaard, die veel use cases aan kan.
+
+- Ondersteunt 3D geometrieën, inclusief volumes (solids).
+- Ondersteunt bogen (ook in het simple features profiel).
+- Zeer uitgebreide mogelijkheden voor validatie.
+- Geen beperking wat betreft coordinaatreferentiesystemen.
+
+## Beperkingen
+Juist de uitgebreidheid van GML geeft problemen bij de toepassing; het is een flinke taak om een goede en volledige implementatie van de standaard te maken. Ook het feit dat GML gebaseerd is op XML is soms een handicap.
+
+- Hoewel complexe datastructuren mogelijk zijn in GML, is het in de praktijk, vanwege gebrekkige support hiervoor, vaak toch nodig om de structuur 'plat te slaan' zoals beschreven in <a href="#sf2tosf0"></a>.
+- De support voor GML in (GIS en andere) software is beperkt. Meestal is een conversiestraat (ETL) nodig om GML in te kunnen lezen.
+- Bij grote datavolumes niet geschikt vanwege de verbositeit van XML.
+- Minder geschikt voor publicatie op het web vanwege de complexiteit van XML.
+
+## Toelichting
+<p class='note'>De rest van dit hoofdstuk bevat de integrale tekt uit hfd 3 en 4 van de Handreiking Geometrie in model en GML [[HGMG]].</p>
+
+Het Nederlands Basismodel Geo-informatie (NEN 3610) specificeert in overeenstemming met de ISO-geo-informatiestandaarden GML (Geography Markup Language) als uitwisselingsformaat voor geo-informatie. De bij ISO afgestemde standaard voor GML wordt gehanteerd. Op dit moment is dat GML 3.2.1 [[iso-19136-2007]]. De GML Encoding Standard 3.3 is een uitbreiding op deze versie. De diverse onderdelen uit de 3.3 versie zijn modulair toe te passen en backwards compatible met versie 3.2.1. In Nederland wordt GML 3.1.1 ook nog ondersteund, omdat CityGML 2.0 [[CityGML20]] er gebruik van maakt en daarmee het BGT|IMGeo model.
+
+Omdat GML 3.2.1 een zeer uitgebreide standaard is wordt er een profiel, een subset gehanteerd.
 
 GML 3.2.1 is een uitgebreide standaard, ontwikkeld door het Open Geospatial Consortium (OGC) en biedt oplossingen voor een groot aantal situaties en variaties voor het uitwisselen van geo-informatie. Variaties zijn er in geometrietypen maar ook in complexiteit van datastructuren. Om verschillende niveaus van toepassing van GML 3.2.1 mogelijk te maken zijn er door OGC zogenaamde profielen gemaakt. De ontwikkeling van de profielen is voortgekomen uit een behoefte van onder meer softwareleveranciers om verschillende niveaus van complexiteit te ondersteunen. Operabiliteit kan daarmee beter gegarandeerd worden. De profielen omvatten elk een subset van de totale GML 3.2.1 standaard. De standaardprofielen zijn Simple Features Profile 0, Simple Features Profile 1 en Simple Features Profile 2 (afgekort tot respectievelijk SF0, SF1, en SF2). Deze profielen hebben een toenemende complexiteit en bieden ook een toenemende functionaliteit. SF0 is dus het eenvoudigst, en SF2 het meest uitgebreid. Het OGC Simple Features profile moet niet verward worden met de ISO 19125 - Simple feature access standaard. De eerste gaat over implementatie van geometrie in GML de tweede over definities van 2 dimensionale geometrietypen.
 
