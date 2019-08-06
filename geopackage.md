@@ -28,7 +28,7 @@ GeoPackage werkt standaard met numerieke ID's. Dit geeft problemen met ID's van 
 - Goede ondersteuning in (GIS) software
 - Extensies maken het opnemen van visualisatie, tiling, metadata etc binnen één GeoPackage bestand mogelijk
 
-## Nadelen
+## Beperkingen
 - Workaround nodig bij het gebruik van niet-numerieke ID's 
 - Datastructuur moet platgeslagen worden
 - Geen ondersteuning voor 3D volumes (solids) 
