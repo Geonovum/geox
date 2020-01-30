@@ -45,7 +45,7 @@ Positionering:
 - Aan de uitleverkant
 - In Web visualisaties en APIs
 - Voor de onbekende gebruiker
-- Voor kleine aanleveringen (bv terugmelden)
+- Voor kleine aanleveringen (bijvoorbeeld terugmelden)
 - Niet als authentieke bron
 - Als er geen ander coördinaatreferentiesysteem dan WGS 84 noodzakelijk is
 
@@ -59,7 +59,7 @@ Positionering:
 ## GML
 Positionering:
 - Archivering van data
-- In combinatie met tekstgerichte uitwisseling (dan is XML nl geschikter dan JSON)
+- In combinatie met tekstgerichte uitwisseling (dan is XML namelijk geschikter dan JSON)
 - In gevallen waar nauwkeurige validatie van de bestandstructuur en -inhoud heel belangrijk is
 
 ## RDF (linked data)
