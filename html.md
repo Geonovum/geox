@@ -10,7 +10,7 @@ Met behulp van (gestandaardiseerde) webtechnologie als CSS, JavaScript, SVG / we
 
 In HTML kunnen eenvoudig relaties gelegd worden met andere bronnen (webpagina's van gerelateerde geo-objecten bijvoorbeeld of verwijzingen naar definities) en andere begrippenkaders.
 
-Een nadeel van HTML is dat een dataset (meestal) niet in 1 webpagina wordt gepubliceerd, maar elk object een eigen pagina krijgt. Dit betekent dat verwerking van meer dan een object in een ander systeem (bijvoorbeeld in een GIS of inlezen in een database), lastiger is.
+Een nadeel van HTML is dat een dataset (meestal) niet in één webpagina wordt gepubliceerd, maar elk object een eigen pagina krijgt. Dit betekent dat verwerking van meer dan één object in een ander systeem (bijvoorbeeld in een GIS of inlezen in een database), lastiger is.
 
 ## Voordelen
 - directe visualiatie / presentatie aan (eind)gebruikers van (object)informatie
