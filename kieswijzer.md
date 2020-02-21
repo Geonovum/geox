@@ -1,6 +1,5 @@
 # Keuzehulp bestandsformaten
-
-Dit hoofdstuk geeft het overzicht: wanneer gebruik je GML, GeoJSON, GeoPackage, en RDF. Wat zijn de overwegingen en in welke situatie is welke encoding het meest geschikt.
+Dit hoofdstuk geeft het overzicht: wanneer gebruik je HTML, GML, GeoJSON, GeoPackage, en RDF. Wat zijn de overwegingen en in welke situatie is welke encoding het meest geschikt.
 
 Bij de keuze voor de juiste encoding speelt de beoogde toepassing een belangrijke rol. Hieronder een lijst met veelvoorkomende toepassingen:
 
@@ -39,6 +38,13 @@ Grofweg spelen de volgende keuzes een rol:
 -	Behoefte aan bogen of niet
 -	Is het 3D data of niet
 -	Semantiek belangrijk of niet
+
+## HTML
+Positionering:
+- Web publicatie en directe visualiatie
+- Indexeerbaar door zoekmachines
+- Combinatie met tekst
+- Mogelijk om begrippenkaders te linken
 
 ## GeoJSON
 Positionering:
