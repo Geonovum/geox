@@ -9,6 +9,15 @@ Bij de keuze voor de juiste encoding speelt de beoogde toepassing een belangrijk
 - Ruimtelijke analyses - het ontdekken van betekenisvolle patronen in geodata
 - Uitwisselen van geodata tussen systemen
 
+<div style="position: relative;" >
+  <img src="media/diagram-keuzehulp.png" style="width: 85%; height: auto;" >
+  <a class="image-link" href="#html" title="HTML-keuze"><div style="position: absolute; left: 5%; top: 59%; width: 12%; height: 19%; background-color: transparent;" target="_self"></div></a>
+  <a class="image-link" href="#geojson" title="GeoJSON-keuze"><div style="position: absolute; left: 20%; top: 59%; width: 12%; height: 10%; background-color: transparent;"></div></a>
+  <a class="image-link" href="#rdf" title="RDF-keuze"><div style="position: absolute; left: 41.5%; top: 59%; width: 12%; height: 21%; background-color: transparent;"></div></a>
+  <a class="image-link" href="#geopackage" title="GeoPackage-keuze"><div style="position: absolute; left: 55%; top: 59%; width: 12%; height: 29%; background-color: transparent;"></div></a>
+  <a class="image-link" href="#gml" title="GML-keuze"><div style="position: absolute; left: 68%; top: 59%; width: 12%; height: 27%; background-color: transparent;"></div></a>  
+</div>
+
 Elk van deze toepassingen schept andere behoeften: vaak zal het mogelijk en ook nodig zijn om meerdere toepassingen te ondersteunen met een publicatie van geodata. Hierbij is de keuze van de meest geschikte encoding van groot belang. Het kan in sommige gevallen nodig of handig zijn om de data in verschillende encodings aan te bieden.
 
 Het hoofddoel moet zijn om de geodata te publiceren op een manier die voor gebruikers gemakkelijk te ontcijferen en te gebruiken is. Daarbij is het belangrijk om in je achterhoofd te houden op welke doelgroepen de datapublicatie gericht is en welk doel zij hebben met hun gebruik van de data. Uit het beoogd gebruik valt af te leiden wat voor kenmerken de data moet hebben. Bijvoorbeeld:

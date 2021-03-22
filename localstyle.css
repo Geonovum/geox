@@ -38,3 +38,9 @@ th, td {
     hyphens: auto;
     padding: 0.25em;
 }
+
+.image-link {
+    line-height: 0; 
+    font-size: 0;
+    color: transparent; 
+}
