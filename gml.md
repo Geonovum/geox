@@ -1,4 +1,4 @@
-# Geography Markup Language (GML) - Nederlands profiel
+# Geography Markup Language (GML)
 
 ## Introductie
 Geography Markup Language [[gml]] is het meest robuste uitwisselingsformaat voor geografische bestanden. Het definieert XML-codering voor het overbrengen en opslaan van allerlei geo-informatie, zoals geometrie, topografie, coverages en sensordata. GML kan worden gebruikt voor bestandsuitwisseling tussen systemen maar ook binnen webservices zoals WFS.
@@ -23,7 +23,7 @@ Juist de uitgebreidheid van GML geeft problemen bij de toepassing; het is een fl
 - Bij grote datavolumes niet geschikt vanwege de verbositeit van XML.
 - Minder geschikt voor publicatie op het web vanwege de complexiteit van XML.
 
-## Toelichting
+<!-- ## Toelichting
 <p class='note'>De rest van dit hoofdstuk bevat de integrale tekt uit hfd 3 en 4 van de Handreiking Geometrie in model en GML [[HGMG]].</p>
 
 Het Nederlands Basismodel Geo-informatie (NEN 3610) specificeert in overeenstemming met de ISO-geo-informatiestandaarden GML (Geography Markup Language) als uitwisselingsformaat voor geo-informatie. De bij ISO afgestemde standaard voor GML wordt gehanteerd. Op dit moment is dat GML 3.2.1 [[iso-19136-2007]]. De GML Encoding Standard 3.3 is een uitbreiding op deze versie. De diverse onderdelen uit de 3.3 versie zijn modulair toe te passen en backwards compatible met versie 3.2.1. In Nederland wordt GML 3.1.1 ook nog ondersteund, omdat CityGML 2.0 [[CityGML20]] er gebruik van maakt en daarmee het BGT|IMGeo model.
@@ -588,4 +588,4 @@ FOUT:
   </pre></li>
   <li>Clause 21.2.6: Het object property model moet gevolgd worden. Toelichting: GML is een objectenmodel. Dat wil zeggen dat alles is gemodelleerd als ofwel een object, ofwel een eigenschap van een object. Een relatie naar een ander object wordt ook gezien als eigenschap. Een object kan niet direct een ander object bevatten, maar een eigenschap kan wel een object bevatten. Dit wordt het object-property model genoemd. Als een eigenschap dus een complexe waarde heeft (structuur bezit) moet deze complexe waarde als apart object worden gedefinieerd. Een eigenschap mag zelf geen verdere structuur hebben. Het eigenschap element kan een verwijzing naar dit object bevatten of kan het als geneste structuur opnemen. Zie ook Clause 7.2.3.</li>
   <li>Clause 21.2.1/21.3.4: Het gebruik van XML attributen is toegestaan (maar niet voor het opnemen van eigenschappen van objecten). Attributen worden niet in een namespace gedeclareerd met uitzondering van `gml:id`. Zie ook clause 7.1.3.</li>
-</ul>
+</ul> -->
