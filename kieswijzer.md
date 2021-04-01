@@ -10,12 +10,7 @@ Bij de keuze voor de juiste encoding speelt de beoogde toepassing een belangrijk
 - Uitwisselen van geodata tussen systemen
 
 <div style="position: relative;" >
-  <img src="media/diagram-keuzehulp.png" style="width: 85%; height: auto;" >
-  <a class="image-link" href="#html" title="HTML-keuze"><div style="position: absolute; left: 5%; top: 59%; width: 12%; height: 19%; background-color: transparent;" target="_self"></div></a>
-  <a class="image-link" href="#geojson" title="GeoJSON-keuze"><div style="position: absolute; left: 20%; top: 59%; width: 12%; height: 10%; background-color: transparent;"></div></a>
-  <a class="image-link" href="#rdf" title="RDF-keuze"><div style="position: absolute; left: 41.5%; top: 59%; width: 12%; height: 21%; background-color: transparent;"></div></a>
-  <a class="image-link" href="#geopackage" title="GeoPackage-keuze"><div style="position: absolute; left: 55%; top: 59%; width: 12%; height: 29%; background-color: transparent;"></div></a>
-  <a class="image-link" href="#gml" title="GML-keuze"><div style="position: absolute; left: 68%; top: 59%; width: 12%; height: 27%; background-color: transparent;"></div></a>  
+  <img src="media/diagram-keuzehulp.png" style="width: 100%; height: auto;" ><a class="image-link" href="#html" title="HTML-keuze"><div style="position: absolute; left: 6.7%; top: 59%; width: 14%; height: 19%; background-color: transparent;" target="_self"></div></a><a class="image-link" href="#geojson" title="GeoJSON-keuze"><div style="position: absolute; left: 24%; top: 59%; width: 14%; height: 10%; background-color: transparent;"></div></a><a class="image-link" href="#rdf" title="RDF-keuze"><div style="position: absolute; left: 49%; top: 59%; width: 14%; height: 21%; background-color: transparent;"></div></a><a class="image-link" href="#geopackage" title="GeoPackage-keuze"><div style="position: absolute; left: 65%; top: 59%; width: 13.5%; height: 29%; background-color: transparent;"></div></a><a class="image-link" href="#gml" title="GML-keuze"><div style="position: absolute; left: 80%; top: 59%; width: 14%; height: 27%; background-color: transparent;"></div></a>  
 </div>
 
 Elk van deze toepassingen schept andere behoeften: vaak zal het mogelijk en ook nodig zijn om meerdere toepassingen te ondersteunen met een publicatie van geodata. Hierbij is de keuze van de meest geschikte encoding van groot belang. Het kan in sommige gevallen nodig of handig zijn om de data in verschillende encodings aan te bieden.
