@@ -16,9 +16,13 @@ Het ruimtelijk schema in al zijn complexiteit is geschikt om zeer gevarieerde re
 
 ## ISO 19125:2004 
 
-Het ISO 19107 ruimtelijk schema is geconstrueerd rond die twee criteria van data complexiteit en dimensionaliteit. Er is nog een derde criterium, functionaliteit (operaties), dat echter voor de indeling van de geometrietypen in het ruimtelijk schema geen gevolgen heeft. ISO 19125-1 Simple feature access [iso-19125-1-2004] definieert een model voor 2 dimensionale geometrietypen. In dit 2D geometriemodel zijn restricties opgenomen die van een algemene geometrie een simpele geometrie maken. De term simple feature staat daarin voor features beperkt tot 2 dimensionale geometrie.
+Het ISO 19107 ruimtelijk schema is geconstrueerd rond de twee criteria van data complexiteit en dimensionaliteit. Er is nog een derde criterium, functionaliteit (operaties), dat echter voor de indeling van de geometrietypen in het ruimtelijk schema geen gevolgen heeft. ISO 19125-1 Simple feature access [iso-19125-1-2004] definieert een model voor 2 dimensionale geometrietypen. In dit 2D geometriemodel zijn restricties opgenomen die van een algemene geometrie een simpele geometrie maken. De term simple feature staat daarin voor features beperkt tot 2 dimensionale geometrie.
 
 ### Simple Features Profiel (GML)
+
+De GML standaard is een omvangrijke verzameling van XML elementen en attributen waarmee van alles mogelijk is. De GML standaard bevat bijvoorbeeld definities voor dynamische (voortdurend veranderende) objecten, topologie, complexe geometrische typen, en rasters. Dit maakt GML tot een rijke standaard die veel te bieden heeft, maar maakt het ook moeilijker voor software aanbieders om de hele standaard te ondersteunen.
+
+Om dit probleem te adresseren zijn er verschillende profielen op GML gedefinieerd door de OGC. Een GML profiel is een subset van de complete GML set. De subset is wel zodanig dat het profiel niet in tegenspraak is met de complete set. Voor GML 3.2.1 zijn er drie profielen met toenemende complexiteit, de zogenaamde Simple Features profielen. Softwareleveranciers kunnen ervoor kiezen hun ondersteuning van GML te beperken tot een van deze profielen, of uiteraard om de hele standaard te ondersteunen.
 
 Simple Features Profile 2 is de standaard voor informatiemodellen in Nederland. Het profiel is een subset van het complete GML 3.2. Toch is het in sommige gevallen gewenst om te werken met een nog eenvoudiger informatiemodel, dat met name voor software die de complexere zaken in SF2 niet ondersteunt, te begrijpen is -  hier is SF0 voor. Meer informatie over deze profielen is te vinden in de [Handreiking Geometrie in model en GML](https://www.geonovum.nl/uploads/documents/Geometrieinmodelengml_1.0.pdf) en is op dit moment alleen geschreven vanuit GML perspectief.
 

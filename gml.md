@@ -5,7 +5,7 @@ Geography Markup Language [[gml]] is het meest robuste uitwisselingsformaat voor
 
 GML is een uitgebreide standaard die oplossingen biedt voor uiteenlopende situaties en variaties in het uitwisselen van geo-informatie. Variaties zijn er bijvoorbeeld in geometrietypen, maar ook in complexiteit van datastructuren. Om op verschillende complexiteitsniveaus met GML te werken, heeft het OGC profielen gemaakt. Deze profielen omschrijven elk een subset van de totale GML-set. De standaardprofielen zijn GML Simple Feature Profile level 0, 1 en 2. Hoe hoger het level, hoe meer je ermee kan. Maar ook: hoe complexer en minder generiek het model wordt. Het is daarom altijd van belang voor- en nadelen van het te gebruiken profiel tegen elkaar af te wegen.
 
-GML gestandaardiseerd bij het OGC en, daar OGC en ISO met elkaar samenwerken, ook gestandaardiseerd als ISO 19136:2007 [[iso-19136-2007]]. Inhoudelijk is dit dezelfde standaard. De ISO variant is opgenomen als nationale standaard in de Pas-toe-of-leg-uit-lijst van het Forum Standaardisatie. Dat betekent dat overheidsorganisaties deze standaard moeten uitvragen bij aanschaf van ICT-producten of ICT-diensten van € 50.000 of meer.
+GML is gestandaardiseerd bij het OGC en, daar OGC en ISO met elkaar samenwerken, ook gestandaardiseerd als ISO 19136:2007 [[iso-19136-2007]]. Inhoudelijk is dit dezelfde standaard. De ISO variant is opgenomen als nationale standaard in de Pas-toe-of-leg-uit-lijst van het Forum Standaardisatie, het gaat hierbij om GML 3.2.1. De GML Encoding Standard 3.3 is een uitbreiding op deze versie. De diverse onderdelen uit de 3.3 versie zijn modulair toe te passen en backwards compatible met versie 3.2.1. In Nederland wordt GML 3.1.1 ook nog ondersteund, omdat CityGML 2.0 [[CityGML20]] er gebruik van maakt en daarmee het BGT|IMGeo model. Omdat GML 3.2.1 een zeer uitgebreide standaard is wordt er een profiel, een subset gehanteerd.
 
 ## Voordelen
 GML is een uitgebreide standaard, die veel use cases aan kan.
@@ -186,28 +186,7 @@ coördinaten in het GML document op te nemen. In clausule 9 van NEN 3610:2011 wo
 In het GML bestand dient het coördinaatreferentiesysteem opgenomen te worden als waarde van het in GML gedefinieerde attribuut `srsName`. Aangeraden wordt om dit zo generiek mogelijk te doen. Als alle coördinaten in het document hetzelfde CRS hebben, zou het `srsName` attribuut op het niveau van de feature collection moeten worden opgenomen. Anders kan `srsName` worden opgenomen op feature member niveau of op geometrie niveau.
 
 Voor het definiëren van het coördinaatreferentiesysteem kunnen <a href="http://www.epsg.org/">EPSG (European Petroleum Survey Group)</a> codes worden gebruikt.
-
-<pre class="example">
-&lt;wfs:FeatureCollection>
-  &lt;gml:boundedBy>
-    &lt;gml:Envelope srsName="urn:opengis:def:crs:EPSG::28992">...&lt;/gml:Envelope>
-  &lt;/gml:boundedBy>
-  &lt;!-- feature instances go here -->
-  &lt;wfs:member>
-    &lt;myns:MyFeature>
-      &lt;gml:boundedBy>
-        &lt;gml:Envelope srsName="...">...&lt;/gml:Envelope>
-      &lt;/gml:boundedBy>
-      &lt;!-- zero or more property values go here -->
-      &lt;myns:geomProperty>
-        &lt;gml:Polygon srsName="...">...&lt;/gml:Polygon>
-      &lt;/myns:geomProperty>
-      &lt;!-- zero or more property values go here -->
-    &lt;/myns:MyFeature>
-  &lt;/wfs:member>
-  &lt;!-- more feature instances go here -->
-&lt;/wfs:FeatureCollection>
-</pre>
+-->
 
 ### Container elementen voor samengestelde geometrietypen
 
@@ -230,7 +209,7 @@ In de tabel in paragraaf 3.3.2 is precies te zien welke typen lijninterpolatie z
 
 De overige typen lijninterpolatie, zoals `gml:CubicSpline`, `gml:ArcByBulge`, etc, zijn niet toegestaan.
 
-## Simple features profile 0 (SF0)
+<!-- ## Simple features profile 0 (SF0)
 
 SF0 is het meest eenvoudige profiel op GML, m.a.w. het profiel met de meeste restricties op GML en XML Schema.
 
@@ -588,4 +567,4 @@ FOUT:
   </pre></li>
   <li>Clause 21.2.6: Het object property model moet gevolgd worden. Toelichting: GML is een objectenmodel. Dat wil zeggen dat alles is gemodelleerd als ofwel een object, ofwel een eigenschap van een object. Een relatie naar een ander object wordt ook gezien als eigenschap. Een object kan niet direct een ander object bevatten, maar een eigenschap kan wel een object bevatten. Dit wordt het object-property model genoemd. Als een eigenschap dus een complexe waarde heeft (structuur bezit) moet deze complexe waarde als apart object worden gedefinieerd. Een eigenschap mag zelf geen verdere structuur hebben. Het eigenschap element kan een verwijzing naar dit object bevatten of kan het als geneste structuur opnemen. Zie ook Clause 7.2.3.</li>
   <li>Clause 21.2.1/21.3.4: Het gebruik van XML attributen is toegestaan (maar niet voor het opnemen van eigenschappen van objecten). Attributen worden niet in een namespace gedeclareerd met uitzondering van `gml:id`. Zie ook clause 7.1.3.</li>
-</ul> -->
+</ul> --> -->
