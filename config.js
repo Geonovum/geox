@@ -46,6 +46,20 @@ var respecConfig = {
       date:"14 oktober 2019",
       publisher:"Open Geospatial Consortium",
     },
+    "nen3610-linkeddata":{
+      href:"https://docs.geostandaarden.nl/nen3610/nldp/",
+      title:"NEN 3610 - Linked Data",
+      editors:"Paul Janssen",
+      authors:["Linda van den Brink", "Marco Brattinga", "Marinus Vonhof", " Niels Hoffmann", "Pano Maria", "Hans Schevers", " Ronald van Lanen", "Joep van Genuchten", ], 
+      date:"23 maart 2020",
+      publisher:"Geonovum",
+    },    
+    "NLURIStrategie": {
+      href: "http://www.pilod.nl/wiki/Boek/URI-strategie",
+      publisher: "Platform Linked Data Nederland",
+      authors: ["Hans Overbeek", "Linda van den Brink"],
+      title: "Aanzet tot een nationale URI-Strategie voor Linked Data van de Nederlandse overheid",
+    },
   //  "ISO19136": {
   //    "href": "https://www.iso.org/standard/32554.html",
   //    "title": "ISO 19136:2007 Geographic information -- Geography Markup Language (GML)",

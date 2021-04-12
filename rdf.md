@@ -7,10 +7,10 @@ RDF wordt steeds meer gebruikt als uitwissel- en publicatiemechanisme voor geo-i
 [todo misschien nog aanvullen met basic linked data uitleg]
 
 Hoe  geometrie in RDF moet worden uitgedrukt is beschreven in de OGC GeoSPARQL standaard, die een kleine vocabulaire voor geo-objecten en geometrie bevat. Deze geometrie kan op twee manieren worden worden geserialiseerd:
-- Als WKT waarbij de Simple Feature geometrietypen uit ISO 19125 gebruikt kunnen worden (daardoor beperkt: geen 3D, geen bogen etc);
-- Als GML waarbij de ISO 19107 geometrietypen gebruikt kunnen worden. 
+- Als WKT, waarbij de Simple Feature geometrietypen uit ISO 19125 gebruikt kunnen worden (daardoor beperkt: geen 3D, geen bogen etc);
+- Als GML, waarbij de ISO 19107 geometrietypen gebruikt kunnen worden. 
 
-[TODO voorbeeld opnemen]
+[TODO voorbeelden opnemen]
 
 ### Voordelen
 
@@ -23,6 +23,10 @@ Hoe  geometrie in RDF moet worden uitgedrukt is beschreven in de OGC GeoSPARQL s
 - GIS systemen ondersteunen (nog) geen RDF
 
 ### Afspraken
-- nen3610-linkeddata > Het Linked Data profiel op NEN 3610 beschrijft hoe een linked data model van een NEN 3610 conform informatiemodel kan worden afgeleid.
-- Voor het uitdrukken van geometrie in RDF verbinden we het NEN 3610 model met de OGC GeoSPARQL Linked Data vocabulaire. 
-- De URI strategie
+In Nederland zijn er geen normatieve regels over het gebruik van RDF voor het uitwisselen van geometrie. 
+
+Wel zijn er de volgende handvaten:
+- RDF staat op de lijst met [aanbevolen standaarden](https://forumstandaardisatie.nl/open-standaarden/aanbevolen).
+- De Aanzet tot een Nationale  URI-strategie [[NLURIStrategie]] beschrijft het in Nederland gehanteerde URI patroon.
+- Het Linked Data profiel op NEN 3610 [[nen3610-linkeddata]] beschrijft hoe een linked data model van een NEN 3610 conf
+- Voor het uitdrukken van geometrie in RDF gebruiken we de OGC GeoSPARQL Linked Data vocabulaire [[geosparql]]. orm informatiemodel kan worden afgeleid.
