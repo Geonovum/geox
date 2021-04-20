@@ -12,7 +12,25 @@ Hoe  geometrie in RDF moet worden uitgedrukt is beschreven in de OGC GeoSPARQL s
 
 [TODO voorbeelden opnemen]
 
-### Voordelen
+<!-- <span id="vinkje">&#10003;</span>  <span id="kruisje">&#10005;</span>  <span id="tilde">&#65374;</span> 
+ --> -->
+
+## Overwegingen 
+
+| Vraag                                                                              | Antwoord | Toelichting |
+|------------------------------------------------------------------------------------|----------|-------------|
+| Is het format geospecifiek?                                                        | <span id="tilde">&#65374;</span>  |             |
+| Is het format gebaseerd op algemene ict standaarden?                               | <span id="vinkje">&#10003;</span>  |             |
+| Wordt het format ondersteund in GIS software?                                      | <span id="kruisje">&#10005;</span>  |             |
+| Ondersteunt het format het uitdrukken van schema's, en validatie tegen dat schema? | <span id="tilde">&#65374;</span>  | SHACL, shape expressions?            |
+| Ondersteunt het format meerdere coordinaatsystemen?                                | <span id="kruisje">&#10005;</span>  |             |
+| Ondersteunt het format 3D?                                                         | <span id="tilde">&#65374;</span>   | GeoSPARQL is niet expliciet wat betreft de ondersteuning van 3D geometrieen...         |
+| Ondersteunt het format alle simple features geometrieen?                           | <span id="vinkje">&#10003;</span>  |             |
+| Ondersteunt het format andere ISO 19107 geometrie types?                           | ?  |             |
+| Is het format geschikt voor grote volumes?                                         | ?  |             |
+| Is het format geschikt om semantiek aan te koppelen / in uit te drukken?           | <span id="vinkje">&#10003;</span>  |Gebruik van RDF voor het publiceren van gestructureerde gegevens op het web maakt het mogelijk dat data over de grenzen van sectoren heen gekoppeld en geïntegreerd worden.             |
+
+<!-- ### Voordelen
 
 - data integratie: Gebruik van RDF voor het publiceren van gestructureerde gegevens op het web maakt het mogelijk dat data over de grenzen van sectoren heen gekoppeld en geïntegreerd worden.
 - verschillende CRS mogelijk
@@ -21,7 +39,7 @@ Hoe  geometrie in RDF moet worden uitgedrukt is beschreven in de OGC GeoSPARQL s
 
 ### Beperkingen
 - GIS systemen ondersteunen (nog) geen RDF
-
+ -->
 ### Afspraken
 In Nederland zijn er geen normatieve regels over het gebruik van RDF voor het uitwisselen van geometrie. 
 

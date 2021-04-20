@@ -56,7 +56,25 @@ In veel gevallen is de nauwkeurigheid van GeoJSON in combinatie met WGS 84 voldo
 
 WFS 3 kan in combinatie met zowel GeoJSON als GML worden gebruikt. Dit laatste is alleen nog interessant als er behoefte is aan nauwkeurigere geometrieën of aan arcs (die in GeoJSON niet worden ondersteund). 
 
-## voordelen
+<!-- <span id="vinkje">&#10003;</span>  <span id="kruisje">&#10005;</span>  <span id="tilde">&#65374;</span> 
+ --> -->
+
+## Overwegingen
+
+| Vraag                                                                              | Antwoord | Toelichting |
+|------------------------------------------------------------------------------------|----------|-------------|
+| Is het format geospecifiek?                                                        |<span id="vinkje">&#10003;</span>  |             |
+| Is het format gebaseerd op algemene ict standaarden?                               |<span id="vinkje">&#10003;</span>  | Gebaseerd op JSON (Javascript Object Notation), waardoor jet jeel eenvoudig is om er native (i.e. zonder te hoeven parsen of converteren) mee te werken in web browsers en veel programmeertalen (in tegenstelling tot XML/GML). Praktische voordelen: het is voor mensen te lezen in een tekst editor, er zijn veel tools en bibliotheken voor beschikbaar en er bestaat een grote community die ermee werkt. |
+| Wordt het format ondersteund in GIS software?                                      | ?  |             |
+| Ondersteunt het format het uitdrukken van schema's, en validatie tegen dat schema? |?  |             |
+| Ondersteunt het format meerdere coordinaatsystemen?                                |<span id="tilde">&#65374;</span>  |  Niet direct...           |
+| Ondersteunt het format 3D?                                                         |<span id="tilde">&#65374;</span>  |  Hoewel GeoJSON 3D geometrieen niet direct ondersteunt, is het wel mogelijk om een hoogtecoordinaat (altitude) op te nemen bij punten, lijnen en vlakken. Hiermee zou je 2D polygonen kunnen optrekken naar 3D. |
+| Ondersteunt het format alle simple features geometrieen?                           | <span id="kruisje">&#10005;</span>  | Ondersteuning voor: Point , LineString , Polygon , MultiPoint , MultiLineString , en MultiPolygon - er is dus geen ondersteuning voor bogen.        |
+| Ondersteunt het format andere ISO 19107 geometrie types?                           | <span id="kruisje">&#10005;</span>  |             |
+| Is het format geschikt voor grote volumes?                                         | ?  |             |
+| Is het format geschikt om semantiek aan te koppelen / in uit te drukken?           |<span id="tilde">&#65374;</span>  |  Het is mogelijk om GeoJSON te combineren met linked data, maar...       |
+
+<!-- ## voordelen
 
 - het is voor mensen te lezen in tekst editor
 - omdat GeoJSON op JSON en JSON op Javascript is gebaseerd, is het heel eenvoudig om er native (i.e. zonder te hoeven parsen of converteren) mee te werken in web browsers en veel programmeertalen (in tegenstelling tot XML/GML)
@@ -68,7 +86,7 @@ WFS 3 kan in combinatie met zowel GeoJSON als GML worden gebruikt. Dit laatste i
 - Alleen in combinatie met WGS 84 te gebruiken. Dit heeft gevolgen voor de nauwkeurigheid. 
 - Ondersteunt geen 3D geometrieën (solids) - zie hiervoor [CityJSON](https://www.cityjson.org). Het is wel mogelijk om een hoogtecoordinaat (altitude) op te nemen bij punten, lijnen en vlakken.
 - Ondersteunt geen bogen (arcs).
-
+ -->
 ## afspraken
 TODO: Er zijn afspraken nodig over het aantal decimalen in coordinaten en over het gebruikte CRS. Wanneer gebruik je WGS 84, wanneer RD en hoe wissel je die laatste uit. 
 

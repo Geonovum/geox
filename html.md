@@ -12,17 +12,36 @@ In HTML kunnen eenvoudig relaties gelegd worden met andere bronnen (webpagina's 
 
 Een nadeel van HTML is dat een dataset (meestal) niet in één webpagina wordt gepubliceerd, maar elk object een eigen pagina krijgt. Dit betekent dat verwerking van meer dan één object in een ander systeem (bijvoorbeeld in een GIS of inlezen in een database), lastiger is.
 
-## Voordelen
+<!-- &#9744; (☐) for [ ] and &#9745; (☑) of:
+<span id="vinkje">&#10003;</span>  <span id="kruisje">&#10005;</span>  <span id="tilde">&#65374;</span> 
+ -->
+
+## Overwegingen
+
+| Vraag                                                                              | Antwoord | Toelichting |
+|------------------------------------------------------------------------------------|----------|-------------|
+| Is het format geospecifiek?                                                        | <span id="kruisje">&#10005;</span> |             |
+| Is het format gebaseerd op algemene ict standaarden?                               | <span id="vinkje">&#10003;</span>|  Ja, en om deze reden zijn er meer mogelijkheden, zoals het indexeren van data door zoekmachines...           |
+| Wordt het format ondersteund in GIS software?                                      | <span id="tilde">&#65374;</span>  |  Verwerking van de geometrie in een ander systeem (zoals een GIS desktop systeem) is lastig...           |
+| Ondersteunt het format het uitdrukken van schema's, en validatie tegen dat schema? | ?  |             |
+| Ondersteunt het format meerdere coordinaatsystemen?                                | <span id="kruisje">&#10005;</span>  | Ondersteuning voor andere CRSen dan WGS84 is niet gangbaar...  |
+| Ondersteunt het format 3D?                                                         | ?  |             |
+| Ondersteunt het format alle simple features geometrieen?                           | <span id="tilde">&#65374;</span>  | Ondersteunde geometrietypen zijn zeer beperkt... |
+| Ondersteunt het format andere ISO 19107 geometrie types?                           | ?  |             |
+| Is het format geschikt voor grote volumes?                                         | &#9745;  | Aangezien het format is bedoeld voor directe visualisatie, is het lastiger om bijvoorbeeld een volledige dataset te downloaden wanneer men dit wil combineren met een andere dataset... |
+| Is het format geschikt om semantiek aan te koppelen / in uit te drukken?           | &#9745;  | Het is onder andere eenvoudiger om gestructureerde data te combineren met tekst en en men kan linken aan begrippenkaders... |
+
+<!-- ## Voordelen
 - directe visualiatie / presentatie aan (eind)gebruikers van (object)informatie
 - gestructureerde data in combinatie met tekst
 - indexeerbaar door zoekmachines
-- linken aan begrippenkaders
+- linken aan begrippenkaders -->
 
-## Beperkingen
+<!-- ## Beperkingen
 - geometrietypen zeer beperkt
 - ondersteuning voor andere CRSen dan WGS84 is niet gangbaar
 - een volledige dataset downloaden, bijvoorbeeld om te combineren met een andere dataset, is lastiger
-- verwerking van de geometrie in een ander systeem (zoals een GIS desktop systeem) is lastig
+- verwerking van de geometrie in een ander systeem (zoals een GIS desktop systeem) is lastig -->
 
 ## Voorbeelden
 TODO

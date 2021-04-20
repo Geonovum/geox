@@ -21,7 +21,25 @@ GeoPackage werkt doorgaans met platte datastructuren, de vaak complexe informati
 
 GeoPackage werkt standaard met numerieke ID's. Dit geeft problemen met ID's van basisregistraties, die niet altijd numeriek zijn. Tijdens de WFS-3 werkweek bleek dat de applicatie moest worden aangepast om GeoPackage bestanden te kunnen doorzoeken op basis van het lokaal ID van basisregistraties in plaats van het standaard, numerieke ID.
 
-## Voordelen
+<!-- <span id="vinkje">&#10003;</span>  <span id="kruisje">&#10005;</span>  <span id="tilde">&#65374;</span> 
+ --> -->
+
+## Overwegingen
+
+| Vraag                                                                              | Antwoord | Toelichting |
+|------------------------------------------------------------------------------------|----------|-------------|
+| Is het format geospecifiek?                                                        | <span id="vinkje">&#10003;</span>  |  En extensie mechanismes maken het opnemen van visualisatie, tiling, metadata etc binnen één GeoPackage bestand mogelijk. Wel is een workaround nodig bij het gebruik van niet-numerieke ID's (wat zich vaak voordoet in het domein?)
+| Is het format gebaseerd op algemene ict standaarden?                               | <span id="vinkje">&#10003;</span>  | GeoPackage is gebaseerd op SQLite, daardoor toegankelijk voor grotere doelgroep datagebruikers   |
+| Wordt het format ondersteund in GIS software?                                      | <span id="vinkje">&#10003;</span>  |             |
+| Ondersteunt het format het uitdrukken van schema's, en validatie tegen dat schema? | <span id="kruisje">&#10005;</span>  | Niet direct te valideren ? En de datastructuur moet platgeslagen worden          |
+| Ondersteunt het format meerdere coordinaatsystemen?                                | <span id="vinkje">&#10003;</span>  |             |
+| Ondersteunt het format 3D?                                                         | <span id="kruisje">&#10005;</span>  |             |
+| Ondersteunt het format alle simple features geometrieen?                           | <span id="vinkje">&#10003;</span>  |             |
+| Ondersteunt het format andere ISO 19107 geometrie types?                           | ?  |             |
+| Is het format geschikt voor grote volumes?                                         | <span id="vinkje">&#10003;</span>  |             |
+| Is het format geschikt om semantiek aan te koppelen / in uit te drukken?           | ?  |             |
+
+<!-- ## Voordelen
 - Gebaseerd op SQLite, daardoor toegankelijk voor grotere doelgroep datagebruikers
 - Kan grote datavolumes aan
 - Ondersteunt meerdere coordinaatreferentiesystemen
@@ -32,7 +50,7 @@ GeoPackage werkt standaard met numerieke ID's. Dit geeft problemen met ID's van 
 - Workaround nodig bij het gebruik van niet-numerieke ID's 
 - Datastructuur moet platgeslagen worden
 - Geen ondersteuning voor 3D volumes (solids) 
-- Niet valideerbaar (op dit moment wordt onderzocht of dit toch mogelijk is)
+- Niet valideerbaar (op dit moment wordt onderzocht of dit toch mogelijk is) -->
 
 ## Afspraken
 TODO

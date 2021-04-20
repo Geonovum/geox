@@ -7,7 +7,25 @@ GML is een uitgebreide standaard die oplossingen biedt voor uiteenlopende situat
 
 GML is gestandaardiseerd bij het OGC en, daar OGC en ISO met elkaar samenwerken, ook gestandaardiseerd als ISO 19136:2007 [[iso-19136-2007]]. Inhoudelijk is dit dezelfde standaard. De ISO variant is opgenomen als nationale standaard in de Pas-toe-of-leg-uit-lijst van het Forum Standaardisatie, het gaat hierbij om GML 3.2.1. De GML Encoding Standard 3.3 is een uitbreiding op deze versie. De diverse onderdelen uit de 3.3 versie zijn modulair toe te passen en backwards compatible met versie 3.2.1. In Nederland wordt GML 3.1.1 ook nog ondersteund, omdat CityGML 2.0 [[CityGML20]] er gebruik van maakt en daarmee het BGT|IMGeo model. Omdat GML 3.2.1 een zeer uitgebreide standaard is wordt er een profiel, een subset gehanteerd.
 
-## Voordelen
+<!-- <span id="vinkje">&#10003;</span>  <span id="kruisje">&#10005;</span>  <span id="tilde">&#65374;</span> 
+ --> -->
+
+## Overwegingen 
+
+| Vraag                                                                              | Antwoord | Toelichting |
+|------------------------------------------------------------------------------------|----------|-------------|
+| Is het format geospecifiek?                                                        | <span id="vinkje">&#10003;</span>  | Ja, maar de uitgebreidheid van GML geeft problemen bij de toepassing; het is een flinke taak om een goede en volledige implementatie van de standaard te maken. |           |
+| Is het format gebaseerd op algemene ict standaarden?                               | <span id="vinkje">&#10003;</span>  |  Gebaseerd op XML (wat ook een nadeel kan zijn in sommige gevallen)...           |
+| Wordt het format ondersteund in GIS software?                                      | <span id="tilde">&#65374;</span>   |  De support voor GML in (GIS en andere) software is beperkt. Meestal is een conversiestraat (ETL) nodig om GML in te kunnen lezen           |
+| Ondersteunt het format het uitdrukken van schema's, en validatie tegen dat schema? | <span id="vinkje">&#10003;</span>  | Zeer uitgebreide mogelijkheden voor validatie...Echter hoewel complexe datastructuren mogelijk zijn in GML, is het in de praktijk, vanwege gebrekkige support hiervoor, vaak toch nodig om de structuur 'plat te slaan'            |
+| Ondersteunt het format meerdere coordinaatsystemen?                                | <span id="vinkje">&#10003;</span>  | Er is geen beperking wat betreft coordinaatreferentiesystemen.             |
+| Ondersteunt het format 3D?                                                         | <span id="vinkje">&#10003;</span>  | Ondersteunt 3D geometrieën, inclusief volumes (solids)            |
+| Ondersteunt het format alle simple features geometrieen?                           | <span id="vinkje">&#10003;</span>  | Ondersteunt bogen (ook in het simple features profiel)            |
+| Ondersteunt het format andere ISO 19107 geometrie types?                           | &#9745;  |             |
+| Is het format geschikt voor grote volumes?                                         | <span id="kruisje">&#10005;</span>  | Bij grote datavolumes niet geschikt vanwege de verbositeit van XML.            |
+| Is het format geschikt om semantiek aan te koppelen / in uit te drukken?           | <span id="kruisje">&#10005;</span>  | Minder geschikt voor publicatie op het web vanwege de complexiteit van XML            |
+
+<!-- ## Voordelen
 GML is een uitgebreide standaard, die veel use cases aan kan.
 
 - Ondersteunt 3D geometrieën, inclusief volumes (solids).
@@ -21,7 +39,7 @@ Juist de uitgebreidheid van GML geeft problemen bij de toepassing; het is een fl
 - Hoewel complexe datastructuren mogelijk zijn in GML, is het in de praktijk, vanwege gebrekkige support hiervoor, vaak toch nodig om de structuur 'plat te slaan' zoals beschreven in <a href="#sf2tosf0"></a>.
 - De support voor GML in (GIS en andere) software is beperkt. Meestal is een conversiestraat (ETL) nodig om GML in te kunnen lezen.
 - Bij grote datavolumes niet geschikt vanwege de verbositeit van XML.
-- Minder geschikt voor publicatie op het web vanwege de complexiteit van XML.
+- Minder geschikt voor publicatie op het web vanwege de complexiteit van XML. -->
 
 <!-- ## Toelichting
 <p class='note'>De rest van dit hoofdstuk bevat de integrale tekt uit hfd 3 en 4 van de Handreiking Geometrie in model en GML [[HGMG]].</p>
