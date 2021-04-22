@@ -15,15 +15,15 @@ GML is gestandaardiseerd bij het OGC en, daar OGC en ISO met elkaar samenwerken,
 | Vraag                                                                              | Antwoord | Toelichting |
 |------------------------------------------------------------------------------------|----------|-------------|
 | Is het format geospecifiek?                                                        | <span id="vinkje">&#10003;</span>  | Ja, maar de uitgebreidheid van GML geeft problemen bij de toepassing; het is een flinke taak om een goede en volledige implementatie van de standaard te maken. |           |
-| Is het format gebaseerd op algemene ict standaarden?                               | <span id="vinkje">&#10003;</span>  |  Gebaseerd op XML (wat ook een nadeel kan zijn in sommige gevallen)...           |
+| Is het format gebaseerd op algemene ict standaarden?                               | <span id="vinkje">&#10003;</span>  |  Gebaseerd op XML (wat ook een nadeel kan zijn vanwege de complexiteit van XML)           |
 | Wordt het format ondersteund in GIS software?                                      | <span id="tilde">&#65374;</span>   |  De support voor GML in (GIS en andere) software is beperkt. Meestal is een conversiestraat (ETL) nodig om GML in te kunnen lezen           |
-| Ondersteunt het format het uitdrukken van schema's, en validatie tegen dat schema? | <span id="vinkje">&#10003;</span>  | Zeer uitgebreide mogelijkheden voor validatie...Echter hoewel complexe datastructuren mogelijk zijn in GML, is het in de praktijk, vanwege gebrekkige support hiervoor, vaak toch nodig om de structuur 'plat te slaan'            |
+| Ondersteunt het format het uitdrukken van schema's, en validatie tegen dat schema? | <span id="vinkje">&#10003;</span>  | Zeer uitgebreide mogelijkheden voor validatie vanwege de XML basis           |
 | Ondersteunt het format meerdere coordinaatsystemen?                                | <span id="vinkje">&#10003;</span>  | Er is geen beperking wat betreft coordinaatreferentiesystemen.             |
 | Ondersteunt het format 3D?                                                         | <span id="vinkje">&#10003;</span>  | Ondersteunt 3D geometrieën, inclusief volumes (solids)            |
 | Ondersteunt het format alle simple features geometrieen?                           | <span id="vinkje">&#10003;</span>  | Ondersteunt bogen (ook in het simple features profiel)            |
-| Ondersteunt het format andere ISO 19107 geometrie types?                           | &#9745;  |             |
+| Ondersteunt het format andere ISO 19107 geometrie types?                           | <span id="vinkje">&#10003;</span>  |             |
 | Is het format geschikt voor grote volumes?                                         | <span id="kruisje">&#10005;</span>  | Bij grote datavolumes niet geschikt vanwege de verbositeit van XML.            |
-| Is het format geschikt om semantiek aan te koppelen / in uit te drukken?           | <span id="kruisje">&#10005;</span>  | Minder geschikt voor publicatie op het web vanwege de complexiteit van XML            |
+| Is het format geschikt om semantiek aan te koppelen / in uit te drukken?           | <span id="kruisje">&#10005;</span>  | Semantiek kan op impliciete wijze worden toegevoegd door het schema af te leiden uit een informatiemodel en eventueel door in annotaties te linken naar een begrippenkader of tekstuele definities in het schema op te nemen.            |
 
 <!-- ## Voordelen
 GML is een uitgebreide standaard, die veel use cases aan kan.
