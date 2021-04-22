@@ -74,19 +74,7 @@ De OGC API Features kan in combinatie met zowel GeoJSON als GML worden gebruikt.
 | Is het format geschikt voor grote volumes?                                         |<span id="tilde">&#65374;</span>   | Het zit een beetje tussen andere formaten in, maar is beter geschikt voor kleine volumes.           |
 | Is het format geschikt om semantiek aan te koppelen / in uit te drukken?           |<span id="vinkje">&#10003;</span>  |  Het is mogelijk om GeoJSON te combineren met linked data       |
 
-<!-- ## voordelen
 
-- het is voor mensen te lezen in tekst editor
-- omdat GeoJSON op JSON en JSON op Javascript is gebaseerd, is het heel eenvoudig om er native (i.e. zonder te hoeven parsen of converteren) mee te werken in web browsers en veel programmeertalen (in tegenstelling tot XML/GML)
-- er zijn veel tools en bibliotheken voor beschikbaar
-- er bestaat een grote community die ermee werkt
-- het is mogelijk GeoJSON te combineren met linked data
-
-## beperkingen
-- Alleen in combinatie met WGS 84 te gebruiken. Dit heeft gevolgen voor de nauwkeurigheid. 
-- Ondersteunt geen 3D geometrieën (solids) - zie hiervoor [CityJSON](https://www.cityjson.org). Het is wel mogelijk om een hoogtecoordinaat (altitude) op te nemen bij punten, lijnen en vlakken.
-- Ondersteunt geen bogen (arcs).
- -->
 ## afspraken
 TODO: Er zijn afspraken nodig over het aantal decimalen in coordinaten en over het gebruikte CRS. Wanneer gebruik je WGS 84, wanneer RD en hoe wissel je die laatste uit. 
 
