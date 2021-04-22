@@ -1,6 +1,49 @@
 # Keuzehulp bestandsformaten
 
-Bij de keuze voor de juiste encoding speelt de beoogde toepassing een belangrijke rol. vaak zal het mogelijk en ook nodig zijn om meerdere toepassingen te ondersteunen met een publicatie van geodata. Hierbij is de keuze van de meest geschikte encoding van groot belang. Het kan in sommige gevallen nodig of handig zijn om de data in verschillende encodings aan te bieden. Dit betekent dat de beste oplossing kan variëren, en afhankelijk is van overwegingen die gemaakt zullen moeten worden wat betreft een aantal aspecten. Een aantal belangrijke aspecten (die dus invloed kunnen hebben op de keuze voor een format) zijn samengevat in de volgende vragen:
+Bij de keuze voor de juiste encoding speelt de beoogde toepassing een belangrijke rol. vaak zal het mogelijk en ook nodig zijn om meerdere toepassingen te ondersteunen met een publicatie van geodata. Hierbij is de keuze van de meest geschikte encoding van groot belang. Het kan in sommige gevallen nodig of handig zijn om de data in verschillende encodings aan te bieden. Dit betekent dat de beste oplossing kan variëren, en afhankelijk is van overwegingen die gemaakt zullen moeten worden wat betreft een aantal aspecten. Een aantal belangrijke aspecten (die dus invloed kunnen hebben op de keuze voor een format) lichten we hieronder kort toe. 
+
+## Aanleveren versus uitleveren van data
+Bij het kiezen van het juiste formaat, maakt het veel verschil of de data wordt uitgewisseld tussen softwaresysteem in een keten, bijvoorbeeld bij het aanleveren aan een landelijke voorziening voor data; of dat de data wordt aangeboden aan gebruikers. In een keten heb je altijd te maken met bekende gebruikers, en vaste afspraken die binnen de keten voor gegevensuitwisseling zijn gemaakt. Een partij die binnen een keten acteert heeft een ook langdurig belang en zal dus meer bereid zijn tot het doen van een investering in tijd en/of geld om de data te kunnen uitwisselen. Bij het aanbieden van data aan gebruikers, vaak als open data, is dit veel minder het geval. Aan de 'aanleverkant' van een datavoorziening kunnen dus de formaten een wat hogere leer- of implementatiecurve hebben, en is validatie meestal een belangrijk aspect. 
+
+## Bekende versus onbekende gebruiker
+Bij het aanleveren van data aan een landelijke voorziening heb je per definitie een bekende gebruiker: er zijn afspraken tussen verzender en ontvanger van de data. Bij het uitleveren van data is dit niet per definitie het geval. Er kan sprake zijn van bekende gebruikers: partijen die bijvoorbeeld een abonnement op de data hebben of waarvan bekend is dat ze de data afnemen. Maar het kan ook zijn dat de data voor iedereen beschikbaar is zonder verder contact met de data aanbieder. In dat geval kunnen er gebruikers zijn met allerlei verschillende kennisniveau's, applicaties en behoeftes. Om breed gebruik van data te bevorderen is het dan verstandig om de data zo laagdrempelig mogelijk aan te bieden, dus in bij een breed publiek bekende dataformaten en/of formaten waarvoor brede ondersteuning in tooling bestaat.
+
+## GIS-gebruikers of andere gebruikers
+Nog een aspect dat met gebruikers te maken heeft, is de vraag of het om GIS gebruikers gaat. De huidige GIS systemen kunnen niet alle lichte formaten, die we in deze handreiking beschrijven, aan. Als (een deel van) het publiek van de gepubliceerde data wel de behoefte heeft om data in een GIS in te lezen, om bijvoorbeeld ruimtelijke analyses te kunnen doen, moet hier rekening mee gehouden worden. 
+
+## Archivering versus direct gebruik
+Bij archivering is een belangrijk basisconcept dat vorm, inhoud en structuur van archiefbescheiden behouden moeten blijven of tenminste reproduceerbaar zijn. Voor data die gearchiveerd moeten worden zijn daarom afwegingen zoals langdurige ondersteuning, gedocumenteerde standaarden en open formaten van extra belang. Mogelijk moet er ook voldaan worden aan de Archiefwet.
+
+## Ondersteuning in algemene tooling
+Als het gaat om de aanleverkant in een keten, is er meestal specifieke ondersteuning voor het gekozen uitwisselformaat in de keten geimplementeerd. Soms kan er echter toch behoefte zijn aan ondersteuning in tooling, die niet onderdeel van de keten is maar wel toegevoegde waarde heeft in het werkproces van de zender of de ontvanger van de data. 
+
+<aside class="issue">[deze behoeft nog extra toelichting]</aside>
+
+## Validatie
+Zoals al aangestipt, is validatie, het controleren van de datastructuur en -inhoud tegen vooraf afgesproken regels, vooral belangrijk aan de aanleverkant van landelijke datavoorzieningen. Men wil immers de kwaliteit borgen van de landelijke dataset en wil zorgen dat alleen correcte data wordt ingelezen. Maar er zijn ook andere situaties denkbaar waarin validatie belangrijk is. Validatie kan zich richten op verschillende aspecten. 
+- Validatie van een vooraf afgesproken datastructuur (model / grammatica / schema)
+- Validatie van business rules (regels over de inhoud en afhankelijkheden tussen onderdelen van de data)
+- Validatie van geometrieën
+
+Al deze validatie-aspecten worden in wisselende mate ondersteund door de verschillende formaten. 
+
+## Uitleveren van schema's
+In sommige situaties is het gewenst om de afspraken over datastructuur en -inhoud (ook wel: 'schema's') vast te leggen in machine-leesbare vorm en dit machine-leesbare schema te delen met de ontvangers van data. Dit is niet bij alle lichte formaten mogelijk. 
+
+## Out of the box validatie
+Als je een dataset wilt valideren kun je dit altijd uitprogrammeren, maar vaak biedt het voordelen om zonder programmeerwerk te kunnen valideren. Dit is bijvoorbeeld bij op XML gebaseerde formaten mogelijk omdat het uitdrukken van dataschema's een goed geïmplementeerd onderdeel van de standaard is. 
+
+<aside class="issue">[Dit is wellicht niet goed als aparte vraag maar zou gecombineerd kunnen worden met [[##Validatie]]. 
+
+## Nauwkeurige data
+Als er sprake is van nauwkeurige geometrische data, kan dit ook gevolgen hebben voor de formaatkeuze. Dit hangt samen met coordinaatreferentiesystemen. Sommige formaten ondersteunen alleen WGS84, waarmee het niet mogelijk is om coordinaten in Nederland net zo nauwkeurig uit te drukken als bijvoorbeeld in het Rijksdriehoekstelsel. 
+
+Echter, de data aanbieder zou goed moeten nadenken of het ook nodig is om de data zo nauwkeurig als mogelijk te publiceren. Dit hangt af van de gebruikersbehoefte en zou niet aanbodgedreven moeten zijn. Ontwikkelaars die met de data in web viewers aan de slag gaan, werken over het algemeen met Web Mercator (een projectie van WGS84). Bezoekers van hun websites willen bijvoorbeeld weten 'of er een pinautomaat in de buurt is' en hebben daarbij geen last van een afwijking van een paar meter. Onbekende datagebruikers, waaronder bijvoorbeeld web developers of data scientists - kortom, niet-geo-experts - weten vaak niet eens dat er verschillende coordinaatreferentiesystemen zijn en waarom. Voor de meeste use cases hebben zij deze kennis ook helemaal niet nodig.
+
+## Simpele geometrie
+GIS standaarden en (in mindere mate) -tooling ondersteunen niet alleen rechttoe rechtaan punten, lijnen en vlakken maar ook exotischere vormen zoals bogen, volumes ... [nog een paar exotischere vormen noemen].
+
+Deze aspecten zijn samen te vatten in de volgende vragen, waarbij ook de afhankelijkheden tussen de vragen zijn meegenomen:
 
 **1. Gaat het om het aanleveren van data (in ‘keten of tussen systemen), of het uitleveren van data aan eindgebruikers?**
 - In geval van uitleveren:
