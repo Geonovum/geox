@@ -41,7 +41,15 @@ Als er sprake is van nauwkeurige geometrische data, kan dit ook gevolgen hebben 
 Echter, de data aanbieder zou goed moeten nadenken of het ook nodig is om de data zo nauwkeurig als mogelijk te publiceren. Dit hangt af van de gebruikersbehoefte en zou niet aanbodgedreven moeten zijn. Ontwikkelaars die met de data in web viewers aan de slag gaan, werken over het algemeen met Web Mercator (een projectie van WGS84). Bezoekers van hun websites willen bijvoorbeeld weten 'of er een pinautomaat in de buurt is' en hebben daarbij geen last van een afwijking van een paar meter. Onbekende datagebruikers, waaronder bijvoorbeeld web developers of data scientists - kortom, niet-geo-experts - weten vaak niet eens dat er verschillende coordinaatreferentiesystemen zijn en waarom. Voor de meeste use cases hebben zij deze kennis ook helemaal niet nodig.
 
 ## Simpele geometrie
-GIS standaarden en (in mindere mate) -tooling ondersteunen niet alleen rechttoe rechtaan punten, lijnen en vlakken maar ook exotischere vormen zoals bogen, volumes ... [nog een paar exotischere vormen noemen].
+GIS standaarden en (in mindere mate) -tooling ondersteunen niet alleen rechttoe rechtaan 0, 1 of 2 dimensionale geometrie in de vorm van punten, lijnen en vlakken maar soms ook exotischere vormen zoals kromme lijnen (splines, cirkels, bogen, ellipses), driehoeken, en 3D volumes. In Nederland hanteren we het Simple Feature profiel (zie [[gimeg]] hoofdstuk 3), maar ondersteuning van bogen en 3D volumes is voor sommige use cases wel nodig. In lichte formaten is over het algemeen beperkte ondersteuning: soms alleen punten, soms ook lijnen en vlakken, en in een enkel geval ook bogen en/of volumes. 
+
+## Bogen en volumes
+Als de toepassing het nodig maakt om bogen en/of 3D volumes in de data uit te wisselen, moet er extra gelet worden op ondersteuning hiervoor bij de keuze van het uitwisselformaat.
+
+## Datavolume
+Bij geodata kan men te maken hebben met grote datavolumes. Het woord "groot" is hierbij lastig te kwantificeren, en wat een groot bestand gevonden wordt kan ook veranderen in de loop der jaren. Maar een bestand van bijvoorbeeld 500MB of 1GB kan wel 'groot' genoemd worden. En om een praktijkvoorbeeld te geven: een BGT GML bestand van één gemeente kan al gauw 1GB groot zijn. Het ene formaat is geschikter voor grote datavolumes dan het andere. Het tegenovergestelde geldt ook: sommige formaten hebben relatief veel overhead en zijn daarom minder geschikt voor het uitwisselen van een klein databestandje. 
+
+## Semantiek
 
 Deze aspecten zijn samen te vatten in de volgende vragen, waarbij ook de afhankelijkheden tussen de vragen zijn meegenomen:
 

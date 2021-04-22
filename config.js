@@ -60,6 +60,12 @@ var respecConfig = {
       authors: ["Hans Overbeek", "Linda van den Brink"],
       title: "Aanzet tot een nationale URI-Strategie voor Linked Data van de Nederlandse overheid",
     },
+    "gimeg": {
+      href: "https://docs.geostandaarden.nl/nen3610/gimeg",
+      publisher: "Geonovum", 
+      authors: ["Linda van den Brink", "Paul Janssen", "Wilko Quak",],
+      title: "Geometrie in model en GML",
+    }
   //  "ISO19136": {
   //    "href": "https://www.iso.org/standard/32554.html",
   //    "title": "ISO 19136:2007 Geographic information -- Geography Markup Language (GML)",
