@@ -1,8 +1,10 @@
 # Keuzehulp bestandsformaten
 
-Bij de keuze voor de juiste encoding speelt de beoogde toepassing een belangrijke rol. vaak zal het mogelijk en ook nodig zijn om meerdere toepassingen te ondersteunen met een publicatie van geodata. Hierbij is de keuze van de meest geschikte encoding van groot belang. Het kan in sommige gevallen nodig of handig zijn om de data in verschillende encodings aan te bieden. Dit betekent dat de beste oplossing kan variëren, en afhankelijk is van overwegingen die gemaakt zullen moeten worden wat betreft een aantal aspecten. 
+Stel, je bent een overheidsorganisatie, en je bezit geo-data die je wilt publiceren als open data, of die je wilt uitwisselen met andere partijen. Welk formaat moet je dan kiezen? Vroeger was het antwoord van Geonovum altijd: "GML". Maar tegenwoordig zijn er meerdere formaten waaruit je kunt kiezen.
 
-De belangrijkste aspecten (die dus invloed kunnen hebben op de keuze voor een format) lichten we hieronder kort toe. Na deze toelichting vatten we de aspecten samen en brengen ze met elkaar in verband. 
+Bij de keuze voor de juiste encoding speelt de beoogde toepassing, of toepassingen, een belangrijke rol. Hierbij is de keuze van de meest geschikte encoding van groot belang. Vaak is het nodig of op zijn minst handig om de data in verschillende encodings aan te bieden. Dit betekent dat de beste oplossing kan variëren, en afhankelijk is van overwegingen die de data-eigenaar zal moeten maken. 
+
+De belangrijkste aspecten, die invloed kunnen hebben op de keuze voor een format, lichten we hieronder kort toe. Na deze toelichting vatten we de aspecten samen en brengen ze met elkaar in verband. 
 
 ## Aspecten die een rol spelen bij de keuze
 
@@ -66,7 +68,7 @@ Het vastleggen en uitwisselen van informatie over de betekenis (semantiek) van d
 Informatie over de betekenis, ofwel semantiek, kan op verschillende manieren worden vastgelegd. Dit kan een simpel PDF document of excel bestand zijn, of een website met uitleg; er zijn ook machineleesbare formaten zoals RDFS en SKOS. In de meeste formaten is er weinig of geen ondersteuning voor het gestructureerd vastleggen van semantiek.
 
 ### Samenvatting: de aspecten in samenhang
-Deze aspecten zijn samen te vatten in de volgende vragen, waarbij ook de afhankelijkheden tussen de vragen zijn meegenomen:
+De hierboven uitgelegde aspecten zijn samen te vatten in de volgende vragen, waarbij ook de afhankelijkheden tussen de vragen zijn meegenomen:
 
 **1. Gaat het om het aanleveren van data (in ‘keten of tussen systemen), of het uitleveren van data aan eindgebruikers?**
 - In geval van uitleveren:
@@ -95,10 +97,14 @@ Deze aspecten zijn samen te vatten in de volgende vragen, waarbij ook de afhanke
 - Zo ja:
 --	**Moet de semantiek op gestructureerde wijze worden vastgelegd?**
 
-De antwoorden op de bovengenoemde vragen geven inzicht in welke aspecten een belangrijke rol spelen voor de beoogde toepassing. Met deze informatie kan de lezer de tabellen in hoofdstuk 4-8 nagaan, waarbij gericht kan worden gekeken naar welke formaten het beste aansluiten op de behoeften die uit de antwoorden naar voren zijn gekomen. Let op dat dit geen allesomvattende vragenlijst is, voor bepaalde toepassingen kan het belangrijk zijn om dieper in te gaan op sommige vragen – dit is buiten scope voor deze handreiking. 
-Hoewel elke toepassing tot andere antwoorden kan leiden (en dus andere keuzes), zijn er een aantal generieke toepassingen waarvoor een specifieke encoding veel geschikter is.  Om de lezer te helpen bieden we een visuele keuzehulp aan die deze generieke toepassingen beschrijft en een overzicht geeft van de belangrijkste aspecten die, in het kader van de toepassing, leiden tot het keuze voor een bepaalde encoding.
+Welk formaat, of welke formaten, de beste keuze zijn, hangt af van de antwoorden op deze vragen. Ze geven inzicht in welke aspecten een belangrijke rol spelen voor de beoogde toepassing. Met deze informatie kan de lezer de tabellen in hoofdstuk 4-8 nagaan, en daarbij gericht kijken naar welke formaten het beste aansluiten op de behoeften die uit de antwoorden naar voren zijn gekomen. 
 
-De generieke toepassingen:
+Let wel op dat dit geen allesomvattende vragenlijst is, voor bepaalde toepassingen kan het belangrijk zijn om dieper in te gaan op sommige vragen. Maar met behulp van de vragenlijst krijgt de lezer in ieder geval een goede indicatie.
+
+## Keuzehulp voor generieke toepassingen
+Hoewel elke toepassing tot andere antwoorden kan leiden (en dus andere keuzes), zijn er een aantal generieke toepassingen waarvoor een specifieke encoding veel geschikter is. Om de lezer te helpen bieden we een visuele keuzehulp aan die voor een aantal generieke toepassingen laat zien welke encoding daar het beste bij past, aan de hand van de daarbij relevante aspecten.
+
+De generieke toepassingen zijn:
 
 - Web pagina's waarop mensen informatie kunnen vinden over geo-objecten
 - Kaarten of andere visualisaties van geodata die gepubliceerd worden op het web
@@ -109,16 +115,6 @@ De generieke toepassingen:
 <div style="position: relative;" >
   <img src="media/diagram-keuzehulp.png" style="width: 100%; height: auto;" /><a class="image-link" href="#html" title="HTML-keuze"><div style="position: absolute; left: 6.7%; top: 59%; width: 14%; height: 19%; background-color: transparent;" target="_self"></div></a><a class="image-link" href="#geojson" title="GeoJSON-keuze"><div style="position: absolute; left: 24%; top: 59%; width: 14%; height: 10%; background-color: transparent;"></div></a><a class="image-link" href="#rdf" title="RDF-keuze"><div style="position: absolute; left: 49%; top: 59%; width: 14%; height: 21%; background-color: transparent;"></div></a><a class="image-link" href="#geopackage" title="GeoPackage-keuze"><div style="position: absolute; left: 65%; top: 59%; width: 13.5%; height: 29%; background-color: transparent;"></div></a><a class="image-link" href="#gml" title="GML-keuze"><div style="position: absolute; left: 80%; top: 59%; width: 14%; height: 27%; background-color: transparent;"></div></a>  
 </div>
-
-<!-- Het hoofddoel moet zijn om de geodata te publiceren op een manier die voor gebruikers gemakkelijk te ontcijferen en te gebruiken is. Daarbij is het belangrijk om in je achterhoofd te houden op welke doelgroepen de datapublicatie gericht is en welk doel zij hebben met hun gebruik van de data. Uit het beoogd gebruik valt af te leiden wat voor kenmerken de data moet hebben. Bijvoorbeeld:
-
-- het volume (bestandsgrootte) van de data
-- hoe veel ruimtelijke dimensies het bestrijkt (punten, lijnen, vlakken, 3D)
-- wat voor gebied het bestrijkt (één gebouw, een stad, een heel land)
-- hoe vaak de data verandert
-- de nauwkeurigheid die de dataset heeft én de nauwkeurigheid die gebruikers nodig hebben -->
-
-<!-- Bron: <a href ="https://www.w3.org/TR/sdw-bp/#semantic-thing">Spatial Data on the Web Best Practice 4: Use spatial data encodings that match your target audience</a> [[sdw-bp]]. -->
 
 <aside class="note">
 Om de lezer te helpen willen we het mogelijk maken om de vragenlijst in te vullen en, gebaseerd op het resultaat, een bepaalde view op de tabellen in hoofdstuk 4-8 te activeren. Hiermee zou lezer in een oogopslag kunnen zien wat de voordelen en nadelen zijn van elke encoding, gericht op de toepassing(en).  Wanneer de lezer op een van de generieke toepassingen in het diagram klikt is de view op de generieke toepassing gebaseerd. </aside>
