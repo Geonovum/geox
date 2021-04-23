@@ -18,13 +18,6 @@ var respecConfig = {
   //previousStatus: "GN-CV",
   // See https://www.specref.org/ for commonly used biblio references
   localBiblio: {
-    "HGMG": {
-      "href": "https://www.geonovum.nl/uploads/documents/Geometrieinmodelengml_1.0.pdf",
-      "title": "Handreiking Geometrie in model en GML",
-      "authors": ["Linda van den Brink", "Paul Janssen", "Wilko Quak"],
-      "date": "1 maart 2012",
-      "publisher": "Geonovum"
-    },
     "GML-SF":{
       href:"http://www.opengeospatial.org/standards/gml",
       title:"Geography Markup Language (GML) simple features profile",
@@ -65,6 +58,21 @@ var respecConfig = {
       publisher: "Geonovum", 
       authors: ["Linda van den Brink", "Paul Janssen", "Wilko Quak",],
       title: "Geometrie in model en GML",
+    },
+    "NEN3610": {
+      id: "NEN 3610:2011 nl",
+      title: "NEN 3610:2011 nl - Basismodel geo-informatie - Termen, definities, relaties en algemene regels voor de uitwisseling van informatie over aan de aarde gerelateerde ruimtelijke objecten",
+      href: "https://www.nen.nl/NEN-Shop/Norm/NEN-36102011-nl.htm",
+      status: "Definitief",
+      publisher: "NEN",
+      date: "2011-03-01"
+    },
+    "iso-19107-2019": {
+      title: "Geographic information — Spatial schema",
+      href: "https://www.iso.org/standard/66175.html", 
+      status: "Definitief", 
+      publisher: "ISO",
+      date: "2019-12",
     }
   //  "ISO19136": {
   //    "href": "https://www.iso.org/standard/32554.html",
