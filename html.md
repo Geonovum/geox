@@ -10,26 +10,20 @@ Met behulp van (gestandaardiseerde) webtechnologie als CSS, JavaScript, SVG / we
 
 In HTML kunnen eenvoudig relaties gelegd worden met andere bronnen (webpagina's van gerelateerde geo-objecten bijvoorbeeld of verwijzingen naar definities) en andere begrippenkaders.
 
-Een nadeel van HTML is dat een dataset (meestal) niet in één webpagina wordt gepubliceerd, maar elk object een eigen pagina krijgt. Dit betekent dat verwerking van meer dan één object in een ander systeem (bijvoorbeeld in een GIS of inlezen in een database), lastig is.
-
-<!-- &#9744; (☐) for [ ] and &#9745; (☑) of:
-<span id="vinkje">&#10003;</span>  <span id="kruisje">&#10005;</span>  <span id="tilde">&#65374;</span> 
- -->
-
 ## Overwegingen
 
 | Vraag                                                                              | Antwoord | Toelichting |
 |------------------------------------------------------------------------------------|----------|-------------|
 | Is het format geospecifiek?                                                        | <span id="kruisje">&#10005;</span> |             |
 | Is het format gebaseerd op algemene ict standaarden?                               | <span id="vinkje">&#10003;</span>  |  Ja, HTML is de standaard voor Web pagina's.           |
-| Wordt het format ondersteund in GIS software?                                      | <span id="kruisje">&#10005;</span> |            |
+| Wordt het format ondersteund in GIS software?                                      | <span id="kruisje">&#10005;</span> | Wanneer we het hebben over HTML voor de uitwisseling van data wordt een dataset (meestal) niet in één webpage gepubliceerd, maar krijgt elk object een eigen pagina. Dit betekent dat verwerking van meer dan één object in een ander systeem (bijvoorbeeld in een GIS of inlezen in een database), lastig is.|
 | Ondersteunt het format het uitdrukken van schema's, en validatie tegen dat schema? | <span id="kruisje">&#10005;</span> |             |
-| Ondersteunt het format meerdere coordinaatsystemen?                                | <span id="kruisje">&#10005;</span> | Ondersteuning voor andere CRSen dan WGS-84 is niet gangbaar  |
-| Ondersteunt het format 3D?                                                         | <span id="kruisje">&#10005;</span> |             |
-| Ondersteunt het format alle simple features geometrieen?                           | <span id="tilde">&#65374;</span>   | Ondersteunde geometrietypen zijn zeer beperkt |
+| Ondersteunt het format meerdere coordinaatsystemen?                                | <span id="kruisje">&#10005;</span> | Nee, maar voor het gestructureerd opnemen van geometrie / CRSen kunnen annotaties gebruikt worden, deze worden gedefinieerd in een begrippenkader. [Schema.org](https://schema.org/) is een gangbare begrippenkader voor HTML annotaties, en ondersteunt alleen WGS-84. Het is niet de enige mogelijkheid, maar het voordeel van Schema.org annotaties is dat zoekmachines makkelijker met deze informatie overweg kunnen.   |
+| Ondersteunt het format 3D?                                                         | <span id="kruisje">&#10005;</span> | Nee, maar voor het gestructureerd opnemen van geometrie / CRSen kunnen annotaties vanuit een begrippenkader gebruikt worden. [Schema.org](https://schema.org/) is een gangbare begrippenkader, alleen ondersteunt deze geen 3D. |
+| Ondersteunt het format alle simple features geometrieen?                           | <span id="tilde">&#65374;</span>   | Nee, HTML ondersteunt geen geometrietypes vanzelf. Via een begrippenkader zou je een geometrie echter wel op gestructureerde wijze kunnen opnemen. [Schema.org](https://schema.org/) ondersteunt het gebruik van coördinaten (zie [GeoCoordinates](https://schema.org/GeoCoordinates)) en een beperkt aantal geometrietypen (zie [GeoShape](https://schema.org/GeoShape)).  |
 | Ondersteunt het format andere ISO 19107 geometrie types?                           | <span id="kruisje">&#10005;</span> |             |
 | Is het format geschikt voor grote volumes?                                         | <span id="kruisje">&#10005;</span> |             |
-| Is het format geschikt om semantiek aan te koppelen / in uit te drukken?           | <span id="vinkje">&#10003;</span>  | Het is eenvoudig om gestructureerde data te combineren met tekst en en men kan linken aan begrippenkaders |
+| Is het format geschikt om semantiek aan te koppelen / in uit te drukken?           | <span id="vinkje">&#10003;</span>  | Het is eenvoudig om gestructureerde data te combineren met tekst en en men kan linken aan begrippenkaders (zie [RDFa Primer](https://www.w3.org/TR/rdfa-primer/) voor meer informatie) |
 
 <!-- ## Voordelen
 - directe visualiatie / presentatie aan (eind)gebruikers van (object)informatie

@@ -26,11 +26,11 @@ GeoPackage werkt standaard met numerieke ID's. Dit geeft problemen met ID's van 
 | Vraag                                                                              | Antwoord | Toelichting |
 |------------------------------------------------------------------------------------|----------|-------------|
 | Is het format geospecifiek?                                                        | <span id="vinkje">&#10003;</span>  |  
-| Is het format gebaseerd op algemene ict standaarden?                               | <span id="vinkje">&#10003;</span>  | GeoPackage is gebaseerd op SQLite, daardoor toegankelijk voor grotere doelgroep datagebruikers   |
-| Wordt het format ondersteund in GIS software?                                      | <span id="vinkje">&#10003;</span>  |             |
+| Is het format gebaseerd op algemene ict standaarden?                               | <span id="vinkje">&#10003;</span>  | GeoPackage is gebaseerd op SQLite, en is daardoor toegankelijk voor een grotere doelgroep datagebruikers   |
+| Wordt het format ondersteund in GIS software?                                      | <span id="vinkje">&#10003;</span>  |[check nodig] |
 | Ondersteunt het format het uitdrukken van schema's, en validatie tegen dat schema? | <span id="kruisje">&#10005;</span> | Validatie wordt niet ondersteund. |
 | Ondersteunt het format meerdere coordinaatsystemen?                                | <span id="vinkje">&#10003;</span>  |             |
-| Ondersteunt het format 3D?                                                         | <span id="kruisje">&#10005;</span> | Volumes worden niet ondersteund.            |
+| Ondersteunt het format 3D?                                                         | <span id="kruisje">&#10005;</span> | Volumes worden niet ondersteund, wel bestaan er een aantal [Community extensions voor GeoPackage](https://www.geopackage.org/extensions.html), waaronder een voor 3D - echter zijn dit geen officiële GeoPackage extensies |
 | Ondersteunt het format alle simple features geometrieen?                           | <span id="vinkje">&#10003;</span>  |             |
 | Ondersteunt het format andere ISO 19107 geometrie types?                           | <span id="kruisje">&#10005;</span> |             |
 | Is het format geschikt voor grote volumes?                                         | <span id="vinkje">&#10003;</span>  |             |
