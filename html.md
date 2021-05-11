@@ -4,7 +4,7 @@ HTML is een specificatie van het W3C [[html5]] om gegevens gestructureerd aan te
 
 Geodata in HTML kan op verschillende manieren gepubliceerd worden. Een HTML pagina van een geo-object zou de niet-geo eigenschappen kunnen tonen. Maar een HTML pagina kan ook de geometrie zelf bevatten en visualiseren.
 
-HTML kent geen aparte elementen voor geometrie, maar de geometrie kan wel gestructureerd opgenomen  worden in een HTML pagina, door middel van een zogenaamde annotatie. Annotaties zijn vaak volgens het begrippenkader van Schema.org opgesteld. Slechts enkele eenvoudige geometrietypen worden gebruikt: punt, bounding box, cirkel, lijn, en polygoon. Het is ook mogelijk om een hoogtegetal op te nemen. De geometrie wordt meestal beschouwd als een vorm van metadata van de HTML pagina. Die wordt dan opgenomen met microdata, RDFa of stukjes JSON-LD en voor de gebruiker verborgen door een webbrowser, maar wel geïndexeerd door zoekmachines
+HTML kent geen aparte elementen voor geometrie, maar de geometrie kan wel gestructureerd opgenomen  worden in een HTML pagina, door middel van een zogenaamde annotatie. Annotaties zijn vaak volgens het begrippenkader van Schema.org opgesteld. Slechts enkele eenvoudige geometrietypen worden gebruikt: punt, bounding box, cirkel, lijn, en polygoon. Het is ook mogelijk om een hoogtegetal op te nemen. De geometrie wordt meestal beschouwd als een vorm van metadata van de HTML pagina. Die wordt dan opgenomen met microdata, RDFa of stukjes JSON-LD en voor de gebruiker verborgen door een webbrowser, maar wel geïndexeerd door zoekmachines.
 
 Met behulp van (gestandaardiseerde) webtechnologie als CSS, JavaScript, SVG / web canvas, kan geometrie gevisualiseerd worden via HTML pagina's. In steeds meer API's is er ook een HTML representatie van een geo-object. Zo is in de core van OGC API Features [[OAPIF]] [HTML een aanbevolen formaat](http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_requirements_class_html) voor representatie van geodata.
 
@@ -39,3 +39,6 @@ In HTML kunnen eenvoudig relaties gelegd worden met andere bronnen (webpagina's 
 
 ## Voorbeelden
 TODO
+
+## Afspraken
+

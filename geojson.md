@@ -2,36 +2,6 @@
 
 JSON [[RFC8259]] is een codering voor gegevens in een op JavaScript gebaseerd formaat. Vaak wordt JSON als alternatief voor XML gebruikt om gestructureerde gegevens te coderen en uit te wisselen.
 
-## Voorbeeld
-(*Bron: Spatial Data on the Web Best Practice, [Coordinates encoded using GeoJSON](https://www.w3.org/TR/sdw-bp/#ex-crs-geojson)*)
-<pre class="example" id="ex-crs-geojson" title="Coordinates encoded using GeoJSON [RFC7946] in HTTP response">
-HTTP/1.1 200 OK
-Date: Sun, 05 Mar 2017 17:12:35 GMT
-Content-length: 543
-Connection: close
-Content-type: application/geo+json
-
-{
-  "type": "Feature",
-  "geometry": {
-    "type": "Polygon",
-    "coordinates": [
-      [ [4.884235, 52.375108], [4.884276, 52.375153], 
-        [4.884257, 52.375159], [4.883981, 52.375254], 
-        [4.883850, 52.375109], [4.883819, 52.375075], 
-        [4.884104, 52.374979], [4.884143, 52.374965], 
-        [4.884207, 52.375035], [4.884263, 52.375016], 
-        [4.884320, 52.374996], [4.884255, 52.374926], 
-        [4.884329, 52.374901], [4.884451, 52.375034], 
-        [4.884235, 52.375108] ]
-      ]
-  },
-  "properties": {
-    "name": "Anne Frank's House"
-  }
-}
-</pre>
-
 GeoJSON [[RFC7946]] gebruikt JSON om geografische gegevens te coderen. Het is bedoeld om simpele geografische objecten te representeren inclusief hun ruimtelijke en niet-ruimtelijke eigenschappen. GeoJSON ondersteunt de volgende geometrische objecten: 
 - punten: `Point` en `MuliPoint`
 - lijnen: `LineString` en `MultiLineString`
@@ -55,6 +25,11 @@ De OGC API Features kan in combinatie met zowel GeoJSON als GML worden gebruikt.
 <!-- <span id="vinkje">&#10003;</span>  <span id="kruisje">&#10005;</span>  <span id="tilde">&#65374;</span> 
  -->
 
+## Voorbeeld
+(*Bron: Spatial Data on the Web Best Practice, [Coordinates encoded using GeoJSON](https://www.w3.org/TR/sdw-bp/#ex-crs-geojson)*)
+
+*TO DO*
+
 ## Overwegingen
 
 | Vraag                                                                              | Antwoord | Toelichting |
@@ -71,8 +46,22 @@ De OGC API Features kan in combinatie met zowel GeoJSON als GML worden gebruikt.
 | Is het format geschikt om semantiek aan te koppelen / in uit te drukken?           |<span id="vinkje">&#10003;</span>  |  Het is mogelijk om GeoJSON met linked data te combineren door gebruik te maken van [JSON-LD 1.1](https://www.w3.org/TR/json-ld11/). |
 
 
-## afspraken
+## Afspraken
 TODO: Er zijn afspraken nodig over het aantal decimalen in coordinaten en over het gebruikte CRS. Wanneer gebruik je WGS 84, wanneer RD en hoe wissel je die laatste uit. 
+
+### Naamgeving
+
+GeoJSON heeft geen specifieke naamgevingsconventies, echter kunnen de conventies van JSON gebruikt worden:
+
+- Attribuut namen dienen betekenisvol te zijn, met duidelijke semantiek.
+- Attribuut namen dienen camel-cased (ie, wordWordWord) ascii strings te zijn.
+- Het eerste teken dien een letter, een underscore (\_) of een dollarteken ($) te zijn. Navolgende tekens kunnen letters, cijfers, underscore of dollartekens zijn. Gereserveerde JavaScript keywords moeten vermeden worden.
+Bron: https://google.github.io/styleguide/jsoncstyleguide.xml
+
+- Member namen dienen camel-cased te zijn.
+- Member dienen te beginnen en te eindigen met “a-z” (U+0061 tot U+007A)
+- Member dienen alleen ASCII alphanumerische tekens te zijn (i.e., “a-z”, “A-Z”, and “0-9”)
+Bron: https://jsonapi.org/recommendations/
 
 ### aantal decimalen
 Uit GeoJSON standaard: 
@@ -91,3 +80,4 @@ TODO
 
 - Content negotiation met GeoJSON: het media type `application/geo+json` wordt gebruikt om aan te geven dat data wordt aangeboden in  GeoJSON formaat.
 - hoe: URI's in GeoJSON (zie Note hierover in [BP 10](https://www.w3.org/TR/sdw-bp/#entity-level-links)).
+

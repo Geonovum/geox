@@ -1,11 +1,9 @@
 # GeoPackage
 
 ## Introductie
-GeoPackage is een [OGC](https://www.opengeospatial.org) standaard die gebaseerd is op [SQLLite](https://www.sqlite.org/), voor de uitwisseling van geodata. Het wordt wel gezien als vervanger van Shapefiles.
+GeoPackage is een [OGC](https://www.opengeospatial.org) standaard die gebaseerd is op [SQLLite](https://www.sqlite.org/), voor de uitwisseling van geodata. Het wordt wel gezien als vervanger van Shapefiles. GeoPackage is in 2019 [aangemeld voor de pas-toe-of-leg-uit lijst](https://www.geonovum.nl/over-geonovum/actueel/geopackage-aanmelden-voor-pas-toe-of-leg-uit-lijst) en is inmiddels aan die lijst toegevoegd. Dit format vervangt niet GML, maar bij het aanbieden van een download moeten Nederlandse overheidsorganisaties naast GML dus ook GeoPackage kunnen leveren.
 
-GeoPackage is in 2019 [aangemeld voor de pas-toe-of-leg-uit lijst](https://www.geonovum.nl/over-geonovum/actueel/geopackage-aanmelden-voor-pas-toe-of-leg-uit-lijst) en is inmiddels aan die lijst toegevoegd. 
-
-GeoPackage is een “licht” formaat om geografische informatie uit te wisselen. Veel geografische software ondersteunt de GeoPackage standaard al, waaronder ook een paar populaire pakketten die moeite hebben met de verwerking van GML. GeoPackage is een binair formaat, niet in een tekst editor te openen. 
+GeoPackage is een “licht” formaat om geografische informatie uit te wisselen. Veel geografische software ondersteunt de GeoPackage standaard al, waaronder ook een paar populaire pakketten die moeite hebben met de verwerking van GML. GeoPackage is een binair formaat, niet in een tekst editor te openen. Het ondersteunt een subset van de geometrie types zoals gedefinieerd in [[ISO 13249-3]] - dit is een uitbreiding op het Simple Features data model van [[ISO 19125]], welke het opnemen van circulaire interpolaties mogelijk maakt. In de GeoPackage documentatie wordt een overzicht gegeven van de [ondersteunde geometrie types](http://www.geopackage.org/spec/#geometry_types).  
 
 Moderne datasets zoals de Basisregistratie Grootschalige Topografie zijn zó gedetailleerd, dat bestandsomvang een probleem gaat vormen bij het importeren van data in softwaresystemen. GeoPackage is een geschikt formaat voor het uitwisselen van geodatasets met een grote omvang, bijvoorbeeld wanneer gebruikers een grote dataset of subset daarvan willen downloaden om in hun lokale (GIS) systeem te gebruiken voor ruimtelijke analyses. 
 
@@ -40,3 +38,7 @@ GeoPackage werkt standaard met numerieke ID's. Dit geeft problemen met ID's van 
 TODO
 
 Er is behoefte aan afspraken over naamgeving van klassen/attributen, en hoe je visualisatie/metadata opneemt.
+
+### Naamgeving
+
+Voor GeoPackage wordt het gebruik van snake_case aangeraden. Om de interoperabiliteit te stimuleren kunnen de database identifiers (tabel namen, kolom namen, etc.) met lowercase tekens worden opgenomen - het is in ieder geval handig om alleen lowercase tekens, cijfers en underscores(\_) te gebruiken. 
