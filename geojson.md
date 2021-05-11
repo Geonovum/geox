@@ -75,6 +75,10 @@ TODO - Wanneer gebruik je WGS 84, wanneer RD of ETRS89 en hoe wissel je die laat
 
 Gebruiken we wel of niet GeoJSON in combinatie met andere coordinaatreferentiesystemen dan WGS 84? En als we dit wel doen, hoe communiceer je dan wat het coordinaatreferentiesysteem van je data is? Hier moeten we afspraken over maken. 
 
+### gebruik in uitwisseling
+
+De OGC heeft een set templates voor YAML schema’s die horen bij de OGC Feature API standaard, waarin ook GeoJSON geometrie beschreven is. YAML is een serialisatie format waarmee men OpenAPI definities vastlegt. Deze definities worden gebruikt om APIs op een eenduidige manier de beschrijven en te documenteren, zodat gebruikers begrijpen hoe ze de APIs kunnen bevragen. De templates van OGC zijn handig te gebruiken in API's waarmee geo-objecten gepubliceerd worden. De templates voor het definiëren van de schema's voor GeoJSON bevragingen zijn te vinden op [featureCollectionGeoJSON.yaml](http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/featureCollectionGeoJSON.yaml) en [featureGeoJSON.yaml](http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/featureGeoJSON.yaml). Uiteraard bevatten deze templates alleen de generieke informatie die van toepassing is voor het definieren van de geometrie. Specifieke informatie over typeringen en attributen zullen aanbieders zelf moeten toevoegen. 
+
 ## how to
 TODO
 
