@@ -9,6 +9,58 @@ GML is gestandaardiseerd bij het OGC en, daar OGC en ISO met elkaar samenwerken,
 <!-- <span id="vinkje">&#10003;</span>  <span id="kruisje">&#10005;</span>  <span id="tilde">&#65374;</span> 
  --> -->
 
+## Voorbeeld
+
+<aside class="example ds-selector-tabs" title="Voorbeelden van geometrie voor GeoJSON" style="overflow-x: hidden;">
+<div class="container--tabs">
+  <div class="selectors">
+    <ul class="nav nav-tabs">
+      <li class="tabs active"><a href="#gml-polygoon">GML - Voorbeeld 1</a></li>
+      <li class="tabs"><a href="#gml-punt">GML - Voorbeeld 2</a></li>
+    </ul>
+    <div class="tab-content">
+      <div id="gml-punt" class="tab-pane">
+        <pre>
+&lt;FeatureCollection>
+  &lt;featureMember>
+    &lt;ex:Gebouw gml:id="H10">
+     &lt;ex:naam>Anne Frank's Huis&lt;/ex:naam>
+     &lt;geometrie>
+        &lt;gml:Point gml:id="geom1">
+            &lt;gml:pos>4.884235 52.375108&lt;/gml:pos>
+        &lt;/gml:Point>
+     &lt;/geometrie>     
+    &lt;/ex:Gebouw>
+  &lt;/featureMember>
+&lt;/FeatureCollection>
+		</pre>        
+      </div>
+      <div id="gml-polygoon" class="tab-pane active">
+    	<pre>
+&lt;FeatureCollection>
+  &lt;featureMember>
+    &lt;ex:Gebouw gml:id="H10">
+     &lt;ex:naam>Anne Frank's Huis&lt;/ex:naam>
+     &lt;geometrie>
+        &lt;gml:Polygon gml:id="geom2">
+            &lt;gml:exterior>
+                &lt;gml:LinearRing>
+                    &lt;gml:posList>4.884235 52.375108 4.884276 52.375153 4.884257 52.375159 4.883981 52.375254 4.883850 52.375109 4.883819 52.375075 4.884104 52.374979 4.884143 52.374965 4.884207 52.375035 4.884263 52.375016 4.884320 52.374996 4.884255 52.374926 4.884329 52.374901 4.884451 52.375034 4.884235 52.375108&lt;/gml:posList>
+                &lt;/gml:LinearRing>
+            &lt;/gml:exterior>
+        &lt;/gml:Polygon>
+     &lt;/geometrie>     
+    &lt;/ex:Gebouw>
+  &lt;/featureMember>
+&lt;/FeatureCollection>
+      </pre>
+      </div>
+    </div>
+  </div>
+</div>
+</aside>
+
+
 ## Overwegingen 
 
 | Vraag                                                                              | Antwoord | Toelichting |

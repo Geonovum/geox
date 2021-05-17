@@ -37,8 +37,154 @@ In HTML kunnen eenvoudig relaties gelegd worden met andere bronnen (webpagina's 
 - een volledige dataset downloaden, bijvoorbeeld om te combineren met een andere dataset, is lastiger
 - verwerking van de geometrie in een ander systeem (zoals een GIS desktop systeem) is lastig -->
 
-## Voorbeelden
-TODO
+## Voorbeeld
 
-## Afspraken
+<aside class="example ds-selector-tabs" title="Voorbeelden van geometrie voor HTML" style="overflow-x: hidden;">
+<div class="container--tabs">
+	De voorbeelden hieronder tonen representaties van geodata zoals je het in een HTML zou tegenkomen, volgens het RDFa format. Uiteraard is het ook mogelijk om andere formats toe te passen.
+  <div class="selectors">
+    <ul class="nav nav-tabs">
+      <li class="tabs active"><a href="#html-geocoordinates">HTML - Voorbeeld 1 </a></li>
+      <li class="tabs"><a href="#html-geoshapes">HTML - Voorbeeld 2</a></li>
+    </ul>
+    <div class="tab-content">
+      <div id="html-geocoordinates" class="tab-pane active">
+        Voorbeeld van een Schema.org GeoCoordinate instance zoals je het in een HTML zou kunnen verwerken (in RDFa)
+        <pre>
+		&lt;div xmlns="http://www.w3.org/1999/xhtml"
+		  prefix="
+		    : http://schema.org/
+		    rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+		    rdfs: http://www.w3.org/2000/01/rdf-schema#"
+		  >
+		  &lt;div typeof=":Place" about="http://www.ldproxy.net/bag/inspireadressen/inspireadressen.3329155">
+		    &lt;div property=":description" content="Museum house where Anne Frank & her family hid from the Nazis in a secret annex, during WWII.">&lt;/div>
+		    &lt;div property=":name" content="Anne Franks House">&lt;/div>
+		    &lt;div rel=":address">
+		      &lt;div typeof=":PostalAddress">
+		        &lt;div property=":streetAddress" content="Prinsengracht 267">&lt;/div>
+		        &lt;div property=":addressLocality" content="Amsterdam">&lt;/div>
+		        &lt;div property=":postalCode" content="1016GV">&lt;/div>
+		      &lt;/div>
+		    &lt;/div>
+		    &lt;div property=":url" content="http://www.ldproxy.net/bag/inspireadressen/inspireadressen.3329155">&lt;/div>
+		      &lt;div property="geo" typeof=":GeoCoordinates">
+		        &lt;div property=":latitude" content="52.37520">&lt;/div>
+		        &lt;div property=":longitude" content="4.88399">&lt;/div>
+		      &lt;/div>
+		  &lt;/div>
+		&lt;/div>
+		</pre>         
+      </div>
+      <div id="html-geoshapes" class="tab-pane">
+      	Voorbeeld van een Schema.org GeoShape instance zoals je het in een HTML zou kunnen verwerken (in RDFa)
+        <pre>
+        	<textarea>
+		<div xmlns="http://www.w3.org/1999/xhtml"
+		  prefix="
+		    : http://schema.org/
+		    rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+		    rdfs: http://www.w3.org/2000/01/rdf-schema#"
+		  >
+		  <div typeof=":Place" about="http://www.ldproxy.net/bag/inspireadressen/inspireadressen.3329155">
+		    <div property=":description" content="Museum house where Anne Frank & her family hid from the Nazis in a secret annex, during WWII."></div>
+		    <div rel=":address">
+		      <div typeof=":PostalAddress">
+		        <div property=":postalCode" content="1016GV"></div>
+		        <div property=":streetAddress" content="Prinsengracht 267"></div>
+		        <div property=":addressLocality" content="Amsterdam"></div>
+		      </div>
+		    </div>
+		    <div rel=":geo">
+		      <div typeof=":GeoShape">
+		      	<div property=":polygon" content="52.375108,4.884235 52.375153,4.884276 
+				                  52.375159,4.884257 52.375254,4.883981 
+				                  52.375109,4.883850 52.375075,4.883819 
+				                  52.374979,4.884104 52.374965,4.884143 
+				                  52.375035,4.884207 52.375016,4.884263 
+				                  52.374996,4.884320 52.374926,4.884255 
+				                  52.374901,4.884329 52.375034,4.884451 
+				                  52.375108,4.884235"></div>
+		      </div>
+		    </div>
+		    <div property=":url" content="http://www.ldproxy.net/bag/inspireadressen/inspireadressen.3329155"></div>
+		    <div property=":name" content="Anne Frank's House"></div>
+		  </div>
+		</div>
+		</textarea>
+		</pre>
+      </div>
+    </div>
+  </div>
+</div>
+</aside>
 
+<!-- <aside class="example ds-selector-tabs" title="Voorbeelden van geometrie voor HTML" style="overflow-x: hidden;">
+<div class="container--tabs">
+  <div class="selectors">
+    <ul class="nav nav-tabs">
+      <li class="tabs active"><a href="#html-geocoordinates">HTML + Schema.org GeoCoordinates (in RDFa) </a></li>
+      <li class="tabs"><a href="#html-geoshapes">HTML + Schema.org GeoShapes</a></li>
+    </ul>
+    <div class="tab-content">
+      <div id="html-geocoordinates" class="tab-pane active">
+        (*Bron: Spatial Data on the Web Best Practice, Best Practice 2: Make your spatial data indexable by search engines*)
+        <pre title="">&lt;script type="application/ld+json">
+		{
+		  "@context" : {
+		    "@vocab" : "http://schema.org/"
+		  },
+		  "@type" : "Place",
+		  "@id" : "http://www.ldproxy.net/bag/inspireadressen/inspireadressen.3329155",
+		  "url" : "http://www.ldproxy.net/bag/inspireadressen/inspireadressen.3329155",
+		  "geo" : {
+		    "@type" : "GeoCoordinates",
+		    "longitude" : "4.88399",
+		    "latitude" : "52.37520"
+		  },
+		  "name": "Anne Franks House",
+		  "description": "Museum house where Anne Frank & her family hid from the Nazis in a secret annex, during WWII.",
+		  "address" : {
+		    "@type" : "PostalAddress",
+		    "streetAddress" : "Prinsengracht 267",
+		    "addressLocality" : "Amsterdam",
+		    "postalCode" : "1016GV"
+		  }
+		}
+		&lt;/script></pre>         
+      </div>
+      <div id="html-geoshapes" class="tab-pane">
+        <pre title="">&lt;script type="application/ld+json">
+		{
+		  "@context" : {
+		    "@vocab" : "http://schema.org/"
+		  },
+		    "@type" : "Place",
+		  	"@id" : "http://www.ldproxy.net/bag/inspireadressen/inspireadressen.3329155",
+		  	"url" : "http://www.ldproxy.net/bag/inspireadressen/inspireadressen.3329155",
+		    "name" : "Anne Frank's House",
+		    "geo" : {
+		      "@type": "GeoShape",
+		      "polygon": "52.375108,4.884235 52.375153,4.884276 
+		                  52.375159,4.884257 52.375254,4.883981 
+		                  52.375109,4.883850 52.375075,4.883819 
+		                  52.374979,4.884104 52.374965,4.884143 
+		                  52.375035,4.884207 52.375016,4.884263 
+		                  52.374996,4.884320 52.374926,4.884255 
+		                  52.374901,4.884329 52.375034,4.884451 
+		                  52.375108,4.884235"
+		  },
+		  "description": "Museum house where Anne Frank & her family hid from the Nazis in a secret annex, during WWII.",
+		  "address" : {
+		    "@type" : "PostalAddress",
+		    "streetAddress" : "Prinsengracht 267",
+		    "addressLocality" : "Amsterdam",
+		    "postalCode" : "1016GV"
+		  }		  
+		}
+		&lt;/script></pre>
+      </div>
+    </div>
+  </div>
+</div>
+</aside> -->

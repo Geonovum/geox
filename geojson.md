@@ -26,9 +26,58 @@ De OGC API Features kan in combinatie met zowel GeoJSON als GML worden gebruikt.
  -->
 
 ## Voorbeeld
-(*Bron: Spatial Data on the Web Best Practice, [Coordinates encoded using GeoJSON](https://www.w3.org/TR/sdw-bp/#ex-crs-geojson)*)
 
-*TO DO*
+<aside class="example ds-selector-tabs" title="Voorbeelden van geometrie voor GeoJSON" style="overflow-x: hidden;">
+<div class="container--tabs">
+  <div class="selectors">
+    <ul class="nav nav-tabs">
+      <li class="tabs active"><a href="#geojson-polygoon">GeoJSON - Voorbeeld 1</a></li>
+      <li class="tabs"><a href="#geojson-punt">GeoJSON - Voorbeeld 2</a></li>
+    </ul>
+    <div class="tab-content">
+      <div id="geojson-punt" class="tab-pane ">
+        <pre>
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [4.884235, 52.375108] 
+          },
+          "properties": {
+            "name": "Anne Frank's House"
+          }
+        }
+      </pre>        
+      </div>
+      <div id="geojson-polygoon" class="tab-pane active">
+        (*Bron: Spatial Data on the Web Best Practice, [Coordinates encoded using GeoJSON](https://www.w3.org/TR/sdw-bp/#ex-crs-geojson)*)
+        <pre>
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [ [4.884235, 52.375108], [4.884276, 52.375153], 
+                [4.884257, 52.375159], [4.883981, 52.375254], 
+                [4.883850, 52.375109], [4.883819, 52.375075], 
+                [4.884104, 52.374979], [4.884143, 52.374965], 
+                [4.884207, 52.375035], [4.884263, 52.375016], 
+                [4.884320, 52.374996], [4.884255, 52.374926], 
+                [4.884329, 52.374901], [4.884451, 52.375034], 
+                [4.884235, 52.375108] ]
+              ]
+          },
+          "properties": {
+            "name": "Anne Frank's House"
+          }
+        }
+      </pre>
+      </div>
+    </div>
+  </div>
+</div>
+</aside>
+
 
 ## Overwegingen
 
@@ -75,7 +124,7 @@ TODO - Wanneer gebruik je WGS 84, wanneer RD of ETRS89 en hoe wissel je die laat
 
 Gebruiken we wel of niet GeoJSON in combinatie met andere coordinaatreferentiesystemen dan WGS 84? En als we dit wel doen, hoe communiceer je dan wat het coordinaatreferentiesysteem van je data is? Hier moeten we afspraken over maken. 
 
-### gebruik in uitwisseling
+### Gebruik in uitwisseling
 
 De OGC heeft een set templates voor YAML schema’s die horen bij de OGC Feature API standaard, waarin ook GeoJSON geometrie beschreven is. YAML is een serialisatie format waarmee men OpenAPI definities vastlegt. Deze definities worden gebruikt om APIs op een eenduidige manier de beschrijven en te documenteren, zodat gebruikers begrijpen hoe ze de APIs kunnen bevragen. De templates van OGC zijn handig te gebruiken in API's waarmee geo-objecten gepubliceerd worden. De templates voor het definiëren van de schema's voor GeoJSON bevragingen zijn te vinden op [featureCollectionGeoJSON.yaml](http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/featureCollectionGeoJSON.yaml) en [featureGeoJSON.yaml](http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/featureGeoJSON.yaml). Uiteraard bevatten deze templates alleen de generieke informatie die van toepassing is voor het definieren van de geometrie. Specifieke informatie over typeringen en attributen zullen aanbieders zelf moeten toevoegen. 
 

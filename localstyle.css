@@ -40,7 +40,27 @@ th, td {
 }
 
 .image-link {
+    text-decoration:none;
     line-height: 0; 
     font-size: 0;
     color: transparent; 
+}
+
+/******************************************************************************/
+/*                                Keuzehulp vragen                            */
+/******************************************************************************/
+ul { list-style: none; }
+
+.check-container {
+    position: left;
+    width: 90 %;
+    background: #e8e8e8;
+}
+
+div.question {
+  padding: 20px;
+}
+
+.checkhidden {
+display: none;
 }

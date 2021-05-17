@@ -8,7 +8,75 @@ Hoe geometrie in RDF moet worden uitgedrukt is beschreven in de OGC GeoSPARQL st
 - Als WKT, waarbij de Simple Feature geometrietypen uit ISO 19125 gebruikt kunnen worden (daardoor beperkt: geen 3D, geen bogen etc);
 - Als GML, waarbij de ISO 19107 geometrietypen gebruikt kunnen worden. 
 
-[TODO voorbeelden opnemen]
+## Voorbeeld
+
+<aside class="example ds-selector-tabs" title="Voorbeelden van geometrie voor HTML" style="overflow-x: hidden;">
+<div class="container--tabs">
+  <div class="selectors">
+    <ul class="nav nav-tabs">
+      <li class="tabs active"><a href="#rdf-jsonld">RDF in JSON-LD</a></li>
+      <li class="tabs"><a href="#rdf-turtle">RDF in Turtle</a></li>
+    </ul>
+    <div class="tab-content">
+      <div id="rdf-jsonld" class="tab-pane active">
+      	Voorbeeld van een JSON-LD fragment, zoals je het zou kunnen verwerken in een HTML bestand
+        <pre content-type="application/json">
+		{
+		  "@context" : {
+		    "@vocab" : "http://schema.org/"
+		  },
+		    "@type" : "Place",
+		  	"@id" : "http://www.ldproxy.net/bag/inspireadressen/inspireadressen.3329155",
+		  	"url" : "http://www.ldproxy.net/bag/inspireadressen/inspireadressen.3329155",
+		    "name" : "Anne Frank's House",
+		    "geo" : {
+		      "@type": "GeoShape",
+		      "polygon": "52.375108,4.884235 52.375153,4.884276 
+		                  52.375159,4.884257 52.375254,4.883981 
+		                  52.375109,4.883850 52.375075,4.883819 
+		                  52.374979,4.884104 52.374965,4.884143 
+		                  52.375035,4.884207 52.375016,4.884263 
+		                  52.374996,4.884320 52.374926,4.884255 
+		                  52.374901,4.884329 52.375034,4.884451 
+		                  52.375108,4.884235"
+		  },
+		  "description": "Museum house where Anne Frank & her family hid from the Nazis in a secret annex, during WWII.",
+		  "address" : {
+		    "@type" : "PostalAddress",
+		    "streetAddress" : "Prinsengracht 267",
+		    "addressLocality" : "Amsterdam",
+		    "postalCode" : "1016GV"
+		  }		  
+		}
+		</pre>        
+      </div>
+      <div id="rdf-turtle" class="tab-pane">
+      	Dezelfde data zoals getoond in  <a href="rdf-jsonld">het JSON-LD voorbeeld</a>, maar dan volgens het veelgebruikte Terse RDF Triple Language (Turtle) formaat.
+      	<pre>
+@prefix schema: &lt;http://schema.org/> .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#> .
+&lt;http://www.ldproxy.net/bag/inspireadressen/inspireadressen.3329155>
+  a schema:Place ;
+  schema:address [
+    a schema:PostalAddress ;
+    schema:addressLocality "Amsterdam"^^xsd:string ;
+    schema:postalCode "1016GV"^^xsd:string ;
+    schema:streetAddress "Prinsengracht 267"^^xsd:string
+  ] ;
+  schema:description "Museum house where Anne Frank & her family hid from the Nazis in a secret annex, during WWII."^^xsd:string ;
+  schema:geo [
+    a schema:GeoCoordinates ;
+    schema:latitude "52.37520"^^xsd:string ;
+    schema:longitude "4.88399"^^xsd:string
+  ] ;
+  schema:name "Anne Franks House"^^xsd:string ;
+  schema:url "http://www.ldproxy.net/bag/inspireadressen/inspireadressen.3329155"^^xsd:string .
+		</pre>
+      </div>
+    </div>
+  </div>
+</div>
+</aside>
 
 <!-- <span id="vinkje">&#10003;</span>  <span id="kruisje">&#10005;</span>  <span id="tilde">&#65374;</span> 
  --> -->
