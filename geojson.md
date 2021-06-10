@@ -22,62 +22,76 @@ In veel gevallen is de nauwkeurigheid van GeoJSON in combinatie met WGS-84 voldo
 
 De OGC API Features kan in combinatie met zowel GeoJSON als GML worden gebruikt. Dit laatste is alleen nog interessant als er behoefte is aan nauwkeurigere geometrieën of aan bogen of volumes (die in GeoJSON niet worden ondersteund). 
 
-<!-- <span id="vinkje">&#10003;</span>  <span id="kruisje">&#10005;</span>  <span id="tilde">&#65374;</span> 
- -->
-
 ## Voorbeeld
 
 <aside class="example ds-selector-tabs" title="Voorbeelden van geometrie voor GeoJSON" style="overflow-x: hidden;">
 <div class="container--tabs">
   <div class="selectors">
     <ul class="nav nav-tabs">
-      <li class="tabs active"><a href="#geojson-polygoon">GeoJSON - Voorbeeld 1</a></li>
-      <li class="tabs"><a href="#geojson-punt">GeoJSON - Voorbeeld 2</a></li>
+      <li class="tabs active"><a href="#geojson-polygoon">GeoJSON (Polygon)</a></li>
+      <li class="tabs"><a href="#geojson-3d">GeoJSON (3D)</a></li>
     </ul>
     <div class="tab-content">
-      <div id="geojson-punt" class="tab-pane ">
+        <span>GeoJSON features en collections kunnen eenvoudig gebruikt worden in web toepassingen. Met Leaflet of Mapbox kun je bijvoorbeeld al snel interactieve kaarten ter beschikking stellen. Ook zijn er een meerdere visualisatie en validatie tools beschikbaar (zoals <a href="https://geojsonlint.com/">GeoJSONLint</a> en <a href="https://geojson.io">GeoJSON.io</a>).</span>
+      <div id="geojson-3d" class="tab-pane">
         <pre>
-        {
-          "type": "Feature",
-          "geometry": {
-            "type": "Point",
-            "coordinates": [4.884235, 52.375108] 
-          },
-          "properties": {
-            "name": "Anne Frank's House"
-          }
-        }
+<br>{
+  <br>"type": "Feature",
+  <br>"geometry": {
+    <br>"type": "MultiPolygon",
+    <br>"coordinates": [           
+            <br>[
+                <br>[
+                    <br>[4.884067, 52.375343], [4.883980, 52.375252],
+                    <br>[4.884259, 52.375159], [4.884299, 52.375205],
+                    <br>[4.884336, 52.375191], [4.884375,52.3752393],
+                    <br>[4.884067, 52.375343]
+                <br>]
+           <br>],
+           <br>[
+               <br>[
+                   <br>[4.884196, 52.375238], [4.884169, 52.375212], 
+                   <br>[4.884214, 52.375198], [4.884238, 52.375223], 
+                   <br>[4.884196, 52.375238]
+               <br>]
+           <br>]
+         <br>]
+  <br>},
+  <br>"properties": {
+    <br>"name": "Anne Frank's House"
+  <br>}
+<br>}
       </pre>        
       </div>
       <div id="geojson-polygoon" class="tab-pane active">
         (*Bron: Spatial Data on the Web Best Practice, [Coordinates encoded using GeoJSON](https://www.w3.org/TR/sdw-bp/#ex-crs-geojson)*)
         <pre>
-        {
-          "type": "Feature",
-          "geometry": {
-            "type": "Polygon",
-            "coordinates": [
-              [ [4.884235, 52.375108], [4.884276, 52.375153], 
-                [4.884257, 52.375159], [4.883981, 52.375254], 
-                [4.883850, 52.375109], [4.883819, 52.375075], 
-                [4.884104, 52.374979], [4.884143, 52.374965], 
-                [4.884207, 52.375035], [4.884263, 52.375016], 
-                [4.884320, 52.374996], [4.884255, 52.374926], 
-                [4.884329, 52.374901], [4.884451, 52.375034], 
-                [4.884235, 52.375108] ]
-              ]
-          },
-          "properties": {
-            "name": "Anne Frank's House"
-          }
-        }
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [ [4.884235, 52.375108], [4.884276, 52.375153], 
+        [4.884257, 52.375159], [4.883981, 52.375254], 
+        [4.883850, 52.375109], [4.883819, 52.375075], 
+        [4.884104, 52.374979], [4.884143, 52.374965], 
+        [4.884207, 52.375035], [4.884263, 52.375016], 
+        [4.884320, 52.374996], [4.884255, 52.374926], 
+        [4.884329, 52.374901], [4.884451, 52.375034], 
+        [4.884235, 52.375108] ]
+      ]
+  },
+  "properties": {
+    "name": "Anne Frank's House",
+    "description": "Museum house where Anne Frank & her family hid from the Nazis in a secret annex, during WWII."
+  }
+}
       </pre>
       </div>
     </div>
   </div>
 </div>
 </aside>
-
 
 ## Overwegingen
 
@@ -96,7 +110,15 @@ De OGC API Features kan in combinatie met zowel GeoJSON als GML worden gebruikt.
 
 
 ## Afspraken
-TODO: Er zijn afspraken nodig over het aantal decimalen in coordinaten en over het gebruikte CRS. Wanneer gebruik je WGS 84, wanneer RD en hoe wissel je die laatste uit. 
+
+### 3D geometrie
+Uit de GeoJSON standaard:
+
+> A position is an array of numbers.  There MUST be two or more elements.  The first two elements are longitude and latitude, or easting and northing, precisely in that order and using decimal numbers.  Altitude or elevation MAY be included as an optional third element.
+
+> An OPTIONAL third-position element SHALL be the height in meters above or below the WGS 84 reference ellipsoid. 
+
+Hierboven wordt een voorbeeld gegeven van een polygoon waarbij de 3D conventie is toegepast. Het representeren van 3D geometrieën beperkt zich daarom tot gevallen waarbij het voldoende is om extrusies te gebruiken van 2D geometrieën (2.5D). Daarnaast wordt er in de praktijk wel eens afgeweken van deze conventie - zo scrhijft <a href="https://docs.mapbox.com/mapbox-gl-js/api/">MapBox GL </a> voor om een property  `height` op te nemen in GeoJSON, voor het weergeven van 3D geometrieën in interactieve kaarten. 
 
 ### Naamgeving
 
@@ -112,25 +134,23 @@ Bron: https://google.github.io/styleguide/jsoncstyleguide.xml
 - Member dienen alleen ASCII alphanumerische tekens te zijn (i.e., “a-z”, “A-Z”, and “0-9”)
 Bron: https://jsonapi.org/recommendations/
 
-### aantal decimalen
-Uit GeoJSON standaard: 
+### Aantal decimalen
+Uit de GeoJSON standaard: 
 
 > The size of a GeoJSON text in bytes is a major interoperability consideration, and precision of coordinate values has a large impact on the size of texts. A GeoJSON text containing many detailed Polygons can be inflated almost by a factor of two by increasing coordinate precision from 6 to 15 decimal places.  For geographic coordinates with units of degrees, 6 decimal places (a default common in, e.g., sprintf) amounts to about 10 centimeters, a precision well within that of current GPS systems.  Implementations should consider the cost of using a greater precision than necessary.
 
 > Furthermore, the WGS 84 datum is a relatively coarse approximation of the geoid, with the height varying by up to 5 m (but generally between 2 and 3 meters) higher or lower relative to a surface parallel to Earth's mean sea level.
 
-### coordinaatreferentiesysteem
-TODO - Wanneer gebruik je WGS 84, wanneer RD of ETRS89 en hoe wissel je die laatste twee uit.
-
-Gebruiken we wel of niet GeoJSON in combinatie met andere coordinaatreferentiesystemen dan WGS 84? En als we dit wel doen, hoe communiceer je dan wat het coordinaatreferentiesysteem van je data is? Hier moeten we afspraken over maken. 
+<!-- TODO - Wanneer gebruik je WGS 84, wanneer RD of ETRS89 en hoe wissel je die laatste twee uit.
+Gebruiken we wel of niet GeoJSON in combinatie met andere coordinaatreferentiesystemen dan WGS 84? En als we dit wel doen, hoe communiceer je dan wat het coordinaatreferentiesysteem van je data is? Hier moeten we afspraken over maken.  -->
 
 ### Gebruik in uitwisseling
 
-De OGC heeft een set templates voor YAML schema’s die horen bij de OGC Feature API standaard, waarin ook GeoJSON geometrie beschreven is. YAML is een serialisatie format waarmee men OpenAPI definities vastlegt. Deze definities worden gebruikt om APIs op een eenduidige manier de beschrijven en te documenteren, zodat gebruikers begrijpen hoe ze de APIs kunnen bevragen. De templates van OGC zijn handig te gebruiken in API's waarmee geo-objecten gepubliceerd worden. De templates voor het definiëren van de schema's voor GeoJSON bevragingen zijn te vinden op [featureCollectionGeoJSON.yaml](http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/featureCollectionGeoJSON.yaml) en [featureGeoJSON.yaml](http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/featureGeoJSON.yaml). Uiteraard bevatten deze templates alleen de generieke informatie die van toepassing is voor het definieren van de geometrie. Specifieke informatie over typeringen en attributen zullen aanbieders zelf moeten toevoegen. 
+De OGC heeft een set templates voor YAML schema’s die horen bij de OGC Feature API standaard, waarin ook GeoJSON geometrie beschreven is. YAML is een serialisatie format waarmee men OpenAPI definities vastlegt. Deze definities worden gebruikt om APIs op een eenduidige manier de beschrijven en te documenteren, zodat gebruikers begrijpen hoe ze de APIs kunnen bevragen. De templates van OGC zijn handig te gebruiken in API's waarmee geo-objecten gepubliceerd worden. De templates voor het definiëren van de schema's voor GeoJSON bevragingen zijn te vinden op [featureCollectionGeoJSON.yaml](http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/featureCollectionGeoJSON.yaml) en [featureGeoJSON.yaml](http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/featureGeoJSON.yaml). Uiteraard bevatten deze templates alleen de generieke informatie die van toepassing is voor het definiëren van de geometrie. Specifieke informatie over typeringen en attributen zullen aanbieders zelf moeten toevoegen. 
 
-## how to
-TODO
+<!-- ## how to -->
+<!-- - Content negotiation met GeoJSON: het media type `application/geo+json` wordt gebruikt om aan te geven dat data wordt aangeboden in  GeoJSON formaat. -->
+### URIs in GeoJSON
 
-- Content negotiation met GeoJSON: het media type `application/geo+json` wordt gebruikt om aan te geven dat data wordt aangeboden in  GeoJSON formaat.
-- hoe: URI's in GeoJSON (zie Note hierover in [BP 10](https://www.w3.org/TR/sdw-bp/#entity-level-links)).
+JSON (en daarbij GeoJSON) staat alleen zekere primitieve datatypes toe. Om deze reden worden URIs geregistreerd als strings. Om de URIs alsnog te kunnen interpreteren zijn conventies nodig. Echter is het vanuit GeoJSON niet mogelijk om zulke conventies vast te leggen. Daarom is het belangrijk om informatie over je GeoJSON bestanden (bijvoorbeeld: details over object types, definities, etc) te registreren in de documentatie. Dit wordt verder beschreven in [[Spatial Data on the Web Best Practice] 10](https://www.w3.org/TR/sdw-bp/#entity-level-links)).
 
