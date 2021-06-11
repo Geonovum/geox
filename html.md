@@ -39,7 +39,7 @@ In HTML kunnen eenvoudig relaties gelegd worden met andere bronnen zoals begripp
 - een volledige dataset downloaden, bijvoorbeeld om te combineren met een andere dataset, is lastiger
 - verwerking van de geometrie in een ander systeem (zoals een GIS desktop systeem) is lastig -->
 
-## Voorbeeld
+## Voorbeelden
 
 <aside class="example ds-selector-tabs" title="Voorbeelden van geometrie voor HTML">
 <div class="container--tabs" style="height">
