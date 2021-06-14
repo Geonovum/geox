@@ -9,8 +9,7 @@ GML is gestandaardiseerd bij het OGC en, daar OGC en ISO met elkaar samenwerken,
 <!-- <span id="vinkje">&#10003;</span>  <span id="kruisje">&#10005;</span>  <span id="tilde">&#65374;</span> 
  --> -->
 
-## Voorbeeld
-
+## Voorbeelden
 <aside class="example ds-selector-tabs" title="Voorbeelden van geometrie voor GeoJSON" style="overflow-x: hidden;">
 <div class="container--tabs">
   <div class="selectors">
@@ -20,28 +19,61 @@ GML is gestandaardiseerd bij het OGC en, daar OGC en ISO met elkaar samenwerken,
     </ul>
     <div class="tab-content">
       <div id="gml-punt" class="tab-pane">
-        <pre>
-&lt;FeatureCollection>
-  &lt;featureMember>
-    &lt;ex:Gebouw gml:id="H10">
-     &lt;ex:naam>Anne Frank's Huis&lt;/ex:naam>
-     &lt;geometrie>
-        &lt;gml:Point gml:id="geom1">
-            &lt;gml:pos>4.884235 52.375108&lt;/gml:pos>
-        &lt;/gml:Point>
-     &lt;/geometrie>     
-    &lt;/ex:Gebouw>
-  &lt;/featureMember>
-&lt;/FeatureCollection>
+        Dit voorbeeld toont een fragment GML data in 3D, conform het [[CityGML]] model.
+      	<pre>
+(*Bron: [Open datasets created with 3dfier](https://3d.bk.tudelft.nl/opendata/3dfier/)*)
+<br>&lt;CityModel xmlns="http://www.opengis.net/citygml/2.0"
+<br>xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<br>xmlns:gml="http://www.opengis.net/gml"
+<br>xmlns:wtr="http://www.opengis.net/citygml/waterbody/2.0"
+<br>xsi:schemaLocation="http://www.opengis.net/citygml/2.0 ./CityGML_2.0/CityGML.xsd">
+<br>&lt;gml:name>my 3dfied map&lt;/gml:name>
+<br>&lt;gml:boundedBy>
+  <br>&lt;gml:Envelope srsDimension="3" srsName="urn:ogc:def:crs:EPSG::7415">
+      <br>&lt;gml:lowerCorner>84122.824 446278.566 0&lt;/gml:lowerCorner>
+      <br>&lt;gml:upperCorner>85999.614 447862.988 100&lt;/gml:upperCorner>
+  <br>&lt;/gml:Envelope>
+<br>&lt;/gml:boundedBy>
+<br>&lt;cityObjectMember>
+    <br>&lt;wtr:WaterBody gml:id="be551d510-0324-11e6-b420-2bdcc4ab5d7f">
+        <br>&lt;wtr:lod1MultiSurface>
+            <br>&lt;gml:MultiSurface>
+                <br>&lt;gml:surfaceMember>
+                    <br>&lt;gml:Polygon>
+                        <br>&lt;gml:exterior>
+                            <br>&lt;gml:LinearRing>
+                                <br>&lt;gml:pos>85530.000 446588.709 -0.010&lt;/gml:pos>
+                                <br>&lt;gml:pos>85531.832 446605.616 -0.010&lt;/gml:pos>
+                                <br>&lt;gml:pos>85478.851 446567.507 -0.010&lt;/gml:pos>
+                                <br>&lt;gml:pos>85530.000 446588.709 -0.010&lt;/gml:pos>
+                            <br>&lt;/gml:LinearRing>
+                        <br>&lt;/gml:exterior>
+                    <br>&lt;/gml:Polygon>
+                <br>&lt;/gml:surfaceMember>
+              <br>&lt;/gml:MultiSurface>
+            <br>&lt;/wtr:lod1MultiSurface>
+        <br>&lt;/wtr:WaterBody>
+      <br>&lt;/cityObjectMember>
+<br>&lt;/CityModel>
 		</pre>        
       </div>
       <div id="gml-polygoon" class="tab-pane active">
+      Een fragment GML voor het voorbeeld uit de andere secties ([HTML](#HTML), [GeoJSON](#GeoJSON), [RDF](#RDF)), conform model 'ex'.
     	<pre>
-&lt;FeatureCollection>
+&lt;FeatureCollection xmlns:gml="http://www.opengis.net/gml/3.2"
+xmlns="http://www.geonovum.nl/IMVoorbeeld"
+xmlns:ex="http://www.example.com/ex"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+&lt;gml:boundedBy>
+  &lt;gml:EnvelopesrsDimension="2"srsName="urn:opengis:def:crs:EPSG::4326">
+    &lt;gml:lowerCorner>4.884235 52.375108&lt;/gml:lowerCorner>
+    &lt;gml:upperCorner>4.884451 52.375034 4.884235&lt;/gml:upperCorner>
+  &lt;/gml:Envelope>
+&lt;/gml:boundedBy>
   &lt;featureMember>
     &lt;ex:Gebouw gml:id="H10">
      &lt;ex:naam>Anne Frank's Huis&lt;/ex:naam>
-     &lt;geometrie>
+     &lt;ex:geometrie>
         &lt;gml:Polygon gml:id="geom2">
             &lt;gml:exterior>
                 &lt;gml:LinearRing>
@@ -49,7 +81,7 @@ GML is gestandaardiseerd bij het OGC en, daar OGC en ISO met elkaar samenwerken,
                 &lt;/gml:LinearRing>
             &lt;/gml:exterior>
         &lt;/gml:Polygon>
-     &lt;/geometrie>     
+     &lt;/ex:geometrie>     
     &lt;/ex:Gebouw>
   &lt;/featureMember>
 &lt;/FeatureCollection>

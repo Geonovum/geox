@@ -1,5 +1,7 @@
 # GeoJSON
 
+## Introductie
+
 JSON [[RFC8259]] is een codering voor gegevens in een op JavaScript gebaseerd formaat. Vaak wordt JSON als alternatief voor XML gebruikt om gestructureerde gegevens te coderen en uit te wisselen.
 
 GeoJSON [[RFC7946]] gebruikt JSON om geografische gegevens te coderen. Het is bedoeld om simpele geografische objecten te representeren inclusief hun ruimtelijke en niet-ruimtelijke eigenschappen. GeoJSON ondersteunt de volgende geometrische objecten: 
@@ -22,7 +24,7 @@ In veel gevallen is de nauwkeurigheid van GeoJSON in combinatie met WGS-84 voldo
 
 De OGC API Features kan in combinatie met zowel GeoJSON als GML worden gebruikt. Dit laatste is alleen nog interessant als er behoefte is aan nauwkeurigere geometrieën of aan bogen of volumes (die in GeoJSON niet worden ondersteund). 
 
-## Voorbeeld
+## Voorbeelden
 
 <aside class="example ds-selector-tabs" title="Voorbeelden van geometrie voor GeoJSON" style="overflow-x: hidden;">
 <div class="container--tabs">
@@ -42,17 +44,17 @@ De OGC API Features kan in combinatie met zowel GeoJSON als GML worden gebruikt.
     <br>"coordinates": [           
             <br>[
                 <br>[
-                    <br>[4.884067, 52.375343], [4.883980, 52.375252],
-                    <br>[4.884259, 52.375159], [4.884299, 52.375205],
-                    <br>[4.884336, 52.375191], [4.884375,52.3752393],
-                    <br>[4.884067, 52.375343]
+                    <br>[4.884067, 52.375343, 5], [4.883980, 52.375252, 5],
+                    <br>[4.884259, 52.375159, 5], [4.884299, 52.375205, 5],
+                    <br>[4.884336, 52.375191, 5], [4.884375,52.3752393, 5],
+                    <br>[4.884067, 52.375343, 5]
                 <br>]
            <br>],
            <br>[
                <br>[
-                   <br>[4.884196, 52.375238], [4.884169, 52.375212], 
-                   <br>[4.884214, 52.375198], [4.884238, 52.375223], 
-                   <br>[4.884196, 52.375238]
+                   <br>[4.884196, 52.375238, 5], [4.884169, 52.375212, 5], 
+                   <br>[4.884214, 52.375198, 5], [4.884238, 52.375223, 5], 
+                   <br>[4.884196, 52.375238, 5]
                <br>]
            <br>]
          <br>]

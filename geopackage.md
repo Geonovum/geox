@@ -35,9 +35,7 @@ GeoPackage werkt standaard met numerieke ID's. Dit geeft problemen met ID's van 
 | Is het format geschikt om semantiek aan te koppelen / in uit te drukken?           | <span id="kruisje">&#10005;</span> |             |
 
 ## Afspraken
-TODO
-
-Er is behoefte aan afspraken over naamgeving van klassen/attributen, en hoe je visualisatie/metadata opneemt.
+<!-- TODO Er is behoefte aan afspraken over naamgeving van klassen/attributen, en hoe je visualisatie/metadata opneemt. -->
 
 ### Naamgeving
 
