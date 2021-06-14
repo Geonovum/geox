@@ -119,7 +119,7 @@ De generieke toepassingen zijn:
 <aside class="note">
 Om de lezer te helpen willen we het mogelijk maken om de vragenlijst in te vullen en, gebaseerd op het resultaat, een bepaalde view op de tabellen in hoofdstuk 4-8 te activeren. Hiermee zou lezer in een oogopslag kunnen zien wat de voordelen en nadelen zijn van elke encoding, gericht op de toepassing(en).  Wanneer de lezer op een van de generieke toepassingen in het diagram klikt is de view op de generieke toepassing gebaseerd. </aside>
 
-## Overzicht van de formaten
+<!-- ## Overzicht van de formaten
 
 ### HTML
 Positionering:
@@ -155,4 +155,4 @@ Positionering:
 - Publiceren van data op het web, in de meest rijke vorm
 - Inclusief semantiek
 - Voor integratie van data uit meerdere verschillende bronnen
-- Voor slim bevragen van data, waarbij geo en niet-geo aspecten een rol kunnen spelen
+- Voor slim bevragen van data, waarbij geo en niet-geo aspecten een rol kunnen spelen -->
