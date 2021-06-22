@@ -80,6 +80,13 @@ var respecConfig = {
       status: "Definitief", 
       publisher: "ISO",
       date: "2019-12",
+    },
+    "iso-13249-3": {
+      title: "Information technology — Database languages — SQL multimedia and application packages — Part 3: Spatial",
+      href: "https://www.iso.org/standard/60343.html", 
+      status: "Definitief", 
+      publisher: "ISO",
+      date: "2016-01",
     }
   //  "ISO19136": {
   //    "href": "https://www.iso.org/standard/32554.html",
