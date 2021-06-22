@@ -19,7 +19,7 @@ GML is gestandaardiseerd bij het OGC en, daar OGC en ISO met elkaar samenwerken,
     </ul>
     <div class="tab-content">
       <div id="gml-punt" class="tab-pane">
-        Dit voorbeeld toont een fragment GML data in 3D, conform het [[CityGML]] model.
+        Dit voorbeeld toont een fragment GML data in 3D, conform het [[CityGML20]] model.
       	<pre>
 (*Bron: [Open datasets created with 3dfier](https://3d.bk.tudelft.nl/opendata/3dfier/)*)
 <br>&lt;CityModel xmlns="http://www.opengis.net/citygml/2.0"
