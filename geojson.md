@@ -12,15 +12,13 @@ GeoJSON [[RFC7946]] gebruikt JSON om geografische gegevens te coderen. Het is be
 
 Een GeoJSON object representeert ofwel een losse geometrie, een `Geometry`; ofwel een enkel geo-object, een `Feature`; of een lijst van geo-objecten, een `FeatureCollection` met daarin meerdere features. Elk `Feature` bevat een `geometry` eigenschap waarin de geometrie is opgenomen; en een `properties` eigenschap waarin de niet-geometrische eigenschappen staan.  
 
-GeoJSON is ontstaan als informele community standaard, opgesteld in een internet werkgroep. Ondersteuning voor GeoJSON is er in sommige geografische databases en GIS softwarepakketten, en is breed aanwezig in web mapping libraries en APIs van bijvoorbeeld Google, Yahoo en Twitter.
+GeoJSON is ontstaan als informele community standaard, opgesteld in een internet werkgroep. Inmiddels is het een [IETF](https://www.ietf.org/) standaard. Ondersteuning voor GeoJSON is er in sommige geografische databases en GIS softwarepakketten, en is breed aanwezig in web mapping libraries en APIs van bijvoorbeeld Google, Yahoo en Twitter.
 
 GeoJSON is een prima formaat voor de meeste toepassingen - zeker in web toepassingen - bijvoorbeeld om iconen of polygonen bovenop een kaart op het web weer te geven. De browser toont dan een basiskaart, haalt de daar bovenop weer te geven geodata op, en combineert deze met de basiskaart met behulp van een JavaScript library.
 
 Een voordeel van dit formaat is dat het te lezen is in een tekst editor, in tegenstelling tot GeoPackage bestanden die binair zijn. Dit maakt GeoJSON wat eenvoudiger in gebruik. JSON is heel geschikt voor web toepassingen, bijvoorbeeld voor publicatie van data in een API of voor visualisatie op het web. Omdat JSON gebaseerd is op JavaScript, is het direct te gebruiken in web toepassingen, zonder dat het eerst geparseerd of geconverteerd moet worden. Het heeft weinig overhead waardoor het goed toepasbaar is binnen een API. Er zijn bovendien veel tools beschikbaar om ermee te werken. Deze voordelen maken GeoJSON goed bruikbaar voor niet-geo experts, die JSON vaak al kennen. 
 
-GeoJSON schrijft WGS-84 voor; dit maakt het geschikt voor visualisatie op het web. Een nadeel van WGS-84 is de lagere nauwkeurigheid in vergelijking met RD; maar voor de meeste toepassingen is data met hoge nauwkeurigheid niet nodig. 
-
-In veel gevallen is de nauwkeurigheid van GeoJSON in combinatie met WGS-84 voldoende; op het Geoforum wordt er bijvoorbeeld zelden gevraagd om data met hoge nauwkeurigheid. Belangrijker is vindbaarheid van data. De aanbeveling is om GeoJSON alleen in combinatie met WGS-84 te gebruiken. De [Spatial Data on the Web Best Practice](https://www.w3.org/TR/sdw-bp/#bp-crs-choice) raadt aan om geodata, zodra je het aanbiedt op het web, in ieder geval altijd in WGS-84 te publiceren, en daarnaast in andere CRS als daar expliciete behoefte aan is. 
+GeoJSON schrijft WGS-84 voor; dit maakt het geschikt voor visualisatie op het web. Een nadeel van WGS-84 is de lagere nauwkeurigheid in vergelijking met RD; maar voor veel toepassingen is data met hoge nauwkeurigheid niet nodig. Op het [Geoforum](https://geoforum.nl/) wordt er bijvoorbeeld zelden gevraagd om data met hoge nauwkeurigheid. De [Spatial Data on the Web Best Practice](https://www.w3.org/TR/sdw-bp/#bp-crs-choice) raadt aan om geodata, zodra je het aanbiedt op het web, in ieder geval altijd in WGS-84 te publiceren, en daarnaast in andere CRS als daar expliciete behoefte aan is. 
 
 De OGC API Features kan in combinatie met zowel GeoJSON als GML worden gebruikt. Dit laatste is alleen nog interessant als er behoefte is aan nauwkeurigere geometrieën of aan bogen of volumes (die in GeoJSON niet worden ondersteund). 
 
@@ -103,9 +101,9 @@ De OGC API Features kan in combinatie met zowel GeoJSON als GML worden gebruikt.
 | Is het format gebaseerd op algemene ict standaarden?                               |<span id="vinkje">&#10003;</span>  | Gebaseerd op JSON (Javascript Object Notation), waardoor het heel eenvoudig is om er native (i.e. zonder te hoeven parsen of converteren) mee te werken in web browsers en veel programmeertalen (in tegenstelling tot XML/GML). Praktische voordelen: het is voor mensen te lezen in een tekst editor, er zijn veel tools en bibliotheken voor beschikbaar en er bestaat een grote community die ermee werkt. |
 | Wordt het format ondersteund in GIS software?                                      |<span id="tilde">&#65374;</span>   | Deels, niet in alle pakketten [check nodig]           |
 | Ondersteunt het format het uitdrukken van schema's, en validatie tegen dat schema? |<span id="vinkje">&#10003;</span>  | JSON heeft een eigen schema formaat, [JSON Schema](https://json-schema.org/draft/2020-12/json-schema-core.html). Daarnaast zijn er YAML definities beschikbaar.            |
-| Ondersteunt het format meerdere coordinaatsystemen?                                |<span id="tilde">&#65374;</span>   |  Formeel niet, hoewel er een loophole in de standaard zit en dit in de praktijk wel door tooling ondersteund wordt. Als er door alle aanbiedende en gebruikende partijen een afspraak over is, kan GeoJSON dus in combinatie met een andere CRS gebruikt worden.|
-| Ondersteunt het format 3D?                                                         |<span id="tilde">&#65374;</span>   |  Hoewel GeoJSON 3D geometrieen niet direct ondersteunt, is het wel mogelijk om een hoogtecoordinaat (altitude) op te nemen bij punten, lijnen en vlakken. Hiermee zou je 2D polygonen kunnen optrekken naar 3D. |
-| Ondersteunt het format alle simple features geometrieen?                           |<span id="vinkje">&#10003;</span>  | Ja, GeoJSON ondersteunt alle 7 geometrietypes vanuit Simple Features. <!-- Echter maakt het format niet gebruik van een feature model - dit betekent dat de features verschillende hoeveelheden (en types) attributen kunnen bezitten, waardoor uitwisseling van data conform het General Feature Model lastig is. --> |
+| Ondersteunt het format meerdere coordinaatsystemen?                                |<span id="tilde">&#65374;</span>   |  Formeel niet, hoewel er een loophole in de standaard zit en dit in de praktijk wel door tooling ondersteund wordt: als er door alle aanbiedende en gebruikende partijen een afspraak over is, kan GeoJSON in combinatie met een andere CRS gebruikt worden.|
+| Ondersteunt het format 3D?                                                         |<span id="tilde">&#65374;</span>   |  Hoewel GeoJSON 3D geometrieën niet direct ondersteunt, is het wel mogelijk om een hoogtecoordinaat (altitude) op te nemen bij punten, lijnen en vlakken. Hiermee zou je 2D polygonen kunnen optrekken naar 3D. |
+| Ondersteunt het format alle simple features geometrieën?                           |<span id="vinkje">&#10003;</span>  | Ja, GeoJSON ondersteunt alle 7 geometrietypes vanuit Simple Features. <!-- Echter maakt het format niet gebruik van een feature model - dit betekent dat de features verschillende hoeveelheden (en types) attributen kunnen bezitten, waardoor uitwisseling van data conform het General Feature Model lastig is. --> |
 | Ondersteunt het format andere ISO 19107 geometrie types?                           |<span id="kruisje">&#10005;</span> | Geen ondersteuning voor bogen, volumes of andere niet-simpele geometrietypen.            |
 | Is het format geschikt voor grote volumes?                                         |<span id="tilde">&#65374;</span>   | Het zit een beetje tussen andere formaten in, maar is beter geschikt voor kleine volumes.           |
 | Is het format geschikt om semantiek aan te koppelen / in uit te drukken?           |<span id="vinkje">&#10003;</span>  |  Het is mogelijk om GeoJSON met linked data te combineren door gebruik te maken van [JSON-LD 1.1](https://www.w3.org/TR/json-ld11/). |
@@ -127,13 +125,13 @@ Hierboven wordt een voorbeeld gegeven van een polygoon waarbij de 3D conventie i
 GeoJSON heeft geen specifieke naamgevingsconventies, echter kunnen de conventies van JSON gebruikt worden:
 
 - Attribuut namen dienen betekenisvol te zijn, met duidelijke semantiek.
-- Attribuut namen dienen camel-cased (ie, wordWordWord) ascii strings te zijn.
+- Attribuut namen dienen camel-cased (ie, wordWordWord) ASCII strings te zijn.
 - Het eerste teken dien een letter, een underscore (\_) of een dollarteken ($) te zijn. Navolgende tekens kunnen letters, cijfers, underscore of dollartekens zijn. Gereserveerde JavaScript keywords moeten vermeden worden.
 Bron: https://google.github.io/styleguide/jsoncstyleguide.xml
 
 - Member namen dienen camel-cased te zijn.
-- Member dienen te beginnen en te eindigen met “a-z” (U+0061 tot U+007A)
-- Member dienen alleen ASCII alphanumerische tekens te zijn (i.e., “a-z”, “A-Z”, and “0-9”)
+- Member namen dienen te beginnen en te eindigen met “a-z” (U+0061 tot U+007A)
+- Member namen dienen alleen ASCII alphanumerieke tekens te zijn (i.e., “a-z”, “A-Z”, and “0-9”)
 Bron: https://jsonapi.org/recommendations/
 
 ### Aantal decimalen
@@ -154,5 +152,5 @@ De OGC heeft een set templates voor YAML schema’s die horen bij de OGC Feature
 <!-- - Content negotiation met GeoJSON: het media type `application/geo+json` wordt gebruikt om aan te geven dat data wordt aangeboden in  GeoJSON formaat. -->
 ### URIs in GeoJSON
 
-JSON (en daarbij GeoJSON) staat alleen zekere primitieve datatypes toe. Om deze reden worden URIs geregistreerd als strings. Om de URIs alsnog te kunnen interpreteren zijn conventies nodig. Echter is het vanuit GeoJSON niet mogelijk om zulke conventies vast te leggen. Daarom is het belangrijk om informatie over je GeoJSON bestanden (bijvoorbeeld: details over object types, definities, etc) te registreren in de documentatie. Dit wordt verder beschreven in [[Spatial Data on the Web Best Practice] 10](https://www.w3.org/TR/sdw-bp/#entity-level-links)).
+JSON (en daarbij GeoJSON) staat maar een beperkt aantal primitieve datatypes toe. Om deze reden worden URIs geregistreerd als strings. Om de URIs alsnog te kunnen interpreteren zijn conventies nodig. Echter is het vanuit GeoJSON niet mogelijk om zulke conventies vast te leggen. Daarom is het belangrijk om informatie over je GeoJSON bestanden (bijvoorbeeld: details over object types, definities, etc) te registreren in de documentatie. Dit wordt verder beschreven in [[Spatial Data on the Web Best Practice] 10](https://www.w3.org/TR/sdw-bp/#entity-level-links)).
 
