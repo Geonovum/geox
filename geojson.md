@@ -93,7 +93,8 @@ De OGC API Features kan in combinatie met zowel GeoJSON als GML worden gebruikt.
 </div>
 </aside>
 
-## Overwegingen
+## Keuze-aspecten
+De volgende tabel geeft aan hoe GeoJSON scoort op de aspecten die een rol spelen bij de keuze voor een bestandsformaat.
 
 | Vraag                                                                              | Antwoord | Toelichting |
 |------------------------------------------------------------------------------------|----------|-------------|
