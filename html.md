@@ -4,11 +4,12 @@ HTML is een specificatie van het W3C [[html5]] om gegevens gestructureerd aan te
 
 Geodata in HTML kan op verschillende manieren gepubliceerd worden. Een HTML pagina kan de geometrie zelf bevatten en visualiseren. Dit wordt gedaan met de hulp van (gestandaardiseerde) webtechnologie als CSS, JavaScript, SVG / web canvas. Hiermee kan de onderliggende data op dynamische wijze geladen en bekeken worden op een web pagina. En steeds meer APIs leveren ook HTML representaties van geo-objecten op. Zo is in de core van OGC API Features [[OAPIF]] [HTML een aanbevolen formaat](http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_requirements_class_html) voor representatie van geodata. Aangezien HTML zelf geen ondersteuning biedt voor geodata (het kent geen aparte elementen voor geometrieën), zal de data via libraries en tools van tevoren verwerkt moeten worden voor visualisatie doeleinden. 
 
-Het is echter wel mogelijk om de geometrie gestructureerd op te nemen in een HTML pagina, door middel van een zogenaamde annotatie. Met een annotatie beschrijf je de geodata op zo'n manier dat het zoekmachines toestaat de data op de pagina te indexeren en mogelijk te combineren met andere data. Om de betekenis van de data te kunnen interpreteren worden hiervoor vocabulaires gebruikt. Annotaties in HTML zijn vaak volgens het begrippenkader van [Schema.org](https://schema.org/) opgesteld, een populair vocabulair waarmee zoekmachines goed overweg kunnen. Slechts enkele eenvoudige geometrietypen kunnen worden beschreven met Schema.org: 
+Het is echter wel mogelijk om de geometrie gestructureerd op te nemen in een HTML pagina, door middel van een zogenaamde annotatie. Met een annotatie beschrijf je de geodata op zo'n manier dat het zoekmachines toestaat de data op de pagina te indexeren en mogelijk te combineren met andere data. Om de betekenis van de data te kunnen interpreteren worden vocabulaires gebruikt. Annotaties in HTML zijn vaak volgens het begrippenkader van [Schema.org](https://schema.org/) opgesteld, een populair vocabulair waarmee zoekmachines goed overweg kunnen. Slechts enkele eenvoudige geometrietypen kunnen worden beschreven met Schema.org: 
 - punt: `schema:GeoCoordinates` (met properties `schema:latitude` en `schema:longitude`)
 - lijnen: `schema:GeoShape` (met property `schema:line`) 
 - vlak: `schema:GeoCircle` of `schema:GeoShape` (met property `schema:box`, `schema:circle` of `schema:line`)
- Het is ook mogelijk om een hoogtegetal op te nemen - zowel voor de geometrieën als voor deze `elevation` geldt dat het in WGS84 moet worden geleverd. De geometrie wordt meestal beschouwd als een vorm van metadata van de HTML pagina. Hoe dan ook, de annotaties die hiervoor nodig zijn kunnen op verschillende manieren verwerkt worden in de HTML. De annotaties kunnen direct verbonden worden met de content die getoont wordt op de pagina (middels microdata of RDFa), of data en inhoud kunnen apart gehouden worden door fragmenten van de data op te nemen die voor de gebruiker verborgen blijven (middels JSON-LD, bijvoorbeeld).
+
+ Het is ook mogelijk om een hoogtegetal op te nemen - zowel voor de geometrieën als voor deze `elevation` geldt dat het in WGS84 moet worden geleverd. De geometrie wordt meestal beschouwd als een vorm van metadata van de HTML pagina. De annotaties die hiervoor nodig zijn kunnen op verschillende manieren verwerkt worden in de HTML. De annotaties kunnen direct verbonden worden met de content die getoont wordt op de pagina (middels microdata of RDFa), of de geodata kunnen apart opgenomen worden in een JSON of JSON-LD fragment.
 
 In HTML kunnen eenvoudig relaties gelegd worden met andere bronnen zoals begrippenkaders of gerelateerde geo-objecten. Als deze geo-objecten op dezelfde manier ook relaties leggen naar andere bronnen, kan dit nieuwe inzichten opleveren. 
 
@@ -100,7 +101,9 @@ about="http://www.ldproxy.net/bag/inspireadressen/inspireadressen.3329155"&gt;
 </div>
 </aside>
 
-## Overwegingen
+## Keuze-aspecten
+
+De volgende tabel geeft aan hoe HTML scoort op de aspecten die een rol spelen bij de keuze voor een bestandsformaat.
 
 | Vraag                                                                              | Antwoord | Toelichting |
 |------------------------------------------------------------------------------------|----------|-------------|
