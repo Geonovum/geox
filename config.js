@@ -10,6 +10,13 @@ var respecConfig = {
       url: "https://www.geonovum.nl",
     }
   ],
+  authors: [
+    {
+      name: "Linda van den Brink",
+      url: "https://www.geonovum.nl"},
+      {name: "Gabriella Wiersma",
+      url: "https://www.geonovum.nl"},
+  ],
   shortName: "geox",
   pubDomain: "nen3610",
   github: "https://github.com/geonovum/geox",
