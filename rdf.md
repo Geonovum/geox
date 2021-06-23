@@ -95,8 +95,9 @@ Hoe geometrie in RDF moet worden uitgedrukt is beschreven in vocabulaires. De OG
 
 <!-- <span id="vinkje">&#10003;</span>  <span id="kruisje">&#10005;</span>  <span id="tilde">&#65374;</span> 
  --> -->
-
-## Overwegingen 
+ 
+## Keuze-aspecten
+De volgende tabel geeft aan hoe RDF scoort op de aspecten die een rol spelen bij de keuze voor een bestandsformaat.
 
 | Vraag                                                                              | Antwoord | Toelichting |
 |------------------------------------------------------------------------------------|----------|-------------|
