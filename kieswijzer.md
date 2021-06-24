@@ -32,7 +32,7 @@ Validatie, het controleren van de datastructuur en -inhoud tegen vooraf afgespro
 Validatie kan zich richten op verschillende aspecten:
 - Validatie van een vooraf afgesproken datastructuur (dat meestal is vastgelegd in een informatiemodel)
 - Validatie van business rules (regels over de inhoud en afhankelijkheden tussen onderdelen van de data)
-- Validatie van geometrieën
+- Validatie van geometrieën 
 
 Al deze validatie-aspecten worden in wisselende mate ondersteund door de verschillende formaten. Als je een dataset wilt valideren kun je dit altijd uitprogrammeren, maar vaak biedt het voordelen om zonder programmeerwerk te kunnen valideren. Dit is bijvoorbeeld bij op XML gebaseerde formaten mogelijk omdat het uitdrukken van dataschema's een goed geïmplementeerd onderdeel van de standaard is. 
 
@@ -66,6 +66,7 @@ Informatie over de betekenis, ofwel semantiek, kan op verschillende manieren wor
 ### Samenvatting: de aspecten in samenhang
 De hierboven uitgelegde aspecten zijn samen te vatten in de volgende vragen, waarbij ook de afhankelijkheden tussen de vragen zijn meegenomen:
 
+<aside id="keuze-vragen">
 **1. Gaat het om het aanleveren van data (in ‘keten of tussen systemen), of het uitleveren van data aan eindgebruikers?**
 - In geval van uitleveren:
 -- 	**Is de gebruiker bekend of onbekend?** 
@@ -93,6 +94,7 @@ De hierboven uitgelegde aspecten zijn samen te vatten in de volgende vragen, waa
 **6. Is semantiek belangrijk (gaat het om meer dan de uitwisseling van geometrieën)?**
 - Zo ja:
 --	**Moet de semantiek op gestructureerde wijze worden vastgelegd?**
+</aside>
 
 Welk formaat, of welke formaten, de beste keuze zijn, hangt af van de antwoorden op deze vragen. Ze geven inzicht in welke aspecten een belangrijke rol spelen voor de beoogde toepassing. Met deze informatie kan de lezer de tabellen in hoofdstuk 4-8 nagaan, en op basis daarvan een afweging maken over welke formaten het beste aansluiten op de behoeften die uit de antwoorden naar voren zijn gekomen. 
 
