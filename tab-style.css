@@ -1,5 +1,5 @@
 a .container--tabs {
-  margin: 2rem;
+  margin: 2rem; 
 }
 
 .container--tabs .nav-tabs {
@@ -13,6 +13,7 @@ a .container--tabs {
   float: left;
   margin-bottom: -2px;
   padding: 1.5px;
+  list-style: none; 
 
 
 }
@@ -21,18 +22,15 @@ a .container--tabs {
   float: left;
   margin-right: 0px;
   line-height: 1.42857143;
-  border: 1px solid #ddd;
   border-radius: 4px 4px 4px 4px;
-  /*border-bottom-color: transparent;*/
+  border-bottom-color: transparent;
 }
 
 .container--tabs .nav-tabs>li.active>a,
 .container--tabs .nav-tabs>li.active>a:hover,
 .container--tabs .nav-tabs>li.active>a:focus {
-  /*color: #555;*/
   cursor: default;
-  /*background-color: #fff;*/
-/*  border: 1px solid #ddd;*/
+border: 1px solid #ddd;
 }
 
 .container--tabs .tab-content {

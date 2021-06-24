@@ -49,18 +49,6 @@ th, td {
 /******************************************************************************/
 /*                                Keuzehulp vragen                            */
 /******************************************************************************/
-ul { list-style: none; }
-
-.check-container {
-    position: left;
-    width: 90 %;
-    background: #e8e8e8;
-}
-
-div.question {
-  padding: 20px;
-}
-
-.checkhidden {
-display: none;
+#keuze-vragen ul { 
+    list-style: none; 
 }
