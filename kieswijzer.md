@@ -66,7 +66,7 @@ Informatie over de betekenis, ofwel semantiek, kan op verschillende manieren wor
 ### Samenvatting: de aspecten in samenhang
 De hierboven uitgelegde aspecten zijn samen te vatten in de volgende vragen, waarbij ook de afhankelijkheden tussen de vragen zijn meegenomen:
 
-<aside id="keuze-vragen">
+<div id="keuze-vragen">
 **1. Gaat het om het aanleveren van data (in ‘keten of tussen systemen), of het uitleveren van data aan eindgebruikers?**
 - In geval van uitleveren:
 -- 	**Is de gebruiker bekend of onbekend?** 
@@ -94,7 +94,7 @@ De hierboven uitgelegde aspecten zijn samen te vatten in de volgende vragen, waa
 **6. Is semantiek belangrijk (gaat het om meer dan de uitwisseling van geometrieën)?**
 - Zo ja:
 --	**Moet de semantiek op gestructureerde wijze worden vastgelegd?**
-</aside>
+</div>
 
 Welk formaat, of welke formaten, de beste keuze zijn, hangt af van de antwoorden op deze vragen. Ze geven inzicht in welke aspecten een belangrijke rol spelen voor de beoogde toepassing. Met deze informatie kan de lezer de tabellen in hoofdstuk 4-8 nagaan, en op basis daarvan een afweging maken over welke formaten het beste aansluiten op de behoeften die uit de antwoorden naar voren zijn gekomen. 
 
