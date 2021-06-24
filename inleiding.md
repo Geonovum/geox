@@ -1,36 +1,13 @@
 
 # Inleiding
-Dit document is een handreiking over het modelleren en uitwisselen van geometrie. Wanneer we het over geometrie hebben, hebben we het dus over Simple Features en vector data. En wat is er (niet) speciaal aan vector data, waarom moet je nadenken als je dit wil modelleren en uitwisselen?
+Hoewel de Geography Markup Language (GML) nog steeds een van de belangrijkste gestandaardiseerde uitwisselformaten is, zijn er in de laatste jaren een aantal alternatieven in opkomst. Aangezien GML een vrij complexe standaard is, is niet geschikt voor alle toepassingen. Deze handreiking geeft daarom een overzicht van de meest populaire alternatieven voor het uitwisselen en publiceren van vectordata - volgens standaarden die vrij toegankelijk zijn. Het gaat hierbij om 'lichtere bestandsformaten', in tegenstelling tot het allesomvattende (maar daardoor ook complexere) GML formaat. 
 
-Dan over het modelleren van deze geometrie: In een informatiemodel (conceptueel/logisch?) geef je aan welke geometrieen aan bod komen. In de X standaard wordt dit beschreven. Het is belangrijk om te herinneren dat je bij het modelleren ook een paradigma kiest: vaak o-o, maar je zou ook eav kunnen gebruiken. Hoe heeft de keuze voor zo'n paradigma impact op de modellering/uitwisseling van geometrieen? Je hebt bij bepaalde keuzes in het model dan ''extra'' encoding rules nodig om het conform de regels van de uitwisselstandaard te kunnen encoden. Ook kan een bepaalde paradigma interessanter zijn, afhankelijk van je applicatie. Meer over datamodellen en de uitwisseling vind je in hoofdstuk X.
+Voor het uitwisselen van geodata kan men tegenwoordig dus kiezen uit verschillende bestandsformaten. Wat het beste formaat is, is afhankelijk van een meerdere aspecten. Vroeg in het proces (bij het modelleren van de data) kan hier bijvoorbeeld al rekening mee worden gehouden. Tijdens het modelleerproces worden namelijk beslissingen genomen die later invloed kunnen hebben op de keuze voor een specifiek formaat - zoals de geometrietypes die worden vastgelegd, gebruikte modelleerparadigma, etc. Echter kun je vanuit één informatiemodel ook weer meerdere implementaties in uitwisselingsformaten afleiden - beslissingen in het model sluiten dit niet per se uit. Kortom: de keuze voor een formaat hangt altijd samen met de waarde die gehecht wordt aan bepaalde aspecten. 
 
-Op basis van één informatiemodel is het dan mogelijk om meerdere "encodings" te definiëren, oftewel implementaties in uitwisselingsformaten. Zoals eerder gezegd, heb je daar soms extra encoding rules voor nodig - hoewel je het liefst wil dat je je model 'out of the box' kunt vertalen in een applicatie schema. Een applicatieschema gebruik je om de data in je database te storen/uit te wisselen. In dit document focussen we op de uitwisseling, echter is het ook belangrijk om je data behoeftes te analyseren om tot een goede oplossing te komen wat betreft je opslag. Soms hoef je die keuzes ook niet apart te maken - als een uitgangspunt is om iets te hebben waarmee je kunt opslaan/uitwisselen, zou je bv kunnen kiezen voor GeoPackage. 
+Het is dan ook niet mogelijk om een opsomming te geven van alle relevante aspecten die een rol spelen bij het kiezen van een passend formaat. Wel is de toepassing leidend bij het maken van een keuze. De use case bepaalt namelijk wat de eisen aan de geometrieën zijn (zijn complexe types nodig? Is een hoge nauwkeurigheid van belang?), en welke verplichtingen aan de orde zijn. De antwoorden op deze vragen kunnen al een indicatie geven van de geschiktheid van de formaten. Inzichten in de behoeften van gebruikers (is ondersteuning in bepaalde tools/frameworks van belang? Moeten de bestanden leesbaar zijn voor mensen, vindbaar? Hoe belangrijk is de semantiek van de data?) zijn eveneens zwaarwegend. Deze handreiking geeft daarom alleen handvaten voor het kiezen van het juiste formaat voor de juiste situatie, en geeft in afzonderlijke hoofdstukken gedetailleerde informatie over het uitwisselen van geometrie in GML, JSON, GeoPackage en RDF.
 
-Maar het uiteindelijke doel is de uitwisseling van data, waarbij het belangrijk is om te weten waarvoor/waarom je uitwisselt: voor een bepaalde applicatie, om te voldoen aan eisen, om interne zaken te regelen, etc. Als dit helder is, kun je een betere keuze maken, aangezien de applicatie vaak bepaalde aspecten highlight. Ook kan het zo zijn dat je achteraf beseft dat je een ander format nodig wil, dan is het ook van belang om te kijken naar wrappers/het schakkelen tussen formats.
-
-Al deze consideraties zullen in dit document worden besproken, met het idee om mensen op weg te helpen bij het kiezen van een format voor de uitwisseling van geodata. Deze handreiking geeft daarom handvaten voor het kiezen van het juiste formaat voor de juiste situatie, en geeft in afzonderlijke hoofdstukken gedetaileerde informatie over het uitwisselen van geometrie in GML, JSON, GeoPackage en RDF.
-
-## Doel en doelgroep
-Dit document betreft een handreiking voor het gebruiken van lichtere formaten voor de uitwisseling van geodata. De informatie is daarom gericht op aanbieders van geo-informatie die graag:
-
-- Meer willen weten over de afwegingen die je moet maken bij het kiezen van een format
-
-
-De handreiking beperkt zich tot vectordata.
+## Scope en doelgroep
+Dit document betreft een handreiking voor het gebruiken van lichtere bestandsformaten voor geodata, en beperkt zich tot de uitwisseling van data waarbij vector geometrieën toegepast worden. Met digitale toegankelijkheid voor ogen, ligt de focus hier op formaten waarvan de onderliggende standaarden open zijn. De tekst is daarom gericht op aanbieders van geo-informatie die graag meer willen weten over de afwegingen die je moet maken bij het kiezen van een formaat. Het is niet mogelijk om alle afwegingen in kaart te brengen en bij elke combinatie van antwoorden een formaat aan te raden. Elke situatie is immers anders en een soortgelijk overzicht is te complex en dus buiten scope. Om deze reden neemt de handreiking een aantal optimale use cases als uitgangspunt.
 
 ## Leeswijzer
-De handreiking is vormgegeven met het idee dat mensen hun weg erin moeten kunnen vinden ongeacht hun kennis. Daarom worden aspecten die van belang zijn voor de uitwisseling toegelicht met voorbeelden, en worden use cases gebruikt om de te illustreren hoe je keuzes kunt onderbouwen. 
-
-## Terminologie
-
-Dit hoofdstuk beschrijft de definitie van termen die vaak voorkomen in dit document. 
-
-<dl class="termenlijst" data-sort>
-  <dt><dfn data-cite="#uitwisselformat" class="preserve">uitwisselformat</dfn></dt>
-    <dd>
-    Def
-    </dd>
-  <dt><dfn data-cite="#datamodel" class="preserve">datamodel</dfn></dt>
-    <dd>
-    Def2
-    </dd>    
+De handreiking is vormgegeven met het idee dat mensen hun weg erin moeten kunnen vinden ongeacht hun kennis. In [Hoofdstuk 2](#Standaarden) worden relevante standaarden beschreven. In [Hoofdstuk 3](#Keuzehulpbestandsformaten) worden belangrijke aspecten bij het kiezen van een formaat toegelicht aan de hand van de optimale use cases. Deze aspecten worden beschreven en vertaald in vragen. Vervolgens worden alle formaten in afzonderlijke hoofdstukken geïntroduceerd en middels deze vragen beoordeeld op hun geschiktheid. Echter is het aan de lezer om te bepalen welke aspecten meewegen in de beslissing. De 'keuze-aspect' tabellen zijn dus bedoeld als een leidraad, niet een definitief advies. Voorbeelden worden gebruikt om de relaties tussen het uitdrukken van de geometrie, de semantiek van achterliggende modellen en het gebruik van de bestandsformaten te illustreren.
