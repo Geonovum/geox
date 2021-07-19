@@ -48,7 +48,9 @@ Als er sprake is van nauwkeurige geometrische data, kan dit gevolgen hebben voor
 GIS standaarden en (in mindere mate) -tooling ondersteunen niet alleen rechttoe rechtaan 0, 1 of 2 dimensionale geometrie in de vorm van punten, lijnen en vlakken maar soms ook exotischere vormen zoals kromme lijnen (splines, cirkels, bogen, ellipses), driehoeken, 3D volumes, etc. In Nederland hanteren we het Simple Feature profiel plus een eenvoudige vorm van bogen, (zie [[gimeg]] hoofdstuk 3), maar ondersteuning van andere kromme lijnen en 3D volumes is voor sommige use cases wel nodig. In lichte formaten is over het algemeen beperkte ondersteuning: soms alleen punten, soms ook lijnen en vlakken, en in een enkel geval ook bogen en/of volumes. 
 
 ### Bogen en volumes
-Als de toepassing het nodig maakt om bogen en/of 3D volumes in de data uit te wisselen, moet er extra gelet worden op ondersteuning hiervoor bij de keuze van het uitwisselformaat.
+Als de toepassing het nodig maakt om bogen en/of 3D volumes in de data uit te wisselen, moet er extra gelet worden op ondersteuning hiervoor bij de keuze van het uitwisselformaat. 
+
+<aside class="note">Bij de ondersteuning van 3D geometrie zijn er meerdere aspecten die aandacht vergen - en andere formaten die van toepassing zijn. Deze aspecten worden niet uitgewerkt in de handreiking, zoals vermeld in [de scope](#scope-en-doelgroep). Wel wordt een indicatie gegeven van de mogelijkheden wat betreft het representeren van 3D volumes (in de formaten die hier behandeld worden). </aside>
 
 ### Datavolume
 Bij geodata kan men te maken hebben met grote datavolumes. Het woord "groot" is hierbij lastig te kwantificeren, en wat een groot bestand gevonden wordt kan ook veranderen in de loop der jaren. Maar een bestand van bijvoorbeeld 500MB of 1GB kan momenteel toch wel 'groot' genoemd worden en in de keuze van het meest geschikte uitwisselformaat speelt dit een rol.
