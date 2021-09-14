@@ -1,8 +1,8 @@
 var respecConfig = {
-  specStatus: "GN-WV",
+  specStatus: "GN-CV",
   specType: "HR",
   //canonicalURI: "WV",
-  //publishDate: "2018-01-01",
+  publishDate: "2021-09-14",
   maxTocLevel: 3,
   editors: [
     {
@@ -18,7 +18,7 @@ var respecConfig = {
       url: "https://www.geonovum.nl"},
   ],
   shortName: "geox",
-  pubDomain: "nen3610",
+  pubDomain: "g4w",
   github: "https://github.com/geonovum/geox",
   format: "markdown",
   //previousPublishDate: "2017-01-01",
