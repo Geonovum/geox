@@ -2,7 +2,7 @@
 ## Introductie
 HTML is een specificatie van het W3C [[html5]] om gegevens gestructureerd aan te bieden, voor ontsluiting op het web. HTML is vooral bekend als de standaard voor webpagina's. Zoekmachines kunnen HTML goed indexeren.
 
-Geodata in HTML kan op verschillende manieren gepubliceerd worden. Een HTML pagina kan de geometrie zelf bevatten en visualiseren. Dit wordt gedaan met de hulp van (gestandaardiseerde) webtechnologie als CSS, JavaScript, SVG / web canvas. Hiermee kan de onderliggende data op dynamische wijze geladen en bekeken worden op een web pagina. En steeds meer APIs leveren ook HTML representaties van geo-objecten op. Zo is in de core van OGC API Features [[OAPIF]] [HTML een aanbevolen formaat](http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_requirements_class_html) voor representatie van geodata. Aangezien HTML zelf geen ondersteuning biedt voor geodata (het kent geen aparte elementen voor geometrieën), zal de data via libraries en tools van tevoren verwerkt moeten worden voor visualisatie doeleinden. 
+Geodata in HTML kan op verschillende manieren gepubliceerd worden. Een HTML pagina kan de geometrie zelf bevatten en visualiseren. Dit wordt gedaan met de hulp van (gestandaardiseerde) webtechnologie als CSS, JavaScript, SVG / web canvas. Hiermee kan de onderliggende data op dynamische wijze geladen en bekeken worden op een web pagina. En steeds meer APIs leveren ook HTML representaties van geo-objecten op. Zo is in de core van OGC API Features [[OAPIF]] [HTML een aanbevolen formaat](http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_requirements_class_html) voor representatie van geodata. Aangezien HTML zelf geen ondersteuning biedt voor geodata (het kent geen aparte elementen voor geometrieën), zal de data via libraries en tools van tevoren verwerkt moeten worden voor visualisatiedoeleinden. 
 
 Het is echter wel mogelijk om de geometrie gestructureerd op te nemen in een HTML pagina, door middel van een zogenaamde annotatie. Met een annotatie beschrijf je de geodata op zo'n manier dat het zoekmachines toestaat de data op de pagina te indexeren en mogelijk te combineren met andere data. Om de betekenis van de data te kunnen interpreteren worden vocabulaires gebruikt. Annotaties in HTML zijn vaak volgens het begrippenkader van [Schema.org](https://schema.org/) opgesteld, een populair vocabulair waarmee zoekmachines goed overweg kunnen. Slechts enkele eenvoudige geometrietypen kunnen worden beschreven met Schema.org: 
 - punt: `schema:GeoCoordinates` (met properties `schema:latitude` en `schema:longitude`)
@@ -14,10 +14,11 @@ Het is echter wel mogelijk om de geometrie gestructureerd op te nemen in een HTM
 In HTML kunnen eenvoudig relaties gelegd worden met andere bronnen zoals begrippenkaders of gerelateerde geo-objecten. Als deze geo-objecten op dezelfde manier ook relaties leggen naar andere bronnen, kan dit nieuwe inzichten opleveren. 
 
 ## Voorbeelden
+De voorbeelden hieronder tonen aan hoe je met geodata om kan gaan in HTML. Het Schema.org vocabulair wordt aangeraden wanneer men data in HTML wil annoteren, omdat de data op deze manier indexeerbaar is door zoekmachines. Echter sluit dit het gebruik van andere vocabulaires niet uit. Wanneer de RDFa of JSON-LD serialisaties worden toegepast, is het ook mogelijk uit de geanoteerde HTML Linked Data te extraheren (zie hier een visualisatie van de data uit de onderstaande voorbeelden).
 
 <aside class="example ds-selector-tabs" title="Voorbeelden van geometrie voor HTML">
 <div class="container--tabs" style="height">
-  <span>De voorbeelden hieronder tonen aan hoe je met geodata om kan gaan in HTML. Het Schema.org vocabulair wordt aangeraden wanneer men data in HTML wil annoteren, omdat de data op deze manier indexeerbaar is door zoekmachines. Echter sluit dit het gebruik van andere vocabulaires niet uit. Wanneer de RDFa of JSON-LD serialisaties worden toegepast, is het ook mogelijk uit de geanoteerde HTML Linked Data te extraheren (zie hier een visualisatie van de data uit de onderstaande voorbeelden). </span>
+
   <div class="selectors">
     <ul class="nav nav-tabs">
       <li class="tabs active"><a href="#html-geoshapes">HTML met RDFa (GeoShape) </a></li>
@@ -111,21 +112,9 @@ De volgende tabel geeft aan hoe HTML scoort op de aspecten die een rol spelen bi
 | Is het format gebaseerd op algemene ict standaarden?                               | <span id="vinkje">&#10003;</span>  |  Ja, HTML is de standaard voor Web pagina's.           |
 | Wordt het format ondersteund in GIS software?                                      | <span id="kruisje">&#10005;</span> | Wanneer we het hebben over HTML voor de uitwisseling van data wordt een dataset (meestal) niet in één webpage gepubliceerd, maar krijgt elk object een eigen pagina. Dit betekent dat verwerking van meer dan één object in een ander systeem (bijvoorbeeld in een GIS of inlezen in een database), lastig is.|
 | Ondersteunt het format het uitdrukken van schema's, en validatie tegen dat schema? | <span id="kruisje">&#10005;</span> |             |
-| Ondersteunt het format meerdere coordinaatsystemen?                                | <span id="kruisje">&#10005;</span> | Nee, maar voor het gestructureerd opnemen van geometrie / CRSen kunnen annotaties gebruikt worden, deze worden gedefinieerd in een begrippenkader. [Schema.org](https://schema.org/) is een gangbare begrippenkader voor HTML annotaties, en ondersteunt alleen WGS-84. Het is niet de enige mogelijkheid, maar het voordeel van Schema.org annotaties is dat zoekmachines makkelijker met deze informatie overweg kunnen.   |
-| Ondersteunt het format 3D?                                                         | <span id="kruisje">&#10005;</span> | Nee, maar voor het gestructureerd opnemen van geometrie / CRSen kunnen annotaties vanuit een begrippenkader gebruikt worden. [Schema.org](https://schema.org/) is een gangbare begrippenkader, alleen ondersteunt deze geen 3D. |
-| Ondersteunt het format alle simple features geometrieen?                           | <span id="tilde">&#65374;</span>   | Nee, HTML ondersteunt geen geometrietypes vanzelf. Via een begrippenkader zou je een geometrie echter wel op gestructureerde wijze kunnen opnemen. [Schema.org](https://schema.org/) ondersteunt het gebruik van coördinaten (zie [GeoCoordinates](https://schema.org/GeoCoordinates)) en een beperkt aantal geometrietypen (zie [GeoShape](https://schema.org/GeoShape)).  |
+| Ondersteunt het format meerdere coördinaatsystemen?                                | <span id="kruisje">&#10005;</span> | Nee, maar voor het gestructureerd opnemen van geometrie / CRSen kunnen annotaties gebruikt worden, deze worden gedefinieerd in een begrippenkader. [Schema.org](https://schema.org/) is een gangbaar begrippenkader voor HTML annotaties, en ondersteunt alleen WGS-84. Het is niet de enige mogelijkheid, maar het voordeel van Schema.org annotaties is dat zoekmachines makkelijker met deze informatie overweg kunnen.   |
+| Ondersteunt het format 3D?                                                         | <span id="kruisje">&#10005;</span> | Nee, maar voor het gestructureerd opnemen van geometrie / CRSen kunnen annotaties vanuit een begrippenkader gebruikt worden. [Schema.org](https://schema.org/) is een gangbaar begrippenkader, alleen ondersteunt deze geen 3D. |
+| Ondersteunt het format alle simple features geometrieën?                           | <span id="tilde">&#65374;</span>   | Nee, HTML ondersteunt geen geometrietypes van zichzelf. Via een begrippenkader zou je een geometrie echter wel op gestructureerde wijze kunnen opnemen. [Schema.org](https://schema.org/) ondersteunt het gebruik van coördinaten (zie [GeoCoordinates](https://schema.org/GeoCoordinates)) en een beperkt aantal geometrietypen (zie [GeoShape](https://schema.org/GeoShape)).  |
 | Ondersteunt het format andere ISO 19107 geometrie types?                           | <span id="kruisje">&#10005;</span> |             |
 | Is het format geschikt voor grote volumes?                                         | <span id="kruisje">&#10005;</span> |             |
-| Is het format geschikt om semantiek aan te koppelen / in uit te drukken?           | <span id="vinkje">&#10003;</span>  | Het is eenvoudig om gestructureerde data te combineren met tekst en en men kan linken aan begrippenkaders (zie [RDFa Primer](https://www.w3.org/TR/rdfa-primer/) voor meer informatie) |
-
-<!-- ## Voordelen
-- directe visualiatie / presentatie aan (eind)gebruikers van (object)informatie
-- gestructureerde data in combinatie met tekst
-- indexeerbaar door zoekmachines
-- linken aan begrippenkaders -->
-
-<!-- ## Beperkingen
-- geometrietypen zeer beperkt
-- ondersteuning voor andere CRSen dan WGS84 is niet gangbaar
-- een volledige dataset downloaden, bijvoorbeeld om te combineren met een andere dataset, is lastiger
-- verwerking van de geometrie in een ander systeem (zoals een GIS desktop systeem) is lastig -->
+| Is het format geschikt om semantiek aan te koppelen / in uit te drukken?           | <span id="vinkje">&#10003;</span>  | Het is eenvoudig om gestructureerde data te combineren met tekst en men kan linken aan begrippenkaders (zie [RDFa Primer](https://www.w3.org/TR/rdfa-primer/) voor meer informatie) |

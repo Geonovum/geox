@@ -3,7 +3,7 @@
 ## Introductie
 GeoPackage is een [OGC](https://www.opengeospatial.org) standaard voor de uitwisseling van geodata die gebaseerd is op [SQLLite](https://www.sqlite.org/). Het wordt wel gezien als vervanger van Shapefiles. GeoPackage is in 2019 [aangemeld voor de pas-toe-of-leg-uit lijst](https://www.geonovum.nl/over-geonovum/actueel/geopackage-aanmelden-voor-pas-toe-of-leg-uit-lijst) (PTOLU) en is inmiddels aan die lijst toegevoegd. Dit format vervangt GML op de PTOLU niet, maar bij het aanbieden van een download moeten Nederlandse overheidsorganisaties naast GML ook GeoPackage kunnen leveren.
 
-GeoPackage is een “licht” formaat om geografische informatie uit te wisselen. Veel geografische software ondersteunt de GeoPackage standaard al, waaronder ook een paar populaire pakketten die moeite hebben met de verwerking van GML. GeoPackage is een binair formaat, en dus niet in een tekst editor te openen. Het ondersteunt een subset van de geometrie types zoals gedefinieerd in [[iso-13249-3]] - dit is een uitbreiding op het Simple Features data model van [[iso-19125-1-2004]], welke het opnemen van circulaire interpolaties mogelijk maakt. In de GeoPackage documentatie wordt een overzicht gegeven van de [ondersteunde geometrie types](http://www.geopackage.org/spec/#geometry_types).  
+GeoPackage is een “licht” formaat om geografische informatie uit te wisselen. Veel geografische software ondersteunt de GeoPackage standaard al, waaronder ook een paar populaire pakketten die moeite hebben met de verwerking van GML. GeoPackage is een binair formaat, en dus niet in een tekst editor te openen. Het ondersteunt een subset van de geometrietypes zoals gedefinieerd in [[iso-13249-3]] - dit is een uitbreiding op het Simple Features data model van [[iso-19125-1-2004]], welke het opnemen van circulaire interpolaties mogelijk maakt. In de GeoPackage documentatie wordt een overzicht gegeven van de [ondersteunde geometrie types](http://www.geopackage.org/spec/#geometry_types).  
 
 Moderne datasets zoals de Basisregistratie Grootschalige Topografie zijn zó gedetailleerd, dat bestandsomvang een probleem gaat vormen bij het importeren van data in softwaresystemen. GeoPackage is een geschikt formaat voor het uitwisselen van geodatasets met een grote omvang, bijvoorbeeld wanneer gebruikers een grote dataset of subset daarvan willen downloaden om in hun lokale (GIS) systeem te gebruiken voor ruimtelijke analyses. 
 
@@ -28,10 +28,10 @@ De volgende tabel geeft aan hoe GeoPackage scoort op de aspecten die een rol spe
 | Is het format gebaseerd op algemene ict standaarden?                               | <span id="vinkje">&#10003;</span>  | GeoPackage is gebaseerd op SQLite, en is daardoor toegankelijk voor een grotere doelgroep datagebruikers   |
 | Wordt het format ondersteund in GIS software?                                      | <span id="vinkje">&#10003;</span>  |In veelgebruikte GIS software (QGIS en ArcGIS pro) werkt het importeren en exporteren van GeoPackage prima - in QGIS is ondersteuning al beschikbaar sinds versie 2.10.1.</aside> |
 | Ondersteunt het format het uitdrukken van schema's, en validatie tegen dat schema? | <span id="kruisje">&#10005;</span> | Validatie wordt niet ondersteund. Een praktische oplossing hiervoor is om voor validatie het bestand te converteren naar GML en dat te valideren. Een GeoPackage bestand bevat genoeg informatie om dat mogelijk te maken. |
-| Ondersteunt het format meerdere coordinaatsystemen?                                | <span id="vinkje">&#10003;</span>  |             |
+| Ondersteunt het format meerdere coördinaatsystemen?                                | <span id="vinkje">&#10003;</span>  |             |
 | Ondersteunt het format 3D?                                                         | <span id="kruisje">&#10005;</span> | Volumes worden niet ondersteund, wel bestaan er een aantal [Community extensions voor GeoPackage](https://www.geopackage.org/extensions.html), waaronder een voor 3D - echter zijn dit geen officiële GeoPackage extensies |
-| Ondersteunt het format alle simple features geometrieen?                           | <span id="vinkje">&#10003;</span>  |             |
-| Ondersteunt het format andere ISO 19107 geometrie types?                           | <span id="kruisje">&#10005;</span> |             |
+| Ondersteunt het format alle simple features geometrieën?                           | <span id="vinkje">&#10003;</span>  |             |
+| Ondersteunt het format andere ISO 19107 geometrietypes?                           | <span id="kruisje">&#10005;</span> |             |
 | Is het format geschikt voor grote volumes?                                         | <span id="vinkje">&#10003;</span>  |             |
 | Is het format geschikt om semantiek aan te koppelen / in uit te drukken?           | <span id="kruisje">&#10005;</span> |             |
 
@@ -40,4 +40,4 @@ De volgende tabel geeft aan hoe GeoPackage scoort op de aspecten die een rol spe
 
 ### Naamgeving
 
-Voor GeoPackage wordt het gebruik van snake_case aangeraden. Om de interoperabiliteit te stimuleren kunnen de database identifiers (tabel namen, kolom namen, etc.) met lowercase tekens worden opgenomen. Het is in ieder geval handig om alleen lowercase tekens, cijfers en underscores(\_) te gebruiken. 
+Voor GeoPackage wordt het gebruik van snake_case aangeraden. Om de interoperabiliteit te stimuleren kunnen de database identifiers (tabel namen, kolom namen, etc.) met lowercase tekens worden opgenomen. Het is in ieder geval handig om alleen lowercase tekens, cijfers en underscores ( `_` ) te gebruiken. 
