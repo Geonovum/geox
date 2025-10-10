@@ -68,7 +68,7 @@ Hoe geometrie in RDF moet worden uitgedrukt is beschreven in vocabulaires. De OG
         <div class="figure" style="float:left"><img src="media/rdf-ex.png" width="500"></div>
     </div>
       <div id="rdf-turtle" class="tab-pane active">
-      	<span>Dezelfde data zoals getoond in  <a href="rdf-jsonld">het JSON-LD voorbeeld</a>, maar dan volgens het veelgebruikte Terse RDF Triple Language (Turtle) formaat.</span>
+      	<span>Dezelfde data zoals getoond in het JSON-LD voorbeeld, maar dan volgens het veelgebruikte Terse RDF Triple Language (Turtle) formaat.</span>
       	<pre>
 @prefix schema: &lt;http://schema.org/> .
 @prefix geosparql: &lt;http://www.opengis.net/ont/geosparql#> .
